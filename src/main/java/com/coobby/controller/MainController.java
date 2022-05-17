@@ -15,4 +15,28 @@ public class MainController {
 	public String detail() {
 		return "recipedetail";
 	}
+	
+	// 마이피드 임시로 열기위해
+	@RequestMapping("MyFeed")
+	public String MyFeed() {
+		return "MyFeed";
+	}
+	
+	// 피드 모달창
+	@RequestMapping("feed/MyFeedModal")
+	public String MyFeedModal() {
+		return "feed/MyFeedModal";
+	}
+	
+	// 마이피드 수정
+	@RequestMapping("feed/UpdateMyFeed")
+	public String UpdateMyFeed() {
+		return "feed/UpdateMyFeed";
+	}
+	
+	// 피드 작성페이지
+	@RequestMapping("feed/WriteFeed")
+	public String WriteFeed() {
+		return "feed/WriteFeed";
+	}
 }

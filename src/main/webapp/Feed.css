@@ -1,0 +1,49 @@
+@charset "EUC-KR";
+
+/* logo */
+.header-size-sm #header-wrap #logo img {
+	width:150px;
+	height:30px;
+}
+
+/* myfeed Tab */
+#myTab .nav-item .nav-link {
+	color: rgba(0,0,0,0.65);
+}
+
+/* myfeed_contents */
+.product-desc h3.userId {
+	display: inline;
+}
+
+.product-desc svg.bi {
+	margin: 0 1%;
+}
+
+.product-desc #feeduser {
+	vertical-align: bottom;
+}
+
+#heartlike {
+	width: 30px;
+	height: 30px;
+}
+
+/* 마이피드 수정페이지 */
+#updatecon {
+	text-align: center;
+}
+
+.img_wrap {
+	width: 300px;
+	margin-top: 50px;;
+}
+.img_wrap img {
+	max-width: 100%;
+}
+
+/* 피드 메인 */
+.searchform {	
+	border-width : 0px 0px 2px 0px;
+	
+}
