@@ -1,10 +1,20 @@
 package com.coobby.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.coobby.domain.FeedVO;
+import com.coobby.feed.service.FeedService;
 
 @Controller
 public class MainController {
+	
+	@Autowired
+	private FeedService feedService;
 
 	@RequestMapping("index")
 	public String index() {
@@ -15,6 +25,8 @@ public class MainController {
 	public String detail() {
 		return "recipedetail";
 	}
+	
+	//************************************** 피드 부분
 	
 	// 마이피드 임시로 열기위해
 	@RequestMapping("MyFeed")
@@ -39,4 +51,21 @@ public class MainController {
 	public String WriteFeed() {
 		return "feed/WriteFeed";
 	}
+	
+	// 피드 목록 출력
+	@RequestMapping("/getFeedList")
+	public void getFeedList(Model m) {
+		FeedVO vo = new FeedVO();
+		List<FeedVO> list = feedService.getFeedList(vo);
+		m.addAttribute("feedList",list);
+	}
+	
 }
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -263,10 +264,12 @@
 									</a>
 									</div>
 								</div>
+								<c:forEach items="${ feedList}" var="feed">
 								<div class="product-desc">
-									<div class="product-title mb-0"><h4 class="mb-0"><a class="fw-medium" href="demo-furniture-single.html">title</a></h4></div>
-									<h5 class="product-price fw-normal">userId</h5>
+									<div class="product-title mb-0"><h4 class="mb-0"><a class="fw-medium" href="demo-furniture-single.html">${feed.fe_title }</a></h4></div>
+									<h5 class="product-price fw-normal">${feed.mem_id }</h5>
 								</div>
+								</c:forEach>
 							</div>
 						</div>
 						</div>
