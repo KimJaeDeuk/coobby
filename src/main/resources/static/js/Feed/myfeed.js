@@ -16,6 +16,18 @@ $(function(){
     $('.flexslider').flexslider({
         animation: "fade"
     })
+    
+    // 게시글 댓글 허용 및 submit
+    $('#checkbox').change(function(){
+		 
+        if($("#checkbox").is(":checked")){
+            $('#checkval').val('1')
+        }else{
+            $('#checkval').val('0')
+        }
+        console.log($('#checkval').val())
+   
+	})
 
     // 좋아요 색상 변경
     
