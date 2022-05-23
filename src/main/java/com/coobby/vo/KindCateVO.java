@@ -1,7 +1,7 @@
 package com.coobby.vo;
 
-import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,6 +14,7 @@ import lombok.Data;
 public class KindCateVO {
 	
 	@Id
-	private String kind_name;
+	@Column(name="kind_name")
+	private String kindName;
 	
 }

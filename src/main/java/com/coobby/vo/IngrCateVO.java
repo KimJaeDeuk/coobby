@@ -1,7 +1,6 @@
 package com.coobby.vo;
 
-import java.util.List;
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -14,6 +13,7 @@ import lombok.Data;
 public class IngrCateVO {
 	
 	@Id
-	private String ingr_name;
+	@Column(name="ingr_name")
+	private String ingrName;
 	
 }

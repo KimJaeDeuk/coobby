@@ -86,13 +86,13 @@
 											<td class="tableLine">
 												<c:if test="${kindCate != null }">
 													<c:forEach var="kind" items="${kindCate}">
-														<span class="smallCate btn btn-default inputText" name="kind_name">
-														${kind.kind_name}
+														<span class="smallCate btn btn-default inputText" name="kindName">
+														${kind.kindName}
 														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
 														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 														</svg>
-														<input type="hidden" name="kind_name" class="hiddenName" value="${kind.kind_name}"/>
+														<input type="hidden" name="kindName" class="hiddenName" value="${kind.kindName}"/>
 														</span>
 													</c:forEach>
 												</c:if>
@@ -107,13 +107,13 @@
 											<td class="tableLine">
 											<c:if test="${howCate != null }">
 													<c:forEach var="how" items="${howCate}">
-														<span class="smallCate btn btn-default inputText" name="how_name">
-														${how.how_name}
+														<span class="smallCate btn btn-default inputText" name="howName">
+														${how.howName}
 														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
 														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 														</svg>
-														<input type="hidden" name="how_name" class="hiddenName" value="${how.how_name}"/>
+														<input type="hidden" name="howName" class="hiddenName" value="${how.howName}"/>
 														</span>
 													</c:forEach>
 												</c:if>
@@ -128,13 +128,13 @@
 											<td class="tableLine">
 											<c:if test="${ingrCate != null }">
 													<c:forEach var="ingr" items="${ingrCate}">
-														<span class="smallCate btn btn-default inputText" name="ingr_name">
-														${ingr.ingr_name}
+														<span class="smallCate btn btn-default inputText" name="ingrName">
+														${ingr.ingrName}
 														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
 														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 														</svg>
-														<input type="hidden" name="ingr_name" class="hiddenName" value="${ingr.ingr_name}"/>
+														<input type="hidden" name="ingrName" class="hiddenName" value="${ingr.ingrName}"/>
 														</span>
 													</c:forEach>
 												</c:if>
@@ -149,13 +149,13 @@
 											<td class="tableLine">
 											<c:if test="${situCate != null }">
 													<c:forEach var="situ" items="${situCate}">
-														<span class="smallCate btn btn-default inputText" name="situ_name">
-														${situ.situ_name}
+														<span class="smallCate btn btn-default inputText" name="situName">
+														${situ.situName}
 														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
 														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 														</svg>
-														<input type="hidden" name="situ_name" class="hiddenName" value="${situ.situ_name}"/>
+														<input type="hidden" name="situName" class="hiddenName" value="${situ.situName}"/>
 														</span>
 													</c:forEach>
 												</c:if>
@@ -233,7 +233,6 @@
 	<!-- AdminLTE App -->
 	<script src="/resources/admin/dist/js/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
-	<script src="/resources/admin/dist/js/demo.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	<script>
 		$(function(){
@@ -270,18 +269,18 @@
 			//수정 버튼을 눌렀을때 진행되는 과정
 			$('.modify').click(function(){
 				if($('.BicCate').html()=='종류별'){
-					className = 'kind_name'
+					className = 'kindName'
 					
 				}
 				else if($('.BicCate').html()=='방법별'){
-					className='how_name'
+					className='howName'
 						
 				}
 				else if($('.BicCate').html()=='재료별'){
-					className='ingr_name'
+					className='ingrName'
 				}
 				else{
-					className='situ_name'
+					className='situName'
 				}
 				console.log($('.BicCate').html());
 				smallChoose.attr("name",className);

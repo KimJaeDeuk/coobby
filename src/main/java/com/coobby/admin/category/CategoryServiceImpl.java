@@ -40,14 +40,14 @@ public class CategoryServiceImpl implements CategoryService{
 		{
 			for(int i=0; i < kind_name.length;i++ ) {
 				KindCateVO vo = new KindCateVO();
-				vo.setKind_name(kind_name[i]);
+				vo.setKindName(kind_name[i]);
 				kindRepo.save(vo);
 			}
 		}		
 		if(situ_name!=null) {
 			for(int i=0; i < situ_name.length; i++ ) {
 				SituCateVO vo = new SituCateVO();
-				vo.setSitu_name(situ_name[i]);
+				vo.setSituName(situ_name[i]);
 				situRepo.save(vo);
 			}
 		}
@@ -55,14 +55,14 @@ public class CategoryServiceImpl implements CategoryService{
 		if(ingr_name!=null) {
 			for(int i=0; i < ingr_name.length; i++ ) {
 				IngrCateVO vo = new IngrCateVO();
-				vo.setIngr_name(ingr_name[i]);
+				vo.setIngrName(ingr_name[i]);
 				ingrRepo.save(vo);
 			}
 		}
 		if(how_name!=null) {
 			for(int i=0; i < how_name.length; i++ ) {
 				HowCateVO vo = new HowCateVO();
-				vo.setHow_name(how_name[i]);
+				vo.setHowName(how_name[i]);
 				howRepo.save(vo);
 			}
 		}
