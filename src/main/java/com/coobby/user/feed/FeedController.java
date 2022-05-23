@@ -1,13 +1,21 @@
 package com.coobby.user.feed;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.filechooser.FileSystemView;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 
 @Controller
@@ -72,17 +80,22 @@ public class FeedController {
 			
 		}
 		 
-		
-		
-		
-		
-		
-//		public String UpdateMyFeed(FeedVO vo, Model m) {
-//			FeedVO fvo=feedService.UpdateMyFeed(vo);
-//			System.out.println(fvo.toString());
-//			m.addAttribute("myfeedmodal", fvo);
-//			return "user/feed/MyFeedModal?fe_no="+fvo.getFe_no().toString();
-//		}
+		// 이미지 업로드
+		@PostMapping()
+		public String uploadImage(@RequestParam("files") List<MultipartFile> files) throws Exception {
+			String rootPath = FileSystemView.getFileSystemView().getHomeDirectory().toString();
+			String basePath = rootPath + "/" + "multi";
+			
+			// 파일 업로드 (여러개) 처리
+			for(MultipartFile file : files) {
+				String originalName = file.getOriginalFilename();
+				String filePath = basePath + "/" + originalName;
+				
+				File dest = new File(filePath);
+				file.transferTo(dest);
+			}
+			return "uploaded";
+		}
 		
 	// ------------------------- 메인피드
 		// 마이피드 목록 출력

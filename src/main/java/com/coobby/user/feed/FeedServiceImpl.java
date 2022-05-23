@@ -49,12 +49,6 @@ public class FeedServiceImpl implements FeedService {
 	}
 	
 
-	// 마이피드 수정 원본 상세보기
-//	public FeedVO getupdateFeed(FeedVO vo) {
-//		FeedVO fvo = feedRepo.findById(vo.getFe_no()).get();
-//		feedRepo.save(fvo);
-//		return fvo;
-//	}
 	
 	
 }

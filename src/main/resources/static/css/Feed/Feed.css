@@ -50,9 +50,6 @@
 	max-width: 100%;
 }
 
-#myTabContent .writefeed {
-	text-align: center;
-}
 
 /* 피드 메인 */
 .searchform {	
@@ -116,6 +113,25 @@ input:checked + label {
 input:checked + label span {
   /* left: 29px; */
   transform: translateX(26px);
+}
+
+#writefeed{
+	display: flex;
+	justify-content: center;
+}
+
+
+/* 작성 페이지 */
+div.content-wrap > div > #uploadFile {
+	display: flex;
+	justify-content: center;
+}
+
+
+
+#wrapper > form > div.updatebtn {
+	display: flex;
+	justify-content: center;
 }
 
 

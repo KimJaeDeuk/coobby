@@ -26,12 +26,6 @@ public interface FeedService {
 //	public void deleteFeedImage(FeedImageVO imgvo);
 	
 	
-	// 마이피드 수정 페이지 원본
-//	public FeedVO getupdateFeed(FeedVO vo);
-	
-	// 마이피드 수정
-//	public FeedVO UpdateMyFeed(FeedVO vo);
-	
 	
 	
 
