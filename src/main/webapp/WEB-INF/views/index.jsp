@@ -466,7 +466,7 @@
 								<h3 class="mb-4 fw-normal h1">New <span data-animate="svg-underline-animated" class="svg-underline nocolor"><span>Arrivals</span></span></h3>
 								<p class="op-07 mb-4">Compellingly cultivate synergistic infrastructures rather than fully tested opportunities. Synergistically evisculate web-enabled interfaces.</p>
 								<a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">New Arrivals</a>
-								<a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">Popular</a>
+								<a href="demo-furniture-products.html" class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color"><b>Popular</b></a>
 							</div>
 
 							<!-- Product 1 -->
