@@ -2,6 +2,11 @@
 <!DOCTYPE>
 <html dir="ltr" lang="en-US">
 <head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	
 	<!-- Document Title
 	============================================= -->
 	<title>COOBBY</title>
@@ -125,7 +130,7 @@
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="demo-furniture-products.html" class="menu-link"><div class="menu-font">피드보기</div></a>
+									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
 									<a class="menu-link" href="demo-furniture-about.html">
@@ -133,7 +138,7 @@
 									</a>
 								</li>
 								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="demo-furniture-contact.html">
+								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
 									<div class="menu-font">마이페이지</div>
 								</a></li>
 							</ul>
@@ -152,6 +157,10 @@
 			<div class="header-wrap-clone"></div>
 		</header><!-- #header end -->
 	</div>
+
+
+	<!-- JavaScripts
+	============================================= -->
 
 </body>
 </html>
