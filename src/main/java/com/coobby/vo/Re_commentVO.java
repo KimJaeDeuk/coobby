@@ -14,13 +14,25 @@ import lombok.Data;
 public class Re_commentVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int re_comm_no;
-	private int re_no;
-	private String mem_id;
-	private String re_content;
-	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)")
-	private String re_comm_createtime;
+	@Column(name="re_comm_no")
+	private int reCommNo;
+	
+	@Column(name="re_no")
+	private int reNo;
+	
+	@Column(name="mem_id")
+	private String memId;
+	
+	@Column(name="re_content")
+	private String reContent;
+	
+	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name="re_comm_createtime")
+	private String reCommCreatetime;
+	
+	@Column(name="re_comm_updatetime")
 	private String re_comm_updatetime;
-	private int re_parent;
+	
+	@Column(name="re_parent")
+	private int reParent;
 
 }

@@ -50,7 +50,7 @@
 	<div id="wrapper" class="clearfix">
 		<!-- Header
 		============================================= -->
-		<jsp:include page="../nav-bar/user-nav.jsp"/>
+		<jsp:include page="../user-nav.jsp"/>
 		<!-- #header end -->
 
 		<!-- Page Title

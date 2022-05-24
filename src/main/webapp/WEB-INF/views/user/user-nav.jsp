@@ -6,30 +6,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="author" content="SemiColonWeb" />
 
-	<!-- Stylesheets
-	============================================= -->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="/resources/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/style.css" type="text/css" />
-
-	<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-	<!-- Furniture Demo Specific Theme Stylesheet - #193532 -->
-	<link rel="stylesheet" href="/resources/css/colors.php?color=193532" type="text/css" />
-
-	<!-- Furniture Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="/resources/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
-	<link rel="stylesheet" href="/resources/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
-	<!-- / -->
-
+	
 	<!-- Document Title
 	============================================= -->
 	<title>COOBBY</title>
@@ -153,7 +130,7 @@
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="demo-furniture-products.html" class="menu-link"><div class="menu-font">피드보기</div></a>
+									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
 									<a class="menu-link" href="demo-furniture-about.html">
@@ -161,7 +138,7 @@
 									</a>
 								</li>
 								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="demo-furniture-contact.html">
+								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
 									<div class="menu-font">마이페이지</div>
 								</a></li>
 							</ul>
@@ -184,12 +161,6 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
-
-	<!-- Footer Scripts
-	============================================= -->
-	<script src="/resources/js/functions.js"></script>
 
 </body>
 </html>
