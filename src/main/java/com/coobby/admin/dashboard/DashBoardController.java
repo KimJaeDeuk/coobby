@@ -15,9 +15,9 @@ public class DashBoardController {
 	@RequestMapping("/dashboard")
 	public void chartMain(Model m) {
 		 //m.addAttribute("countBoard",dashService.recipeCount());// 총 게시물 수
-		 m.addAttribute("todayBoardCnt", dashService.todayRecipe());//당일 게시물 수
+		 m.addAttribute("todayRecipeCnt", dashService.todayRecipe());//당일 게시물 수
 		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
-		
+		 m.addAttribute("todayFeedCnt", dashService.todayFeed());
 	}
 	
 	
