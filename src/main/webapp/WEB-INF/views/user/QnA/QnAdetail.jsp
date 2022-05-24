@@ -91,7 +91,7 @@
        </table>
        </c:if>
      </table>	
-     <a href="QnAListPage.do">
+     <a href="QnAlist">
      <button type="button"
          class="btn btn-secondary m-2" id="btnQnAList">목록보기</button></a>			
      </div>	

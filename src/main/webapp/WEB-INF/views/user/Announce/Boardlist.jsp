@@ -56,8 +56,8 @@
    </div>
    <div class="container">
    <div style="text-align: left; margin-left: 160px;">
-    <button type="button" class="btn btn-main" id="annobtn" style="background-color: gray; color: white;">공지사항</button>
-    <button type="button" class="btn btn-main" id="qnabtn" style="background-color: blue; color: aliceblue;">Q&A</button>
+    <button type="button" class="btn btn-main" id="annobtn" style="background-color: blue; color: white;">공지사항</button>
+    <a href="/user/QnA/QnAlist"><button type="button" class="btn btn-main" id="qnabtn" style="background-color: gray; color: aliceblue;">Q&A</button></a>
     </div>
   </div><br/>
   <div class="container">
@@ -69,7 +69,7 @@
               <thead>
                <tr>
                 <th style="width: 16.6%;">번호</th>
-                <th style="width: 40%;">공지사항제목</th>
+                <th style="width: 40%;">제목</th>
                 <th style="width: 20%;">담당자</th>
                 <th>작성일</th>
                 <th style="width: 8.33%;">조회수</th>
@@ -78,42 +78,42 @@
               <tbody>
                 <tr>
                  <td>1</td>
-                 <td>공지사항 제목입니다.</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항 제목입니다.</td>
+                 <td>관리자</td>
                  <td>2022-05-05</td>
                  <td>12</td>
                 </tr>
                 <tr>
                  <td>2</td>
-                 <td>공지사항</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항</td>
+                 <td>관리자</td>
                  <td>2022-04-25</td>
                  <td>23</td>
                 <tr>
                  <td>3</td>
-                 <td>공지사항</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항</td>
+                 <td>관리자</td>
                  <td>2022-04-02</td>
                  <td>12</td>
                 </tr>
                 <tr>  
                  <td>4</td>
-                 <td>공지사항</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항</td>
+                 <td>관리자</td>
                  <td>2022-03-26</td>
                  <td>34</td>
                 </tr>
                 <tr>
                  <td>5</td>
-                 <td>공지사항</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항</td>
+                 <td>관리자</td>
                  <td>2022-03-11</td>
                  <td>34</td>
                 </tr>
                 <tr>
                  <td>6</td>
-                 <td>공지사항</td>
-                 <td>COOBBY 관리자</td>
+                 <td style="text-align:left">공지사항</td>
+                 <td>관리자</td>
                  <td>2022-03-01</td>
                  <td>65</td>
                 </tr>

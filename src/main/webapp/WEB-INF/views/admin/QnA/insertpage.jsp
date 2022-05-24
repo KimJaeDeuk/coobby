@@ -201,24 +201,22 @@
 					<!-- 사용자 문의내용 출력칸-->
 					<div class="card mb-4">
 						<div class="card-header">
-							<div>번호, 제목</div>
+							<div>질문일자</div>
 						</div>
-						<div> 작성일자:</div>
-
-						<div style="height: 200px;">내용</div>
+						<textarea cols="30" rows="10" name="qrContent" placeholder="질문내용"></textarea>
 					</div>
 
 					<!-- 관리자 답변 폼 -->
-					<form action="" method="post">
+					<form action="listpage" method="post">
 						<div class="card mb-4">
 							<div class="card-header">
-								<div>번호</div>
+								<div>답변일자</div>
 							</div>
-							<textarea cols="30" rows="10" name="qrContent"></textarea>
+							<textarea cols="30" rows="10" name="qrContent" placeholder="답변내용"></textarea>
 						</div>
 						<button type="submit" class="btn btn-secondary m-2"
 							id="btnQnAreply" style="float:right;">답변등록</button>
-						<a href=""><button type="button"
+						<a href="listpage"><button type="button"
 								class="btn btn-secondary m-2" id="btnQnAList" style="float:right;">목록보기</button></a>
 					</form>
 				</div>
