@@ -12,30 +12,30 @@
 	rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 
-<link rel="stylesheet" href="resources/css/bootstrap.css"
+<link rel="stylesheet" href="/resources/css/bootstrap.css"
 	type="text/css" />
-<link rel="stylesheet" href="resources/style.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/dark.css" type="text/css" />
+<link rel="stylesheet" href="/resources/style.css" type="text/css" />
+<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
 
-<link rel="stylesheet" href="resources/css/font-icons.css"
+<link rel="stylesheet" href="/resources/css/font-icons.css"
 	type="text/css" />
-<link rel="stylesheet" href="resources/css/animate.css" type="text/css" />
-<link rel="stylesheet" href="resources/css/magnific-popup.css"
+<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
+<link rel="stylesheet" href="/resources/css/magnific-popup.css"
 	type="text/css" />
 
-<link rel="stylesheet" href="resources/css/custom.css" type="text/css" />
+<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!--  Recipes Demo Specific Stylesheet -->
-<link rel="stylesheet" href="resources/css/colors.php?color=267DF4"
+<link rel="stylesheet" href="/resources/css/colors.php?color=267DF4"
 	type="text/css" />
 <!-- Theme Color -->
-<link rel="stylesheet" href="resources/demos/recipes/css/fonts.css"
+<link rel="stylesheet" href="/resources/demos/recipes/css/fonts.css"
 	type="text/css" />
 <!-- Theme Font -->
-<link rel="stylesheet" href="resources/demos/recipes/recipes.css"
+<link rel="stylesheet" href="/resources/demos/recipes/recipes.css"
 	type="text/css" />
-<link rel="stylesheet" href="resources/mycss/recipedetail.css"
+<link rel="stylesheet" href="/resources/user/recipe/css/recipedetail.css"
 	type="text/css" />
 <!-- Theme Custom CSS -->
 
@@ -50,10 +50,7 @@
 	<div id="wrapper" class="clearfix">
 		<!-- Header
 		============================================= -->
-		<header id="header" class="transparent-header"
-			data-sticky-shrink="false">
-
-		</header>
+		<jsp:include page="../nav-bar/user-nav.jsp"/>
 		<!-- #header end -->
 
 		<!-- Page Title
@@ -66,7 +63,7 @@
 			<div class="container clearfix">
 				<div class="mx-auto center" style="max-width: 800px">
 					<h3 class="nott fw-bold mb-5 display-4" data-animate="zoomIn">
-						title 자리</h3>
+						{ recipe.re_title }</h3>
 				</div>
 			</div>
 		</section>
@@ -84,36 +81,23 @@
 								<div class="col-lg-8 mt-5 mt-lg-0">
 								  <h4>사진</h4>
 									<div class="bxslider">
-									   <div><img src="resources/images/about/1.jpg" alt=""/></div>
-									   <div><img src="resources/images/about/2.jpg" alt=""/></div>
-									   <div><img src="resources/images/about/3.jpg" alt=""/></div>
+									   <div><img src="/resources/images/about/1.jpg" alt=""/></div>
+									   <div><img src="/resources/images/about/2.jpg" alt=""/></div>
+									   <div><img src="/resources/images/about/3.jpg" alt=""/></div>
 									 </div>
 									 <div id="recipeseqcontainer">
 										<h4>조리 순서</h4>
 										<ol class="list-unstyled list-preparation">
 											<li class="recipeseq">
-												<div>Place frozen tater tots on a baking sheet and bake
-													at 450˚F (230˚C) for 20 minutes, or until crispy. Set aside.
-												</div> <img class="recipeimg" src="resources/images/about/1.jpg"
-												alt="" />
-											</li>
-											<li class="recipeseq">
-												<div>Place frozen tater tots on a baking sheet and bake
-													at 450˚F (230˚C) for 20 minutes, or until crispy. Set aside.
-												</div> <img class="recipeimg" src="resources/images/about/1.jpg"
-												alt="" />
-											</li>
-											<li class="recipeseq">
-												<div>Place frozen tater tots on a baking sheet and bake
-													at 450˚F (230˚C) for 20 minutes, or until crispy. Set aside.
-												</div> <img class="recipeimg" src="resources/images/about/1.jpg"
+												<div>{ recipe.re_cook }
+												</div> <img class="recipeimg" src="/resources/images/about/1.jpg"
 												alt="" />
 											</li>
 										</ol>
 									</div>
 									<h4>조리 영상</h4>
 									<div class="rounded position-relative dark mb-5"
-										style="background: url('resources/demos/recipes/images/recipe-week.jpg') no-repeat center center/cover; min-height: 300px;">
+										style="background: url('/resources/demos/recipes/images/recipe-week.jpg') no-repeat center center/cover; min-height: 300px;">
 										<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs"
 											data-lightbox="iframe" class="play-video stretched-link">
 											<i class="icon-play"></i>
@@ -134,7 +118,7 @@
 													<div class="comment-meta">
 														<div class="comment-author vcard">
 															<span class="comment-avatar clearfix"> <img
-																alt="Image" src="resources/demos/articles/images/authors/2.jpg"
+																alt="Image" src="/resources/demos/articles/images/authors/2.jpg"
 																class="avatar avatar-60 photo avatar-default"
 																height="60" width="60" /></span>
 														</div>
@@ -149,25 +133,44 @@
 														<p>Donec sed odio dui. Nulla vitae elit libero, a
 															pharetra augue. Nullam id dolor id nibh ultricies
 															vehicula ut id elit. Integer posuere erat a ante
-															venenatis dapibus posuere velit aliquet.</p>
-	
-														<a class="" href="#">
-															답글
-														</a>
-														<span>/</span>
-														<a class="" href="#">
-															수정
-														</a>
+															venenatis dapibus posuere velit aliquet.
+														</p>
+														<div class="anmo">
+															<span class="comm_answer" href="#">
+																답글
+															</span>
+															<span class="comm_modify" href="#">
+																수정
+															</span>
+														</div>
 														<a class="comment-reply-link" href="#">
-															삭제
+															<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+																<path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+															</svg>
 														</a>
 													</div>
 
 													<div class="clear"></div>
 												</div>
-												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
-												  <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
-												</svg>
+												<form id="childcommform" action="" method="post">
+													<div class="childcomm">
+														<svg class="comm_icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+														  <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z"/>
+														</svg>
+														<div class="childinput">
+															<div class="col-form-label">
+																<label class="labelfont" for="fitness-form-name">답글:</label>
+															</div>
+															<div class="input_container">
+																<textarea class="comm_input" name="" placeholder="답글 추가..."></textarea>
+															</div>														
+														</div>
+														<div class="comm_btn">
+															<button class="button button-circle button-small mt-3">취소</button>
+															<button type="submit" class="button button-circle button-small mt-3">답글</button>
+														</div>
+													</div>
+												</form>
 												<ul class="children">
 													<li
 														class="comment byuser comment-author-_smcl_admin odd alt depth-2"
@@ -212,7 +215,7 @@
 													<div class="comment-meta">
 														<div class="comment-author vcard">
 															<span class="comment-avatar clearfix"> <img
-																alt="Image" src="resources/demos/articles/images/authors/1.jpg"
+																alt="Image" src="/resources/demos/articles/images/authors/1.jpg"
 																class="avatar avatar-60 photo" height="60" width="60" /></span>
 														</div>
 													</div>
@@ -246,8 +249,6 @@
 												<span>댓글</span>
 											</h4>
 
-											<form class="row" action="#" method="post" id="commentform">
-
 												<div class="w-100"></div>
 
 												<div class="col-12 form-group">
@@ -258,12 +259,11 @@
 												</div>
 
 												<div class="col-12 form-group">
-													<button name="submit" type="submit" id="submit-button"
+													<button name="submit" type="button" id="submit-button"
 														tabindex="5" value="Submit"
 														class="button button-circle button-large mt-3">
 														작성</button>
 												</div>
-											</form>
 										</div>
 										<!-- #respond end -->
 									</div>
@@ -272,7 +272,7 @@
 								<div class="col-lg-4">
 									<div id="writercontain"
 										class="single_sidebar_widget author_widget">
-										<img class="writerimg" src="resources/images/about/1.jpg"
+										<img class="writerimg" src="/resources/images/about/1.jpg"
 											alt="" />
 										<!-- 작성자 이름 -->
 										<h4>작성자 이름</h4>
@@ -288,17 +288,17 @@
 									<ul class="list-unstyled list-ingredients bg-light p-4">
 										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
 											class="ingrcontainer"><img class="ingrimg"
-											src="resources/images/about/1.jpg" alt="" />
+											src="/resources/images/about/1.jpg" alt="" />
 											<div class="ingrcenter">재료1</div>
 											<div>재료갯수</div></li>
 										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
 											class="ingrcontainer"><img class="ingrimg"
-											src="resources/images/about/1.jpg" alt="" />
+											src="/resources/images/about/1.jpg" alt="" />
 											<div class="ingrcenter">재료1</div>
 											<div>재료갯수</div></li>
 										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
 											class="ingrcontainer"><img class="ingrimg"
-											src="resources/images/about/1.jpg" alt="" />
+											src="/resources/images/about/1.jpg" alt="" />
 											<div class="ingrcenter">재료1</div>
 											<div>재료갯수</div></li>
 									</ul>
@@ -309,12 +309,12 @@
 											<h4 class="mb-0">관련 레시피</h4>
 										</div>
 										<div class="relrecipecontainer">
-											<img class="relrecipeimg" src="resources/images/about/1.jpg"
+											<img class="relrecipeimg" src="/resources/images/about/1.jpg"
 												alt="" />
 											<div>레시피명</div>
 										</div>
 										<div class="relrecipecontainer">
-											<img class="relrecipeimg" src="resources/images/about/1.jpg"
+											<img class="relrecipeimg" src="/resources/images/about/1.jpg"
 												alt="" />
 											<div>레시피명</div>
 										</div>
@@ -338,7 +338,7 @@
 								style="border-left: 1px solid #eee">
 								<div class="card">
 									<div class="card-body">
-										<img src="resources/demos/recipes/images/popular/7.png" alt="image" />
+										<img src="/resources/demos/recipes/images/popular/7.png" alt="image" />
 										<div
 											class="d-flex justify-content-between align-items-center mt-4 mb-2">
 											<p class="card-author">
@@ -362,7 +362,7 @@
 							<div class="col-md-3 col-sm-6 bg-white">
 								<div class="card">
 									<div class="card-body">
-										<img src="resources/demos/recipes/images/popular/8.png" alt="image" />
+										<img src="/resources/demos/recipes/images/popular/8.png" alt="image" />
 										<div
 											class="d-flex justify-content-between align-items-center mt-4 mb-2">
 											<p class="card-author">
@@ -386,7 +386,7 @@
 							<div class="col-md-3 col-sm-6 bg-white">
 								<div class="card">
 									<div class="card-body">
-										<img src="resources/demos/recipes/images/popular/5.png" alt="image" />
+										<img src="/resources/demos/recipes/images/popular/5.png" alt="image" />
 										<div
 											class="d-flex justify-content-between align-items-center mt-4 mb-2">
 											<p class="card-author">
@@ -410,7 +410,7 @@
 							<div class="col-md-3 col-sm-6 bg-white">
 								<div class="card">
 									<div class="card-body">
-										<img src="resources/demos/recipes/images/popular/6.png" alt="image" />
+										<img src="/resources/demos/recipes/images/popular/6.png" alt="image" />
 										<div
 											class="d-flex justify-content-between align-items-center mt-4 mb-2">
 											<p class="card-author">
@@ -450,7 +450,7 @@
 								data-bs-dismiss="modal" aria-hidden="true"></button>
 						</div>
 						<div id="ingrcontainer">
-							<img id="ingrimg" src="resources/images/about/1.jpg" alt="" />
+							<img id="ingrimg" src="/resources/images/about/1.jpg" alt="" />
 						</div>
 						<div class="modal-body">
 
@@ -617,11 +617,12 @@
 	============================================= -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script src="resources/js/plugins.min.js"></script>
-	<script src="resources/js/myjs/recipebxside.js"></script>
+	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/js/myjs/recipebxside.js"></script>
+	<script src="/resources/user/recipe/js/recipedetail.js" type="text/javascript"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="resources/js/functions.js"></script>
+	<script src="/resources/js/functions.js"></script>
 </body>
 </html>

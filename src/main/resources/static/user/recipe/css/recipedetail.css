@@ -53,13 +53,6 @@
 	display: flex;
 }
 
-@media (min-width: 576px){
-	.modal-dialog {
-	    max-width: 1000px;
-	    margin: 1.75rem auto;
-	}
-}
-
 #ingrcontainer{
 	display:flex;
 	justify-content: center;
@@ -74,8 +67,13 @@
 	border-radius:50%; 
 }
 
-.ingrdetailcontainer{
-	
+.anmo{
+	display: flex;
+	justify-content: end;
+}
+
+.childcomm{
+	display: flex;
 }
 
 .ingrtitle{
@@ -102,3 +100,56 @@
 	margin-right: 30px;
 }
 
+.childcomm {
+	display: none;
+	width: 100%;
+}
+
+.childinput{
+	display: flex;
+	width: 100%;
+}
+
+.labelfont{
+	width: 50px;
+}
+
+.labelfont {
+	font-size: 16px;
+}
+
+.comm_answer:hover {
+	color: #1ABC9C;
+	cursor: pointer;
+}
+
+.comm_icon {
+	margin-top: 8px;
+}
+
+.comm_modify:hover {
+	color: #1ABC9C;
+	cursor: pointer;
+}
+
+.input_container {
+	width: 100%;
+}
+
+.comm_input {
+	margin-top: 15px;
+	width:100%;
+	
+}
+
+.comm_btn {
+	display: flex;
+	justify-content: end;
+}
+
+@media (min-width: 576px){
+	.modal-dialog {
+	    max-width: 1000px;
+	    margin: 1.75rem auto;
+	}
+}
