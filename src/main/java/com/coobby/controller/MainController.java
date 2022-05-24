@@ -12,45 +12,45 @@ public class MainController {
 		return "index";
 	}
 	
-	@RequestMapping("detail")
-	public String detail() {
-		return "recipedetail";
-	}
+//	@RequestMapping("detail")
+//	public String detail() {
+//		return "recipedetail";
+//	}
 	
 	@RequestMapping("mainpage")
 	public String mainpage() {
 		return "mainpage";
 	}
 	
-	@RequestMapping("joinmember")
-	public String joinmember() {
-		return "joinmember";
-	}
+//	@RequestMapping("joinmember")
+//	public String joinmember() {
+//		return "joinmember";
+//	}
 	
-	@RequestMapping("loginpage")
-	public String loginpage() {
-		return "loginpage";
-	}
+//	@RequestMapping("loginpage")
+//	public String loginpage() {
+//		return "loginpage";
+//	}
+//	
+//	@RequestMapping("searchpage")
+//	public String searchpage() {
+//		return "searchpage";
+//	}
+//	
+//	@RequestMapping("searchresultpage")
+//	public String searchresultpage() {
+//		return "searchresultpage";
+//	}
 	
-	@RequestMapping("searchpage")
-	public String searchpage() {
-		return "searchpage";
-	}
-	
-	@RequestMapping("searchresultpage")
-	public String searchresultpage() {
-		return "searchresultpage";
-	}
-	
-	@RequestMapping("selectauthpage")
-	public String selectauthpage() {
-		return "selectauthpage";
-	}
-	
-	@RequestMapping("emailauthpage")
-	public String emailtauthpage() {
-		return "emailauthpage";
-	}
+//	@RequestMapping("selectauthpage")
+//	public String selectauthpage() {
+//		return "selectauthpage";
+//	}
+//	
+//	@RequestMapping("emailauthpage")
+//	public String emailtauthpage() {
+//		return "emailauthpage";
+//	}
 
 	
 //	@RequestMapping("demo-furniture-about")
