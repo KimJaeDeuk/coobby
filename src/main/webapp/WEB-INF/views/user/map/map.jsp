@@ -518,6 +518,7 @@
 			success: function(data){
 				//console.log("lat" + lat + "lon" + lon)
 				console.log("data"+ data)
+				alert(JSON.stringify(data));
 			}
 			
 		})
