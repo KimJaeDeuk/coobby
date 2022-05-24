@@ -9,4 +9,5 @@ import com.coobby.vo.RecipeVO;
 
 public interface DashBoardRepository extends CrudRepository<RecipeVO, Integer>{
 	public List<RecipeVO> findByReCreatetime(String currentDate);
+
 }

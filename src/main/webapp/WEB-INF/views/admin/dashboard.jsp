@@ -103,10 +103,10 @@
 							<div class="small-box bg-success">
 								<div class="inner">
 									<h3>
-										${todayBoardCnt }<sup style="font-size: 20px">개</sup>
+										${todaySingUpCnt }<sup style="font-size: 20px">개</sup>
 									</h3>
 
-									<p>당일 게시물 등록 수</p>
+									<p>당일 회원 가입 수</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-stats-bars"></i>

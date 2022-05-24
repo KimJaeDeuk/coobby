@@ -1,20 +1,19 @@
 package com.coobby.admin.dashboard;
 
-import org.springframework.stereotype.Service;
-import java.util.List;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
-import com.coobby.vo.RecipeVO;
+import org.springframework.stereotype.Service;
 
 @Service
 public class DashBoardServiceImpl implements DashBoardService{
 	
 	@Autowired
 	private DashBoardRepository dashRepo;
+	
+	@Autowired
+	private MemberRepository memRepo;
 	
 	private static final String DATE_PATTERN = "yyyy-MM-dd"; 
 	private static final Date today = new Date();
@@ -33,7 +32,7 @@ public class DashBoardServiceImpl implements DashBoardService{
 	@Override
 	public int todayUser() {
 		
-		return dashRepo.findByme
+		return memRepo.findBymemCreatetime(date.format(today)).size();
 	}
 	
 }
