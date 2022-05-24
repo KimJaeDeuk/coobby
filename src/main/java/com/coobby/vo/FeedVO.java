@@ -21,14 +21,19 @@ public class FeedVO {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer fe_no;
-	private String fe_title;
-	private String fe_content;
+	@Column(name="fe_no")
+	private Integer feNo;
+	@Column(name="fe_title")
+	private String feTitle;
+	@Column(name="fe_content")
+	private String feContent;
 	
-	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)")
+	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
 	@Temporal(TemporalType.DATE)
-	private Date fe_regdate;
-	private int fe_replycheck;
-	private String mem_id;
+	private Date feRegdate;
+	@Column(name="fe_replycheck")
+	private int feReplycheck;
+	@Column(name="mem_id")
+	private String memId;
 	
 }
