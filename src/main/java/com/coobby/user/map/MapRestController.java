@@ -13,7 +13,7 @@ public class MapRestController {
 @Autowired
 private MapService mapService;
 	
-//페이지 뜨자마자 현재 위치 좌표 받아서 나오는 
+//페이지 뜨자마자 현재 위치 좌표 받아서 나오는 매장 위치
 @RequestMapping("/mapLoc")
 public List<MapVO> getStoreLoc(Double lat, Double lon){
 	List<Object[]>locList = mapService.getStoreLoc(lat, lon);
