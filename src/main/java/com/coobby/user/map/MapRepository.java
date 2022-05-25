@@ -16,5 +16,14 @@ public interface MapRepository extends CrudRepository<MapVO, Integer> {
 			+ "ORDER BY distance",
 			nativeQuery = true) 
 	List<Object[]> getStoreLoc(Double lat, Double lon);
+	
+	
+	@Query(value="(select * from price where ingr_code=?1 and store_name = '이마트' order by price limit 3)   "
+			+ "union all  "
+			+ "(select * from price where ingr_code=?1 and store_name = '홈플러스' order by price limit 3)   "
+			+ "union all  "
+			+ "(select * from price where ingr_code=?1 and store_name = '롯데마트' order by price limit 3)   ",
+			nativeQuery = true) 
+	List<MapVO> getStoreList(MapVO vo);
 
 }
