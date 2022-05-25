@@ -7,7 +7,7 @@
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 mapOption = {
     center: new kakao.maps.LatLng(37.56646, 126.98121), // 지도의 중심좌표
-    level: 9, // 지도의 확대 레벨
+    level: 7, // 지도의 확대 레벨
     mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
 };
 
@@ -18,7 +18,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 		mapOption = {
 			center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-			level : 9
+			level : 7
 		// 지도의 확대 레벨 
 		};
 
@@ -95,9 +95,19 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 								var marker = new kakao.maps.Marker({
 									map : map, // 마커를 표시할 지도
 									position : positions[j].latlng, // 마커를 표시할 위치
-									title : positions[j].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-
 								});
+								
+								 // 마커에 표시할 인포윈도우를 생성합니다 
+							    var infowindow = new kakao.maps.InfoWindow({
+							        content: positions[j].title // 인포윈도우에 표시할 내용
+							    });
+
+							  // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+							    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+							    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+							    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+							    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+								
 								
 								
 								} //마커 생성 for 끝 
@@ -119,15 +129,21 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 			displayMarker(locPosition, message);
 		}
-		
+
 /** 지도에 현재 위치 마커 찍기 **/
 		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
 		function displayMarker(locPosition, message) {
-
+			
+			// 본인 위치 마커는 다른 이미지로 설정
+				var imageSrc = '/resources/user/images/map/pngkit_beach-icon-png_7637826.png' // 마커이미지의 주소입니다    
+	    		var imageSize = new kakao.maps.Size(35, 50) // 마커이미지의 크기입니다
+				var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
+				
 			// 마커를 생성합니다
 			var marker = new kakao.maps.Marker({
 				map : map,
-				position : locPosition
+				position : locPosition,
+				image: markerImage // 마커이미지 설정 
 				
 			});
 
@@ -160,7 +176,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 		mapOption = {
 			center : new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
-			level : 9
+			level : 7
 		// 지도의 확대 레벨
 		};
 
@@ -184,13 +200,27 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 							
 							//기존 마커 제거
 							 setMarkers(null);
+						// 본인 위치 마커는 다른 이미지로 설정	 
+							var imageSrc = '/resources/user/images/map/pngkit_beach-icon-png_7637826.png' // 마커이미지의 주소입니다    
+	    					var imageSize = new kakao.maps.Size(33, 50) // 마커이미지의 크기입니다
+							var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
+								
+							// 마커를 생성합니다
+							var marker = new kakao.maps.Marker({
+								map : map,
+								position : new daum.maps.LatLng(37.537187,
+										127.005476),
+								image: markerImage // 마커이미지 설정 
+								
+							});
+
 							
-							//마커 생성
+						/*	//마커 생성
 							var marker = new daum.maps.Marker({
 								position : new daum.maps.LatLng(37.537187,
 										127.005476),
 								map : map
-							});
+							});*/
 							markers.push(marker); // 생성된 마커를 배열에 추가합니다
 							
 							
@@ -239,10 +269,6 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 							var lat = data[i].latitude
 							var lon = data[i].longitude
 							
-							// 이름, 위도, 경도 확인
-/* 							console.log("name" + name);
-							console.log("lat" + lat);
-							console.log("lon" + lon); */
 
 							// 마커를 표시할 위치와 title 객체 배열입니다 
 							var positions = [{
@@ -259,7 +285,23 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 									title : positions[j].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
 
 								});
-								} //마커 생성 for문 끝ㄴ
+								
+								
+								
+																 // 마커에 표시할 인포윈도우를 생성합니다 
+							    var infowindow = new kakao.maps.InfoWindow({
+							        content: positions[j].title // 인포윈도우에 표시할 내용
+							    });
+
+  // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+								
+								
+								
+								} //마커 생성 for문 끝
 							markers.push(marker); // 생성된 마커를 배열에 추가합니다
 						}//success for문 끝
 					},//success 함수 끝
@@ -268,8 +310,6 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 						console.log(err);
 					}
 				})// ajax 끝
-							
-							
 							
 						}//검색 성공 if문 끝
 					});
@@ -283,25 +323,108 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 
 
 function locationLoadSuccess(pos){
+
 // 현재 위치 받아오기
 var currentPos = new kakao.maps.LatLng(pos.coords.latitude,pos.coords.longitude);
 
+var mLat = currentPos.getLat();
+var mLon = currentPos.getLng();
+
+
+
 // 지도 이동(기존 위치와 가깝다면 부드럽게 이동)
 map.panTo(currentPos);
+setMarkers(null); // 기존에 마커가 있다면 제거
 
-// 마커 생성
+	// 본인 위치 마커는 다른 이미지로 설정	 
+							var imageSrc = '/resources/user/images/map/pngkit_beach-icon-png_7637826.png' // 마커이미지의 주소입니다    
+	    					var imageSize = new kakao.maps.Size(33, 50) // 마커이미지의 크기입니다
+							var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize)
+	// 마커를 생성합니다
+							var marker = new kakao.maps.Marker({
+								map : map,
+								position : currentPos,
+								image: markerImage // 마커이미지 설정 
+								
+							});
+
+/*// 마커 생성
 var marker = new kakao.maps.Marker({
     position: currentPos
 }); 
+*/
 markers.push(marker); // 생성된 마커를 배열에 추가합니다
 
-// 기존에 마커가 있다면 제거
-marker.setMap(null);
-marker.setMap(map);
+
+marker.setMap(map); // 생성한 마커 찍기 
+$.ajax({
+		url : "/mapLoc",
+		data : {
+			'lat' : mLat,
+						'lon' : mLon
+					},
+					dataType : "json",
+					type : "GET",
+					success : function(data) {
+						//console.log("data : "+ data.length)
+						//alert(JSON.stringify(data));//json 형태로 데이터 확인만
+					
+						// 매장 위도 경도 각각 변수 저장
+						for (var i = 0; i < data.length; i++) {
+							//db에서 불러온 매장 위치 변수로 지정하기
+							var name = data[i].storeName
+							var lat = data[i].latitude
+							var lon = data[i].longitude
+							
+
+							// 마커를 표시할 위치와 title 객체 배열입니다 
+							var positions = [{
+								title : name,
+								latlng : new kakao.maps.LatLng(lat, lon)
+							}];
+
+							for (var j = 0; j < positions.length; j++) {
+
+								// 마커를 생성합니다
+								
+								var marker = new kakao.maps.Marker({
+									map : map, // 마커를 표시할 지도
+									position : positions[j].latlng, // 마커를 표시할 위치
+									//title : positions[j].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+
+								});
+								
+																								 // 마커에 표시할 인포윈도우를 생성합니다 
+							    var infowindow = new kakao.maps.InfoWindow({
+							        content: positions[j].title // 인포윈도우에 표시할 내용
+							    });
+
+						  // 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+						    // 이벤트 리스너로는 클로저를 만들어 등록합니다 
+						    // for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+						    kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+						    kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+								
+								
+								
+								} //마커 생성 for문 끝
+							markers.push(marker); // 생성된 마커를 배열에 추가합니다
+						}//success for문 끝
+					},//success 함수 끝
+					error : function(err) {
+						alert('err!!!');
+						console.log(err);
+					}
+				})// ajax 끝
+
 };
 
+
+		
+	
+
 function locationLoadError(pos){
-alert('위치 정보를 가져오는데 실패했습니다.');
+alert('위치를 불러올 수 없습니다. 주소를 입력해주세요');
 };
 
 // 위치 가져오기 버튼 클릭시
@@ -310,7 +433,18 @@ navigator.geolocation.getCurrentPosition(locationLoadSuccess,locationLoadError);
 };
 
 
-/** 일단 자바스크립트 파일 말고 프로젝트에 바로 파일 만듦
-* 
-*/
 
+		// 인포윈도우를 표시하는 클로저를 만드는 함수입니다 
+function makeOverListener(map, marker, infowindow) {
+    return function() {
+        infowindow.open(map, marker);
+    };
+}
+
+// 인포윈도우를 닫는 클로저를 만드는 함수입니다 
+function makeOutListener(infowindow) {
+    return function() {
+        infowindow.close();
+    };
+}
+	

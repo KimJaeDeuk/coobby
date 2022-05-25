@@ -34,5 +34,6 @@ public class MapVO {
 	
 	private double longitude;
 	
-	
+	@Column(name="product_name")
+	private String productName;
 }
