@@ -2,21 +2,15 @@ package com.coobby.admin.category;
 
 import java.util.List;
 
-import com.coobby.vo.HowCateVO;
-import com.coobby.vo.IngrCateVO;
-import com.coobby.vo.KindCateVO;
-import com.coobby.vo.SituCateVO;
+import com.coobby.vo.CategoryVO;
 
 public interface CategoryService {
 
-	void saveCategory(String[] kind_name, String[] situ_name, String[] ingr_name, String[] how_name);
+	List<CategoryVO> getCateList();
 
-	List<KindCateVO> kindList();
+	void insertCate(CategoryVO vo);
 
-	List<SituCateVO> situList();
-	
-	List<IngrCateVO> ingrList();
-	
-	List<HowCateVO> howList();
+	void updateCate(CategoryVO vo);
+
 
 }

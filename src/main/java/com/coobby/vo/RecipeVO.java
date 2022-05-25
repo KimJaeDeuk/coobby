@@ -44,16 +44,7 @@ public class RecipeVO {
 	@Column(name="mem_id")
 	private String memId;
 	
-	@Column(name="kind_name")
-	private String kindName;
-	
-	@Column(name="situ_name")
-	private String situName;
-	
-	@Column(name="how_name")
-	private String howName;
-	
-	@Column(name="ingr_name")
-	private String ingrName;
+	@Column(name="cate_code")
+	private Integer cateCode;
 
 }
