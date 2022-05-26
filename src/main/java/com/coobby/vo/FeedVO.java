@@ -16,22 +16,19 @@ import lombok.Data;
 public class FeedVO {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="fe_no")
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer feNo;
-	
 	@Column(name="fe_title")
 	private String feTitle;
-	
 	@Column(name="fe_content")
 	private String feContent;
 	
-	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name="fe_regdate")
-	private String feRegdate;
-	
+	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
+	@Temporal(TemporalType.DATE)
+	private Date feRegdate;
 	@Column(name="fe_replycheck")
-	private Integer feReplycheck;
-	
+	private int feReplycheck;
 	@Column(name="mem_id")
 	private String memId;
 }

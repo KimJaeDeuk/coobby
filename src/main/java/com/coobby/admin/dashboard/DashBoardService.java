@@ -1,5 +1,7 @@
 package com.coobby.admin.dashboard;
 
+import java.util.List;
+
 public interface DashBoardService {
 
 
@@ -10,5 +12,7 @@ public interface DashBoardService {
 //	int todayUser();
 
 	int todayFeed();
+
+	List<Object[]> ageGroupSexRate();
 
 }

@@ -11,6 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name="RE_COMMENT")
 public class Re_commentVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
