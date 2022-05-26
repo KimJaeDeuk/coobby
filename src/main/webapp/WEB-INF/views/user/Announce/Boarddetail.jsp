@@ -85,7 +85,7 @@
 		  </tr> 
 		  </tfoot>
 	   </table>
-	   <a href=""><button type="button" class="btn btn-secondary m-2" id="btnList">목록보기</button> </a>
+	   <a href="Boarddetail"><button type="button" class="btn btn-secondary m-2" id="btnList">목록보기</button> </a>
 		</div>
 	</main>
   <!--================End Checkout Area =================-->

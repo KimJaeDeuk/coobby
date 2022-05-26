@@ -200,7 +200,6 @@
                         <select class="custom-select">
                           <option>번호</option>
                           <option>제목</option>
-                          <option>내용</option>
                           <option>작성일</option>
                           <option>상태</option>
                        </select>
@@ -214,7 +213,7 @@
                   <thead>
                   <tr>
                     <th style="width: 8.33%;">번호</th>
-                    <th style="width: 40%; text-align:left;">제목</th>
+                    <th style="width: 40%;">제목</th>
                     <th>작성일</th>
                     <th style="width: 8.33%;">상태</th>
                   </tr>
@@ -259,7 +258,6 @@
 			</div>
          </div>
           <a href="insertpage"><button type="button" class="btn btn-secondary m-2" id="btnenroll" style= "float:right;">등록하기</button></a> 
-          <a href="detailpage"><button type="submit" class="btn btn-secondary m-2" id="btnupdate" style= "float:right;">수정하기</button></a>
                       <nav aria-label="Page navigation">
 		<ul class="pagination justify-content-center mt-4">
 		   <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>

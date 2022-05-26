@@ -54,9 +54,9 @@
 	<div class="text-center" style="text-align: center;">
 	  <h2>Q&A</h2><br/>
 	 </div>
-	 <div class="container">         
+	 <div class="container">
 	 <span style="text-align: left; margin-left: 160px;">
-	  <button type="button" class="btn btn-main" id="annobtn" style="background-color: gray; color: aliceblue;">공지사항</button>
+	  <a href="/user/Announce/Boardlist"><button type="button" class="btn btn-main" id="annobtn" style="background-color: gray; color: aliceblue;">공지사항</button></a>
 	  <button type="button" class="btn btn-main" id="qnabtn" style="background-color: blue; color: white;">Q&A</button>
 	 <a href="../mypage/inquery"><button type="button" class="btn btn-main" id="oneqnabtn" style="background-color: gray; color: white; float:right; margin-right: 235px;">1:1문의 바로가기</button></a>
 	 </span><br/><br/>
@@ -69,7 +69,7 @@
 				<thead>
 				 <tr>
 				  <th style="width: 16.6;">번호</th>
-				  <th style="width: 40; text-align:left;">제목</th>
+				  <th style="width: 40;">제목</th>
 				  <th style="width: 20;">담당자</th>
 				  <th>작성일</th>
 				  <th style="width: 10;">답변 상태</th>

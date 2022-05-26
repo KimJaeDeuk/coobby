@@ -11,6 +11,10 @@ public class RecipeServiceImpl implements RecipeService{
 	@Autowired private RecipeRepository recipeRepo;
 	
 	public RecipeVO getrecipe(RecipeVO revo) {
-		return recipeRepo.findById(revo.getRe_no()).get();
+		return recipeRepo.findById(revo.getReNo()).get();
+	}
+	
+	public void saverecipe(RecipeVO revo) {
+		recipeRepo.save(revo);
 	}
 }

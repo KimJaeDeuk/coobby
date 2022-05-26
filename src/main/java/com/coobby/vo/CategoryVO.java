@@ -1,6 +1,8 @@
 package com.coobby.vo;
 
+
 import javax.persistence.Column;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import lombok.Data;
 @Entity
 @Table(name="category")
 public class CategoryVO {
+
 	
 	@Id
 	@Column(name="cate_code")
@@ -27,6 +30,7 @@ public class CategoryVO {
 	private String cateName;
 	
 	@Column(name="cate_detail_lev")
+
 	private Integer cateDetaillev;
 	
 	@Column(name="cate_parent_lev")

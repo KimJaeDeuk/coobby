@@ -35,6 +35,12 @@
 			opacity: 0.8;
 			background-color:#F2F2F2;
 		}
+		.page-wrapper {
+		margin-top: 150px;
+		}
+		#footer {
+		margin-top: 100px;
+		}
 	</style>
 	<!-- Document Title
 	============================================= -->
@@ -72,8 +78,9 @@
             <div class="navigation">
               <div class="menuToggle"></div>
 			  <ul style="list-style-type: none;">
-                     <li class="list">
-                       <h4>마이페이지<hr/></h4>
+                     <li>
+                       <h4 style="text-align:center;">마이페이지</h4>
+                       <hr/>
                      </li>
                      <li class="list">
                        <a href="#" class="btn btn-solid-border w-100" >내피드</a>
@@ -102,7 +109,7 @@
 				</div>
 				 <!--? Hero Area End-->
 			<div class="container">
-				<form action="" method="post">		    	
+				<form action="inquery" method="post">		    	
 					<div class="mb-3">
 						<label for="examplenickname" class="form-label">닉네임</label>
 						 <input type="text" class="form-control" id="examplenickname"  placeholder="user" name="nickname">
@@ -119,8 +126,8 @@
 				 </div>
 					 <hr/>
 				 <div class="butto" style="text-align: right;">
-					<button type="submit" class="btn btn-secondary m-2" id="Writebtn" style="background-color: blue; color: aliceblue;">등록하기</button> 
-						<a href=""><button type="button" class="btn btn-secondary m-2" id="Cancelbtn1">취소하기</button></a>   
+					<a href="inquery"><button type="submit" class="btn btn-secondary m-2" id="Writebtn" style="background-color: blue; color: aliceblue;">등록하기</button></a> 
+						<a href="inquery"><button type="button" class="btn btn-secondary m-2" id="Cancelbtn1">취소하기</button></a>   
 				</div> 	 
 				   </form>  
 				  </div>
