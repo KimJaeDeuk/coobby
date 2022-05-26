@@ -1,19 +1,22 @@
 package com.coobby.vo;
 
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="Recipe")
+@Table(name="RECIPE")
 public class RecipeVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,7 +39,7 @@ public class RecipeVO {
 	private String reTip;
 	
 	@Column(name="re_video_url")
-	private String reVideourl;
+	private String reVideoUrl;
 	
 	@Column(name="re_cook")
 	private String reCook;
@@ -44,16 +47,11 @@ public class RecipeVO {
 	@Column(name="mem_id")
 	private String memId;
 	
-	@Column(name="kind_name")
-	private String kindName;
+	@ManyToOne
+	@JoinColumn(name="cate_code")
+	private CategoryVO categoryVO;
 	
-	@Column(name="situ_name")
-	private String situName;
-	
-	@Column(name="how_name")
-	private String howName;
-	
-	@Column(name="ingr_name")
-	private String ingrName;
+	@OneToMany(mappedBy ="recipeVO")
+	List<Recipe_imageVO> recipe_imageVO;
 
 }

@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html dir="ltr" lang="en-US">
 <head>
@@ -38,7 +39,7 @@
 
 	<!-- Document Title
 	============================================= -->
-	<title>Furniture | Canvas</title>
+	<title>COOBBY</title>
 
 </head>
 
@@ -65,13 +66,14 @@
 			<div class="content-wrap">
 				<div class="container clearfix">
 
-					<div class="form-widget">
+ 					<!--<div class="form-widget">
 
-						<div class="form-result"></div>
+						<div class="form-result"></div> -->
 
 						<div class="row shadow bg-light border">
 							<div class="col-lg-12 p-5">
-								<form class="row mb-0" id="fitness-form" action="include/form.php" method="post" enctype="multipart/form-data">
+								<form class="row mb-0" id="fitness-form" action="recipesave" method="post">
+									<input type="hidden" name="memId" value="test" />
 									<div class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scaler"></div>
@@ -79,58 +81,60 @@
 									</div>
 									<div id="recipecontainer">
 										<div id="textcontainer">
-											<div class="col-6 form-group">
+											<div class="col-10 form-group">
 												<div class="row">
 													<div class="col-sm-2 col-form-label">
 														<label class="labelfont" for="fitness-form-name">레시피 제목:</label>
 													</div>
-													<div class="col-sm-9">
-														<input type="text" name="re_title" id="fitness-form-name" class="form-control required" value="" placeholder="제목을 입력해주세요">
+													<div class="col-sm-10">
+														<input type="text" name="reTitle" id="fitness-form-name" class="form-control" value="" placeholder="제목을 입력해주세요">
 													</div>
 												</div>
 											</div>
-											<div class="col-6 form-group">
+											<div class="col-10 form-group">
 												<div class="row">
 													<div class="col-sm-2 col-form-label">
 														<label class="labelfont" for="fitness-form-email">요리 소개:</label>
 													</div>
-													<div class="col-sm-9">
-														<textarea class="introduce" name="re_content" placeholder="내용을 입력해주세요"></textarea>
+													<div class="col-sm-10">
+														<textarea class="introduce" name="reContent" placeholder="내용을 입력해주세요"></textarea>
 													</div>
 												</div>
 											</div>
-											<div class="col-6 form-group">
+											<div class="col-10 form-group">
 												<div class="row">
 													<div class="col-sm-2 col-form-label">
 														<label class="labelfont" for="fitness-form-phone">동영상:</label>
 													</div>
-													<div class="col-sm-9">
-														<input type="text" name="re_video_url" id="fitness-form-phone" class="form-control required" value="" placeholder="Your Contact Number">
+													<div class="col-sm-10">
+														<input type="text" name="reVideoUrl" id="fitness-form-phone" class="form-control" placeholder="URL을 입력하세요">
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-									<div class="col-6 form-group">
+									<div class="col-10 form-group">
 										<div class="row">
 											<div class="col-sm-2 col-form-label">
 												<label class="labelfont" for="fitness-form-goal">카테고리:</label>
 											</div>
 											<div class="col-sm-10">
 												<div class="btn-group d-flex" role="group">
-													<select class="form-select required" name="kind_name" id="event-registration-interests">
+													<select class="form-select" name="kindName" id="event-registration-interests">
 														<option value="">종류별</option>
-														<option value="UX Design">UX Design</option>
+														<c:forEach items="${ kind }" var="catekind">
+															<option value="">asd</option>
+														</c:forEach>
 													</select>
-													<select class="form-select required" name="situ_name" id="event-registration-interests">
+													<select class="form-select" name="situName" id="event-registration-interests">
 														<option value="">상황별</option>
 														<option value="UX Design">UX Design</option>
 													</select>
-													<select class="form-select required" name="how_name" id="event-registration-interests">
+													<select class="form-select" name="howName" id="event-registration-interests">
 														<option value="">방법별</option>
 														<option value="UX Design">UX Design</option>
 													</select>
-													<select class="form-select required" name="ingr_name" id="event-registration-interests">
+													<select class="form-select" name="ingrName" id="event-registration-interests">
 														<option value="">재료별</option>
 														<option value="UX Design">UX Design</option>
 													</select>
@@ -143,10 +147,10 @@
 									<div class="col-12 form-group">
 										<div id="ingrinputcontainer" class="row">
 											<div class="col-sm-4">
-												<input type="text" min="10" max="50" name="fitness-form-age" id="fitness-form-age" class="form-control required" value="" placeholder="예) 고추장">
+												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 고추장">
 											</div>
 											<div class="col-sm-4">
-												<input type="text" min="10" max="50" name="fitness-form-age" id="fitness-form-age" class="form-control required" value="" placeholder="예) 2스푼">
+												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 2스푼">
 											</div>
 										</div>
 										<div class="plusbtncontain">
@@ -162,7 +166,7 @@
 										<ol class="list-preparation">
 											<li>
 												<div class="recipeinsertcontainer">
-													<textarea class="recipeinsert" rows="7" placeholder="내용을 입력해주세요"></textarea>
+													<textarea class="recipeinsert" name="reCook" rows="7" placeholder="내용을 입력해주세요"></textarea>
 													<img id="preview-image" class="recipeimg" src="/resources/images/about/1.jpg" alt="" />
 												</div>
 												<div class="mb-3">
@@ -190,12 +194,9 @@
 											<label class="labelfont" for="fitness-form-email">요리 팁:</label>
 										</div>
 										<div class="col-sm-9">
-											<textarea class="introduce" placeholder="내용을 입력해주세요"></textarea>
+											<textarea class="introduce" name="reTip" placeholder="내용을 입력해주세요"></textarea>
 										</div>
 									</div>
-									<input type="hidden" name="prefix" value="fitness-form-">
-									<input type="hidden" name="subject" value="New Fitness Received">
-									<input type="hidden" id="fitness-form-calories" name="fitness-form-calories" value="">
 									<div class="col-12 d-flex justify-content-end align-items-center">
 										<button type="button" id="calories-trigger" class="btn btn-secondary">목록보기</button>
 										<button type="submit" name="fitness-form-submit" class="btn btn-success ms-2">등록하기</button>
@@ -210,6 +211,13 @@
 				</div>
 			</div>
 		</section><!-- #content end -->
+		
+		<div>
+			<form action="recipesave" method="post">
+				<input type="text" name="reTitle"/>
+				<button type="submit">등록</button>
+			</form>
+		</div>
 		
 
 		<!-- Footer
