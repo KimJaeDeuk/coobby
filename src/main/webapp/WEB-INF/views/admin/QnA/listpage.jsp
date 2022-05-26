@@ -219,31 +219,31 @@
                   <tbody>
                   <tr>
                     <td>1</td>
-                    <td>QnA 제목</td>
+                    <td style="text-align:left">QnA 제목</td>
                     <td>2022-03-05</td>
                     <td>답변 완료</td>
                   </tr>
                   <tr>
                     <td>2</td>
-                    <td>제목</td>
+                    <td style="text-align:left">제목</td>
                     <td>작성일</td>
                     <td>답변 대기</td>
                   </tr>
                   <tr>
                     <td>3</td>
-                    <td>제목</td>
+                    <td style="text-align:left">제목</td>
                     <td>작성일</td>
                     <td>답변 완료</td>
                   </tr>
                   <tr>
                     <td>4</td>
-                    <td>제목</td>
+                    <td style="text-align:left">제목</td>
                     <td>작성일</td>
                     <td>답변 대기</td>
                   </tr>
                   <tr>
                     <td>5</td>
-                    <td>제목</td>
+                    <td style="text-align:left">제목</td>
                     <td>작성일</td>
                     <td>답변 대기</td>
                   </tr>
@@ -255,6 +255,8 @@
             <!-- /.card -->
 			</div>
          </div>
+         <a href="insertpage"><button type="submit" class="btn btn-secondary m-2" id="btnWrite" style= "float:right;">등록하기</button></a>
+         
                       <nav aria-label="Page navigation">
 		<ul class="pagination justify-content-center mt-4">
 		   <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>

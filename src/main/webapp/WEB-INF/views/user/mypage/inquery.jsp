@@ -35,6 +35,12 @@
 			opacity: 0.8;
 			background-color:#F2F2F2;
 		}
+		.page-wrapper {
+			margin-top: 150px;
+		}
+		#footer {
+			margin-top: 100px;
+		}
 	</style>
 	<!-- Document Title
 	============================================= -->
@@ -53,16 +59,6 @@
 	<div id="wrapper" class="clearfix">
 		<jsp:include page="../user-nav.jsp" />
 
-
-		 <!--================Checkout Area =================-->
-  <section class="page-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        </div>
-      </div>
-    </div>
-  </section>
   <div class="page-wrapper">
     <div class="container">
       <div class="row" style="margin-top: 20px;">
@@ -72,8 +68,9 @@
             <div class="navigation">
               <div class="menuToggle"></div>
 			  <ul style="list-style-type: none;">
-                     <li class="list">
-                       <h4>마이페이지<hr/></h4>
+                     <li>
+                       <h4 style="text-align:center">마이페이지</h4>
+                       <hr/>
                      </li>
                      <li class="list">
                        <a href="#" class="btn btn-solid-border w-100" >내피드</a>
@@ -105,23 +102,20 @@
 				<table class="table table-bordered mb-0">
 				 <thead>
 					<tr>
-					 <th>공개여부</th>
 					 <th>작성일</th>
-					 <th>제목</th>
+					 <th style="text-align:left;">제목</th>
 		   			 <th>답변</th>
 					</tr>
 				 </thead>
 					<tbody>
 				   <tr>
-					  <td>공개</td>
 					  <td>2022-05-06</td>
-					  <td>문의글 제목입니다.</td>
+					  <td style="text-align:left;">문의글 제목입니다.</td>
 					  <td>답변 완료</td>
 					</tr>
 					<tr>
-					  <td>비공개</td>
 					  <td>2022-04-22</td>
-				  	  <td>문의글</td>
+				  	  <td style="text-align:left;">문의글</td>
 					  <td>답변 대기</td>
 					</tr>
 				  </tbody>

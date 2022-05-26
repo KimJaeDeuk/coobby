@@ -35,6 +35,13 @@
 			opacity: 0.8;
 			background-color:#F2F2F2;
 		}
+		.page-wrapper {
+		margin-top: 150px;
+		}
+		#footer {
+		margin-top: 100px;
+		}
+
 	</style>
 	<!-- Document Title
 	============================================= -->
@@ -51,15 +58,7 @@
 		<jsp:include page="../user-nav.jsp" />
 
   <!--================Checkout Area =================-->
-  <section class="page-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-        </div>
-      </div>
-    </div>
-  </section>
-  <div class="page-wrapper" style="margin-top: 20px;">
+  <div class="page-wrapper">
     <div class="container">
       <div class="row">
         <!--사이드 -->
@@ -68,8 +67,9 @@
             <div class="navigation">
               <div class="menuToggle"></div>
 			  <ul style="list-style-type: none;">
-                     <li class="list">
-                       <h4>마이페이지<hr/></h4>
+                     <li>
+                       <h4 style="text-align:center;">마이페이지</h4>
+                       <hr/>
                      </li>
                      <li class="list">
                        <a href="#" class="btn btn-solid-border w-100" >내피드</a>
