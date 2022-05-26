@@ -1,4 +1,4 @@
-package com.coobby.user.feed.controller;
+package com.coobby.user.feed;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-
-import com.coobby.user.feed.service.FeedService;
 import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 

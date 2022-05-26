@@ -1,4 +1,4 @@
-package com.coobby.user.feed.service;
+package com.coobby.user.feed;
 
 import java.util.List;
 

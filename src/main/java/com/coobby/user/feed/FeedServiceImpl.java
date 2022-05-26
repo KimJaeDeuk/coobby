@@ -1,12 +1,10 @@
-package com.coobby.user.feed.service;
+package com.coobby.user.feed;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.coobby.user.feed.repository.FeedImageRepository;
-import com.coobby.user.feed.repository.FeedRepository;
 import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 
