@@ -23,9 +23,6 @@ public class CategoryController {
 	
 	@RequestMapping("/category")
 	public void categoryManage(Model m) {
-		List<CategoryVO> list = cateService.getCateList();
-		for(CategoryVO vo : list)
-			System.out.println(vo);
 		m.addAttribute("cateList",cateService.getCateList());
 	
 	}

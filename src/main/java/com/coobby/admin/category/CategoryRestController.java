@@ -2,7 +2,10 @@ package com.coobby.admin.category;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,12 +21,17 @@ public class CategoryRestController {
 	private CategoryService cateService;
 	
 	@PostMapping("/insertCate")
-	public void insertCate(@RequestBody CategoryVO vo) {
-		cateService.insertCate(vo);
+	public CategoryVO insertCate(@RequestBody CategoryVO vo) {
+		return cateService.insertCate(vo);
 	}
 	
-	@PostMapping("/updateCate")
-	public void updateCate(@RequestBody CategoryVO vo) {
-		cateService.updateCate(vo);
+	@PutMapping("/updateCate")
+	public CategoryVO updateCate(@RequestBody CategoryVO vo) {
+		return cateService.updateCate(vo);
+	}
+	
+	@DeleteMapping("/deleteCate/{cateCode}")
+	public void deleteCate(@PathVariable Integer cateCode) {
+		cateService.deleteCate(cateCode);
 	}
 }

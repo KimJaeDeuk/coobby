@@ -246,6 +246,7 @@
 			let smallChoose;
 			let className;
 			let detailLev;
+			let smallCateCode;
 			//소분류를 클릭했을때 수정 혹은 등록을 할 수 있게
 			$(document).on('click','.inputText', function(){
 				$('.cateModify').val($(this).text().trim());
@@ -257,7 +258,9 @@
 				$(this).attr('id','clickCate');
 				$('#clickCate').css({'background-color' : '#cbcbcb', 'color' : 'white'});
 				detailLev = $(this).closest('tr').children(':first').find('input').val();
-				console.log(detailLev)
+				if($(this).children('input').val()){
+					smallCateCode=$(this).children('input').val();
+				}
 			});
 			//console.log($(this).closest('tr').children(':first').find('input').val()); 부모의 detaillev 찾는 방법
 			//+버튼을 눌러 소분류를 추가하는 과정
@@ -273,31 +276,40 @@
 			//빨간색 -버튼을 눌러 소븐류를 삭제
 			$(document).on('click','.smallCateDel', function(){
 				if($(this).text() != ''){					//값이 있던 것이므로 ajax로 delete
-					
+					let CateCode = $(this).next().val();
+					$.ajax({
+						type : 'DELETE',
+						url : 'deleteCate/'+CateCode,
+						success : function() {
+							console.log('Ajax성공');
+							
+						},
+						error : function(err) {
+							alert('실패');
+							console.log(err);
+						}
+					}); 
 					
 				}
-				else										//원래 값이 없던것이므로 그냥 태그 삭제
-					$(this).closest('span').remove();
+				$(this).closest('span').remove();	//원래 값이 없던 ajax연동이 됐던 삭제
 			});
 			
 			//수정 버튼을 눌렀을때 진행되는 과정
 			$('.modify').click(function(){
 				if(smallChoose.text() != ''){	//값이 있음을 체크하고 ajax로 update
 					$.ajax({
-						type : 'POST',
-						url : 'insertCate',
-						data : cateName : $('.cateModify').val(),
+						type : 'PUT',
+						url : 'updateCate',
+						data : JSON.stringify({cateName : $('.cateModify').val(),
+								cateCode : smallCateCode}),
 						contentType: "application/json; charset=utf-8",
-						success : function() {
+						success : function(data) {
 							console.log('Ajax성공');
 						},
 						error : function(err) {
 							alert('실패');
-							console.log(err);
-						    console.log(JSON.stringify(err));
 						}
 					}); 
-					console.log('hello')
 				
 				}
 				else{							//값이 없음을 체크하고 ajax로 insert
@@ -308,13 +320,13 @@
 						data : JSON.stringify({cateDetailParentlev : detailLev,
 								cateName : $('.cateModify').val()}),
 						contentType: "application/json; charset=utf-8",
-						success : function() {
+						success : function(data) {
+							smallCateCode = data["cateCode"];
 							console.log('Ajax성공');
 						},
 						error : function(err) {
 							alert('실패');
 							console.log(err);
-						    console.log(JSON.stringify(err	));
 						}
 					});
 				}
@@ -326,13 +338,11 @@
 				  		'<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>'+
 				  		'<path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>'+
 						'</svg>'+
-						'<input type="hidden" name="cateName" class="hiddenName" value="'+ $('.cateModify').val() +'"/>');
+						'<input type="hidden" name="cateName" class="hiddenName" value="'+smallCateCode +'"/>');
 				$('.cateModify').val('');
 				$('span').removeAttr('id');
 				$('span').removeAttr('style');
 			});
-			
-			
 		});
 	</script>
 </body>

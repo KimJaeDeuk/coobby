@@ -16,9 +16,8 @@ public interface CategoryRepository extends CrudRepository<CategoryVO, Integer>{
 	@Modifying
 	@Query(value="INSERT INTO CATEGORY(cate_lev, cate_Name, cate_parent_lev, cate_detail_parent_lev) "
 			+ " values(2, :name ,1, :lev)", nativeQuery=true)
-	void insertCate(@Param("name") String cateName, @Param("lev") int cateDetailParentlev);
-	
-	void updateCate(String cateName);
+	public void insertCate(@Param("name") String cateName, @Param("lev") int cateDetailParentlev);
 
+	public CategoryVO findByCateName(String cateName);
 
 }

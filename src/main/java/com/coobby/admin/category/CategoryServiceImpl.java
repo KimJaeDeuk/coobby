@@ -20,14 +20,22 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 
 	@Override
-	public void insertCate(CategoryVO vo) {
-		cateRepo.insertCate(vo.getCateName(), vo.getCateDetailParentlev()); 
+	public CategoryVO insertCate(CategoryVO vo) {
+		cateRepo.insertCate(vo.getCateName(), vo.getCateDetailParentlev());
+		return cateRepo.findByCateName(vo.getCateName());
 	}
 
 	@Override
-	public void updateCate(CategoryVO vo) {
-		cateRepo.updateCate(vo.getCateName());
-		
+	public CategoryVO updateCate(CategoryVO vo) {
+		CategoryVO vos = cateRepo.findById(vo.getCateCode()).get();
+		vos.setCateName(vo.getCateName());
+		cateRepo.save(vos);
+		return vos;
+	}
+
+	@Override
+	public void deleteCate(Integer cateCode) {
+		cateRepo.deleteById(cateCode);	
 	}
 	
 	
