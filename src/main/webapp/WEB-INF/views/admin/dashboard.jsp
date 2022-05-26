@@ -1,6 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"
+	import ="com.coobby.session.SessionUserCounter"
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,10 +89,10 @@
 							<div class="small-box bg-info">
 								<div class="inner">
 									<h3>
-										${todayBoardCnt }<sup style="font-size : 20px">개</sup>
+										${todayRecipeCnt }<sup style="font-size : 20px">개</sup>
 									</h3>
 
-									<p>당일 게시물 등록 수</p>
+									<p>당일 레시피 등록 수</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-bag"></i>
@@ -103,24 +105,10 @@
 							<div class="small-box bg-success">
 								<div class="inner">
 									<h3>
-										${todayBoardCnt }<sup style="font-size: 20px">개</sup>
+										${todaySingUpCnt }<sup style="font-size: 20px">명</sup>
 									</h3>
 
-									<p>당일 게시물 등록 수</p>
-								</div>
-								<div class="icon">
-									<i class="ion ion-stats-bars"></i>
-								</div>
-							</div>
-						</div>
-						<!-- ./col -->
-						<div class="col-lg-3 col-6">
-							<!-- small box -->
-							<div class="small-box bg-warning">
-								<div class="inner">
-									<h3>44</h3>
-
-									<p>총 방문자 수</p>
+									<p>당일 회원 가입 수</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-person-add"></i>
@@ -130,11 +118,25 @@
 						<!-- ./col -->
 						<div class="col-lg-3 col-6">
 							<!-- small box -->
+							<div class="small-box bg-warning">
+								<div class="inner">
+									<h3>${todayFeedCnt }<sup style="font-size: 20px">개</sup></h3>
+
+									<p>당일 피드 등록 수</p>
+								</div>
+								<div class="icon">
+									<i class="ion ion-stats-bars"></i>
+								</div>
+							</div>
+						</div>
+						<!-- ./col -->
+						<div class="col-lg-3 col-6">
+							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3>65</h3>
+									<h3><%= SessionUserCounter.getCount() %></h3>
 
-									<p>당일 방문자 수</p>
+									<p>현재 접속 회원 수</p>
 								</div>
 								<div class="icon">
 									<i class="ion ion-pie-graph"></i>
@@ -153,7 +155,7 @@
 								<div class="col-md-6">
 									<div class="card card-primary">
 										<div class="card-header">
-											<h3 class="card-title">Area Chart</h3>
+											<h3 class="card-title">회원 남녀 성비</h3>
 
 											<div class="card-tools">
 												<button type="button" class="btn btn-tool"

@@ -9,4 +9,6 @@ public interface DashBoardService {
 
 //	int todayUser();
 
+	int todayFeed();
+
 }
