@@ -81,28 +81,41 @@
 										</tr>
 									</thead>
 									<tbody>
+									
+										<c:forEach items="${cateList }" var="bigCate" varStatus="status">
+										<c:if test="${bigCate.cateLev == '1'}">
 										<tr>
-											<td><div class="btn btn-default btn-block 1">종류별</div></td>
+											<c:set var="plus" value="0"/>
+											<td>
+												<div class="btn btn-default btn-block 1">${bigCate.cateName}</div>
+												<input type="hidden" name="cateDetaillev" value="${ bigCate.cateCode}"/>
+											</td>
+											
 											<td class="tableLine">
-												<c:if test="${kindCate != null }">
-													<c:forEach var="kind" items="${kindCate}">
-														<span class="smallCate btn btn-default inputText" name="kindName">
-														${kind.kindName}
+											<c:forEach items="${cateList }" var="smallCate">
+												<c:if test="${smallCate.cateDetailParentlev eq bigCate.cateDetaillev}">
+													<span class="smallCate btn btn-default inputText" name="cateName">
+														${smallCate.cateName}
 														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
 														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
 														</svg>
-														<input type="hidden" name="kindName" class="hiddenName" value="${kind.kindName}"/>
-														</span>
-													</c:forEach>
+														<input type="hidden" name="cateName" class="hiddenName" value="${smallCate.cateCode}"/>
+													</span>
 												</c:if>
+											</c:forEach>
+												<c:if test="${ plus eq '0'}">
 												<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-plus-circle smallCateAdd" viewBox="0 0 16 16">
 		  											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
 		  											<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 												</svg>
+												<c:set var="plus" value="1"/>
+												</c:if>
 											</td>
 										</tr>
-										<tr>
+										</c:if>
+										</c:forEach>
+										<%-- <tr>
 											<td><div class="btn btn-default btn-block 2">방법별</div></td>
 											<td class="tableLine">
 											<c:if test="${howCate != null }">
@@ -164,13 +177,7 @@
 		  											<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
 												</svg>
 											</td>
-											
-										</tr>
-										<tr>
-											<td colspan="2">
-												<div class="btn btn-default btn-lg btn-block saveAll">전체 저장</div>
-											</td>
-										</tr>
+										</tr> --%>
 									</tbody>
 								</table>
 								</form>
@@ -238,68 +245,104 @@
 		$(function(){
 			let smallChoose;
 			let className;
+			let detailLev;
+			let smallCateCode;
 			//소분류를 클릭했을때 수정 혹은 등록을 할 수 있게
 			$(document).on('click','.inputText', function(){
 				$('.cateModify').val($(this).text().trim());
+				cateDetail = $(this).children('input:eq(0)').val();
 				smallChoose = $(this);
 				$('.bCateParent').html('<div class="btn btn-default btn-block BicCate">'+$(this).parent().prev().children().text()+'</div>')	// 대분류가 무엇인지 찾고 삽입
 				$('span').removeAttr('id');
 				$('span').removeAttr('style');
 				$(this).attr('id','clickCate');
 				$('#clickCate').css({'background-color' : '#cbcbcb', 'color' : 'white'});
-				
+				detailLev = $(this).closest('tr').children(':first').find('input').val();
+				if($(this).children('input').val()){
+					smallCateCode=$(this).children('input').val();
+				}
 			});
-			
+			//console.log($(this).closest('tr').children(':first').find('input').val()); 부모의 detaillev 찾는 방법
 			//+버튼을 눌러 소분류를 추가하는 과정
 			$(document).on('click','.smallCateAdd', function(){
-				$(this).before('<span class="smallCate btn btn-default inputText">'+
+				$(this).before('<span class="smallCate btn btn-default inputText" name="cateName">'+
 						'<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">'+
 						  '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>'+
 						  '<path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>'+
 						'</svg>'+
 						'</span>');
-				
 			});
 			
 			//빨간색 -버튼을 눌러 소븐류를 삭제
 			$(document).on('click','.smallCateDel', function(){
-				$(this).closest('span').remove();
+				if($(this).text() != ''){					//값이 있던 것이므로 ajax로 delete
+					let CateCode = $(this).next().val();
+					$.ajax({
+						type : 'DELETE',
+						url : 'deleteCate/'+CateCode,
+						success : function() {
+							console.log('Ajax성공');
+							
+						},
+						error : function(err) {
+							alert('실패');
+							console.log(err);
+						}
+					}); 
+					
+				}
+				$(this).closest('span').remove();	//원래 값이 없던 ajax연동이 됐던 삭제
 			});
 			
 			//수정 버튼을 눌렀을때 진행되는 과정
 			$('.modify').click(function(){
-				if($('.BicCate').html()=='종류별'){
-					className = 'kindName'
+				if(smallChoose.text() != ''){	//값이 있음을 체크하고 ajax로 update
+					$.ajax({
+						type : 'PUT',
+						url : 'updateCate',
+						data : JSON.stringify({cateName : $('.cateModify').val(),
+								cateCode : smallCateCode}),
+						contentType: "application/json; charset=utf-8",
+						success : function(data) {
+							console.log('Ajax성공');
+						},
+						error : function(err) {
+							alert('실패');
+						}
+					}); 
+				
+				}
+				else{							//값이 없음을 체크하고 ajax로 insert
+					console.log($('.cateModify').val() + " ++ " +detailLev);
+					$.ajax({
+						type : 'POST',
+						url : 'insertCate',
+						data : JSON.stringify({cateDetailParentlev : detailLev,
+								cateName : $('.cateModify').val()}),
+						contentType: "application/json; charset=utf-8",
+						success : function(data) {
+							smallCateCode = data["cateCode"];
+							console.log('Ajax성공');
+						},
+						error : function(err) {
+							alert('실패');
+							console.log(err);
+						}
+					});
+				}
 					
-				}
-				else if($('.BicCate').html()=='방법별'){
-					className='howName'
-						
-				}
-				else if($('.BicCate').html()=='재료별'){
-					className='ingrName'
-				}
-				else{
-					className='situName'
-				}
-				console.log($('.BicCate').html());
-				smallChoose.attr("name",className);
+					
 				smallChoose.html('')
 				smallChoose.append($('.cateModify').val()+
 						'<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">'+
 				  		'<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>'+
 				  		'<path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>'+
 						'</svg>'+
-						'<input type="hidden" name="'+className+'" class="hiddenName" value="'+ $('.cateModify').val() +'"/>');
+						'<input type="hidden" name="cateName" class="hiddenName" value="'+smallCateCode +'"/>');
 				$('.cateModify').val('');
 				$('span').removeAttr('id');
 				$('span').removeAttr('style');
 			});
-			
-			$('.saveAll').click(function(){
-				$('form').submit();
-			});
-			
 		});
 	</script>
 </body>

@@ -1,8 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" trimDirectiveWhitespaces="true"
-	import ="com.coobby.session.SessionUserCounter"
-%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" trimDirectiveWhitespaces="true"
+	import="com.coobby.session.SessionUserCounter"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,7 +89,7 @@
 							<div class="small-box bg-info">
 								<div class="inner">
 									<h3>
-										${todayRecipeCnt }<sup style="font-size : 20px">개</sup>
+										${todayRecipeCnt }<sup style="font-size: 20px">개</sup>
 									</h3>
 
 									<p>당일 레시피 등록 수</p>
@@ -120,7 +120,8 @@
 							<!-- small box -->
 							<div class="small-box bg-warning">
 								<div class="inner">
-									<h3>${todayFeedCnt }<sup style="font-size: 20px">개</sup></h3>
+									<h3>${todayFeedCnt }<sup style="font-size: 20px">개</sup>
+									</h3>
 
 									<p>당일 피드 등록 수</p>
 								</div>
@@ -134,7 +135,7 @@
 							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3><%= SessionUserCounter.getCount() %></h3>
+									<h3><%=SessionUserCounter.getCount()%></h3>
 
 									<p>현재 접속 회원 수</p>
 								</div>
@@ -155,7 +156,7 @@
 								<div class="col-md-6">
 									<div class="card card-primary">
 										<div class="card-header">
-											<h3 class="card-title">회원 남녀 성비</h3>
+											<h3 class="card-title">연령대 남녀 성비</h3>
 
 											<div class="card-tools">
 												<button type="button" class="btn btn-tool"
@@ -170,7 +171,7 @@
 										</div>
 										<div class="card-body">
 											<div class="chart">
-												<canvas id="areaChart"
+												<canvas id="sexRate"
 													style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
 											</div>
 										</div>
@@ -279,14 +280,70 @@
 	<!-- ./wrapper -->
 
 	<!-- jQuery -->
-<script src="/resources/admin/plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- ChartJS -->
-<script src="/resources/admin/plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE App -->
-<script src="/resources/admin/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-	<!-- AdminLTE for demo purposes -->
+	<script src="/resources/admin/plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<script
+		src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<!-- ChartJS -->
+	<script src="/resources/admin/plugins/chart.js/Chart.min.js"></script>
+	<!-- AdminLTE App -->
+	<script src="/resources/admin/dist/js/adminlte.min.js"></script>
+	<script>
+// 차트를 그럴 영역을 dom요소로 가져온다.
+		var chartArea = document.getElementById('sexRate').getContext('2d');
+		// 차트를 생성한다.
+		menData=[]
+		womenData=[]
+		labels= ['10대','20대','30대','40대','50대','60대','70대'];
+		for(var i =0; i<labels.length ; i++){
+			<c:forEach items="${ageGroup}" var="items" varStatus="status">
+				men = menData.length
+				women = womenData.length
+				if('${items[0]}'== labels[i]){
+					menData.push(${items[1]});
+					womenData.push(${items[2]});
+					continue;
+				}
+			</c:forEach>
+			if(men == menData.length){
+				menData.push(0)
+			}
+			if(women == womenData.length){
+				womenData.push(0)
+			}
+		}
+		console.log(menData + "  " + womenData);
+			
+		var myChart = new Chart(chartArea, {
+		    // ①차트의 종류(String)
+		    type: 'bar',
+		    // ②차트의 데이터(Object)
+		    data: {
+		        // ③x축에 들어갈 이름들(Array)
+		        labels: labels,
+		        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
+		      datasets: [{
+            label: '남자',
+            backgroundColor: "#1E90FF",
+            data: menData
+        }, {
+            label: '여자',
+            backgroundColor: "#F7464A",
+            data: womenData
+        }]
+		    },
+		    // ⑩차트의 설정(Object)
+		    options: {
+		        // ⑪축에 관한 설정(Object)
+		        scales: {
+		            // ⑫y축에 대한 설정(Object)
+		            y: {
+		                // ⑬시작을 0부터 하게끔 설정(최소값이 0보다 크더라도)(boolean)
+		                beginAtZero: true
+		            }
+		        }
+		    }
+		});
+	</script>
 </body>
 </html>

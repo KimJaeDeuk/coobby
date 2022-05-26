@@ -2,6 +2,7 @@ package com.coobby.admin.dashboard;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +36,11 @@ public class DashBoardServiceImpl implements DashBoardService{
 	@Override
 	public int todayFeed() {
 		return feedRepo.findByfeRegdate(date.format(today)).size();
+	}
+
+	@Override
+	public List<Object[]> ageGroupSexRate() {
+		return memRepo.ageGroupSexRate();
 	}
 	
 }
