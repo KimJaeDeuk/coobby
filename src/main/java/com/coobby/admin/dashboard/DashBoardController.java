@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("admin")
 public class DashBoardController {
-	
-	@Autowired 
+
+	@Autowired
 	private DashBoardService dashService;
-	
+
 	@RequestMapping("/dashboard")
 	public void chartMain(Model m) {
 		 //m.addAttribute("countBoard",dashService.recipeCount());// 총 게시물 수
 		 m.addAttribute("todayBoardCnt", dashService.todayRecipe());//당일 게시물 수
-		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
-		
+//		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
+
 	}
-	
-	
+
+
 }
