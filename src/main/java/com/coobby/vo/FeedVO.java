@@ -8,15 +8,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name="feed")
+@Table(name="Feed")
 public class FeedVO {
 	
 	@Id
@@ -35,5 +31,4 @@ public class FeedVO {
 	private int feReplycheck;
 	@Column(name="mem_id")
 	private String memId;
-	
 }
