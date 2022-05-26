@@ -41,8 +41,7 @@
 <!-- Furniture Custom Fonts -->
 <!-- / -->
 <!-- CSS -->
-<link rel="stylesheet" href="/resources/css/Feed/Feed.css"
-	type="text/css" />
+<link rel="stylesheet" href="/resources/user/Feed/css/Feed.css"	type="text/css" />
 
 
 <!-- Document Title
@@ -67,12 +66,11 @@
 
 		<!-- 글 작성하기
 		============================================= -->
-		<form action="saveFeed">
+		<form action="saveFeed" method="post" enctype="multipart/form-data">
 			<div class="content-wrap">
 				<div class="container">
 					<input type="file" class="hidden_input " id="uploadFile"
-						name="uploadFile" accept="image/jpeg, image/jpg, image/png"
-						multiple />
+						name="uploadfiles" multiple />
 					<div class="row">
 					<!-- 사진 업로드 -->
 						<div class="col-md-6 uploadpic">
@@ -273,8 +271,8 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="/resources/js/functions.js"></script>
-	<script src="/resources/js/Feed/myfeed.js"></script>
-	<script type="text/javascript" src="/resources/js/Feed/UploadMyFeed.js"></script>
+	<script src="/resources/user/Feed/js/myfeed.js"></script>
+	<script type="text/javascript" src="/resources/user/Feed/js/UploadMyFeed.js"></script>
 
 </body>
 </html>

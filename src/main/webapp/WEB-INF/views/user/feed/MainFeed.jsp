@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="/resources/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
 	<!-- / -->
 	<!-- CSS -->
-	<link rel="stylesheet" href="/resources/css/Feed/Feed.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/css/user/Feed/css/Feed.css" type="text/css" />
 
 
 	<!-- Document Title
@@ -78,15 +78,15 @@
 									<div class="product-image">
 										<img src="demos/furniture/images/shop/2.jpg" alt="Light Grey Sofa">
 										<div>
-											<a href="MainFeedModal?fe_no=${feed.fe_no }" class="btn btn-light" data-lightbox="ajax">
+											<a href="MainFeedModal?fe_no=${feed.feNo }" class="btn btn-light" data-lightbox="ajax">
 											<div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400">
 											</div>
 										</a>
 										</div>
 									</div>
 									<div class="product-desc">
-										<div class="product-title mb-0"><h4 class="mb-0">${feed.fe_title }</h4></div>
-										<h5 class="product-price fw-normal">${feed.mem_id }</h5>
+										<div class="product-title mb-0"><h4 class="mb-0">${feed.feTitle }</h4></div>
+										<h5 class="product-price fw-normal">${feed.memId }</h5>
 									</div>
 									</c:forEach>
 								</div>
@@ -233,7 +233,7 @@
 	<!-- Footer Scripts
 	============================================= -->
 	<script src="/resources/js/functions.js"></script>
-	<script src="/resources/js/Feed/myfeed.js"></script>
+	<script src="/resources/user/Feed/js/myfeed.js"></script>
 
 </body>
 </html>

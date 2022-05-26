@@ -1,5 +1,6 @@
 package com.coobby.vo;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -14,10 +15,14 @@ import lombok.Data;
 public class FeedImageVO {
 	
 	@Id
-	private String fe_stored_image;
-	private String fe_origin_image;
-	private int fe_file_size;
-	private int fe_seq;
+	@Column(name="fe_stored_image")
+	private String feStoredImage;
+	@Column(name="fe_origin_image")
+	private String feOriginImage;
+	@Column(name="fe_file_size")
+	private int feFileSize;
+	@Column(name="fe_seq")
+	private int feSeq;
 	//private int fe_no;
 	
 	@ManyToOne
