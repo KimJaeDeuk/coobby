@@ -44,8 +44,9 @@ public class RecipeVO {
 	@Column(name="re_cook")
 	private String reCook;
 	
-	@Column(name="mem_id")
-	private String memId;
+	@ManyToOne
+	@JoinColumn(name="mem_id")
+	private MemberVO memberVO;
 	
 	@ManyToOne
 	@JoinColumn(name="cate_code")

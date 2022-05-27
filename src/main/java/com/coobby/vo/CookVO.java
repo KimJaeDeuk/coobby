@@ -26,6 +26,6 @@ public class CookVO {
 	private String ingrCount;
 	
 	@Column(name="re_no")
-	private int reNo;
+	private Integer reNo;
 
 }
