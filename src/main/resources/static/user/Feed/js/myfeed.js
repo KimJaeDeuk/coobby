@@ -3,12 +3,12 @@ $(function(){
 
     // 게시글과 채팅 탭 기능
     $('#feed_tab').click(function(){
-        $('#myfeed').show();
+        $('#myfeed2').show();
         $('#chatting').hide();
     })
 
     $('#chat_tab').click(function(){
-        $('#myfeed').hide();
+        $('#myfeed2').hide();
         $('#chatting').show();
     })
 
