@@ -8,13 +8,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name="Feed")
 public class FeedVO {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="fe_no")
@@ -23,7 +26,7 @@ public class FeedVO {
 	private String feTitle;
 	@Column(name="fe_content")
 	private String feContent;
-	
+
 	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
 	@Temporal(TemporalType.DATE)
 	private Date feRegdate;

@@ -9,7 +9,7 @@ public interface DashBoardService {
 
 	int todayRecipe();
 
-//	int todayUser();
+	int todayUser();
 
 	int todayFeed();
 
