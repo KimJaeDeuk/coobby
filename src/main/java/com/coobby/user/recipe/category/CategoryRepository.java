@@ -12,20 +12,21 @@ public interface CategoryRepository extends CrudRepository<CategoryVO, Integer>{
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 1 ORDER BY cate_code  ",
 			nativeQuery=true)
-	List<Object []> kindCategory();
+	List<Object[]> kindCategory();
 	
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 2 ORDER BY cate_code  ",
 			nativeQuery=true)
-	List<Object []> howCategory();
+	List<Object[]> howCategory();
 	
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 3 ORDER BY cate_code  ",
 			nativeQuery=true)
-	List<Object []> ingrCategory();
+	List<Object[]> ingrCategory();
 	
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 4 ORDER BY cate_code  ",
 			nativeQuery=true)
-	List<Object []> situCategory();
+	List<Object[]> situCategory();
+	
 }
