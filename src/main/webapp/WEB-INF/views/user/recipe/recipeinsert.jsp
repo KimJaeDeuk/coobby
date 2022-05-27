@@ -123,20 +123,26 @@
 													<select class="form-select" name="kindName" id="event-registration-interests">
 														<option value="">종류별</option>
 														<c:forEach items="${ kind }" var="catekind">
-															<option value="">asd</option>
+															<option value="${ catekind.cateCode }">${ catekind.cateName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="situName" id="event-registration-interests">
+													<select class="form-select" name="situName" id="">
 														<option value="">상황별</option>
-														<option value="UX Design">UX Design</option>
+														<c:forEach items="${ situ }" var="catesitu">
+															<option value="${ catesitu.cateCode }">${ catesitu.cateName }</option>
+														</c:forEach>
 													</select>
 													<select class="form-select" name="howName" id="event-registration-interests">
 														<option value="">방법별</option>
-														<option value="UX Design">UX Design</option>
+														<c:forEach items="${ how }" var="catehow">
+															<option value="${ catehow.cateCode }">${ catehow.cateName }</option>
+														</c:forEach>
 													</select>
 													<select class="form-select" name="ingrName" id="event-registration-interests">
 														<option value="">재료별</option>
-														<option value="UX Design">UX Design</option>
+														<c:forEach items="${ ingr }" var="cateingr">
+															<option value="${ cateingr.cateCode }">${ cateingr.cateName }</option>
+														</c:forEach>
 													</select>
 												</div>
 											</div>
@@ -211,13 +217,6 @@
 				</div>
 			</div>
 		</section><!-- #content end -->
-		
-		<div>
-			<form action="recipesave" method="post">
-				<input type="text" name="reTitle"/>
-				<button type="submit">등록</button>
-			</form>
-		</div>
 		
 
 		<!-- Footer

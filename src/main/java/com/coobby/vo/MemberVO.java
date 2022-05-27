@@ -15,9 +15,8 @@ import lombok.Data;
 public class MemberVO {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="mem_id")
-	private Integer memId;
+	private String memId;
 	
 	@Column(name="mem_pass")
 	private String memPass;
@@ -63,12 +62,5 @@ public class MemberVO {
 	
 	@Column(name="report_cnt")
 	private Integer reportCnt;
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

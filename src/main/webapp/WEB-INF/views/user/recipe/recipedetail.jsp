@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -63,7 +64,7 @@
 			<div class="container clearfix">
 				<div class="mx-auto center" style="max-width: 800px">
 					<h3 class="nott fw-bold mb-5 display-4" data-animate="zoomIn">
-						{ recipe.re_title }</h3>
+						${ recipe.reTitle }</h3>
 				</div>
 			</div>
 		</section>
@@ -89,8 +90,8 @@
 										<h4>조리 순서</h4>
 										<ol class="list-unstyled list-preparation">
 											<li class="recipeseq">
-												<div>{ recipe.re_cook }
-												</div> <img class="recipeimg" src="/resources/images/about/1.jpg"
+												<div>${ recipe.reCook }</div>
+												<img class="recipeimg" src="/resources/images/about/1.jpg"
 												alt="" />
 											</li>
 										</ol>
@@ -102,6 +103,10 @@
 											data-lightbox="iframe" class="play-video stretched-link">
 											<i class="icon-play"></i>
 										</a>
+									</div>
+									<h4>요리 TIP</h4>
+									<div>
+										${ recipe.reTip }
 									</div>
 
 									<!-- Comments
@@ -272,12 +277,12 @@
 								<div class="col-lg-4">
 									<div id="writercontain"
 										class="single_sidebar_widget author_widget">
-										<img class="writerimg" src="/resources/images/about/1.jpg"
+										<img class="writerimg" src="/resources/images/about/${ recipe.memberVO.memStoredimage }"
 											alt="" />
 										<!-- 작성자 이름 -->
-										<h4>작성자 이름</h4>
+										<h4>${ recipe.memberVO.memName }</h4>
 										<!-- 작성자 자기소개 -->
-										<p>작성자 소개</p>
+										<p>${ recipe.memberVO.memNickname }</p>
 										<div class="br"></div>
 									</div>
 									<div class="line line-sm"></div>
@@ -286,21 +291,13 @@
 										<h4 class="mb-0">레시피 재료</h4>
 									</div>
 									<ul class="list-unstyled list-ingredients bg-light p-4">
-										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
-											class="ingrcontainer"><img class="ingrimg"
-											src="/resources/images/about/1.jpg" alt="" />
-											<div class="ingrcenter">재료1</div>
-											<div>재료갯수</div></li>
-										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
-											class="ingrcontainer"><img class="ingrimg"
-											src="/resources/images/about/1.jpg" alt="" />
-											<div class="ingrcenter">재료1</div>
-											<div>재료갯수</div></li>
-										<li data-bs-toggle="modal" data-bs-target="#contactFormModal"
-											class="ingrcontainer"><img class="ingrimg"
-											src="/resources/images/about/1.jpg" alt="" />
-											<div class="ingrcenter">재료1</div>
-											<div>재료갯수</div></li>
+										<c:forEach items="${ ingr }" var="ingr">
+											<li data-bs-toggle="modal" data-bs-target="#contactFormModal" class="ingrcontainer">
+												<img class="ingrimg" src="/resources/images/about/1.jpg" alt="" />
+												<div class="ingrcenter">${ ingr.INGR_NAME }</div>
+												<div class="ingrcount">${ ingr.INGR_COUNT }</div>
+											</li>
+										</c:forEach>
 									</ul>
 									<div class="line line-sm"></div>
 									<div class="single_sidebar_widget author_widget">
