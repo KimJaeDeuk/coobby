@@ -131,7 +131,7 @@
 							</div>
 						</div>
 						<div class="swiper-slide-bg"
-							style="background-image: linear-gradient(to bottom, transparent, rgba(25, 53, 50, .9)), url(/resources/user/images/my/main5.jpg);"></div>
+							style="background-image: linear-gradient(to bottom, transparent, rgba(25, 53, 50, .9)), url('/resources/user/images/my/main5.jpg');"></div>
 					</div>
 
 					<div class="swiper-slide">

@@ -5,26 +5,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-//@RequestMapping("user/mainpage")
+@RequestMapping("/user/login")
 public class loginController {
+	
 	@RequestMapping("joinmember")
 	public String joinmember() {
-		return "joinmember";
+		return "/user/login/joinmember";
 	}
 	
 	@RequestMapping("loginpage")
 	public String loginpage() {
-		return "loginpage";
+		return "/user/login/loginpage";
 	}
 	
 	@RequestMapping("selectauthpage")
 	public String selectauthpage() {
-		return "selectauthpage";
+		return "/user/login/selectauthpage";
 	}
 	
 	@RequestMapping("emailauthpage")
 	public String emailtauthpage() {
-		return "emailauthpage";
+		return "/user/login/emailauthpage";
 	}
 
 

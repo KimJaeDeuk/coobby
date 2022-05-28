@@ -30,7 +30,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="/resources/user/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/style.css" type="text/css" />
 
 	<link rel="stylesheet" href="/resources/user/css/dark.css" type="text/css" />
 	<link rel="stylesheet" href="/resources/user/css/font-icons.css" type="text/css" />
@@ -160,10 +160,8 @@
 		<!-- Header
 		============================================= -->
 		<header id="header" class="header-size-sm border-bottom-0">
-			<div id="wrapper" class="clearfix">
-	<jsp:include page="../user-nav.jsp"/>
-		</div>
-		</header><!-- #header end -->
+		<jsp:include page="../user-nav.jsp"/>
+			</header>
 
 		<section class="recipe" id="page-title" style="height: 2%;">	
 
@@ -188,7 +186,7 @@
 					</a> -->
 					<form class="search-view" action="/search/" method="get">
 					  <form style="display: inline; margin: 0px;"><input type="text" name="keyword" class="form-control-lg search-input" placeholder="레시피 검색..." value="">
-					  <button type="button" class="btn btn-primary" style="margin-left:-5px; margin-top: -5px;">
+					  <button type="button" onclick="location.href='demo-furniture-selectproducts.html' " class="btn btn-primary" style="margin-left:-5px; margin-top: -5px;">
 						<svg xmlns="http://www.w3.org/2000/svg" width="30" height="33" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
 							<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
 						  </svg>
@@ -327,7 +325,7 @@
 
 					<div class="row justify-content-between align-items-center">
 						<div class="col-auto mb-4">
-							<p>" "에 대한 검색 결과입니다.</p>
+						<p>" "에 대한 검색 결과입니다.</p>
 							<h3 class="fw-medium h1">★BookMark <span data-animate="svg-underline-animated" class="svg-underline nocolor"><span>Recipe</span></span></h3>
 						</div>
 
@@ -384,7 +382,7 @@
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
 													<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
 												  </svg></a>
-											 <a href="/resources/user/demos/furniture/ajax/quick-view.html" class="btn btn-light" data-lightbox="ajax"><i class="bi bi-star"></i>
+											 <a href="demos/furniture/ajax/quick-view.html" class="btn btn-light" data-lightbox="ajax"><i class="bi bi-star"></i>
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
 													<path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
 												  </svg></a>
@@ -436,7 +434,7 @@
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
 													<path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
 												  </svg></a>
-											 <a href="demos/furniture/ajax/quick-view.html" class="btn btn-light" data-lightbox="ajax"><i class="bi bi-star"></i>
+											 <a href="/resources/user/demos/furniture/ajax/quick-view.html" class="btn btn-light" data-lightbox="ajax"><i class="bi bi-star"></i>
 												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
 													<path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.565.565 0 0 0-.163-.505L1.71 6.745l4.052-.576a.525.525 0 0 0 .393-.288L8 2.223l1.847 3.658a.525.525 0 0 0 .393.288l4.052.575-2.906 2.77a.565.565 0 0 0-.163.506l.694 3.957-3.686-1.894a.503.503 0 0 0-.461 0z"/>
 												  </svg></a>
@@ -987,12 +985,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/user/js/jquery.js"></script>
-	<script src="/resources/user/js/plugins.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/user/js/functions.js"></script>
+	<script src="js/functions.js"></script>
 
 </body>
 </html>

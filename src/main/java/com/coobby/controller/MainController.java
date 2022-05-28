@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-//@RequestMapping("user/mainpage")
+@RequestMapping("/user/main")
 public class MainController {
 
 	@RequestMapping("index")
@@ -19,7 +19,7 @@ public class MainController {
 	
 	@RequestMapping("mainpage")
 	public String mainpage() {
-		return "mainpage";
+		return "/user/main/mainpage";
 	}
 	
 //	@RequestMapping("joinmember")
