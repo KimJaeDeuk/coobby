@@ -75,7 +75,7 @@
 							<a href="insertFeed" class="button button-border button-rounded button-yellow"><i class="icon-pencil"></i>작성하기</a>
 						</div>
 						<!-- 마이 피드 내용 -->
-						<div id="myfeed" role="tabpanel" aria-labelledby="home-tab" class="row">						
+						<div id="myfeed2" role="tabpanel" aria-labelledby="home-tab" class="row">						
 						<div class="product">						
 							<c:forEach items="${ feedList}" var="feed">
 								<div class="grid-inner col-lg-3 col-md-4 col-sm-6 col-12">
@@ -97,11 +97,12 @@
 							</c:forEach>
 						</div>
 						</div>
-						</div>
+						
 						<!-- 채팅 내용 -->
-						<!-- <div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
+						<div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
 							<p>채팅</p>
-						</div> -->
+						</div>
+						</div>
 
 					</div><!-- #shop end -->
 
