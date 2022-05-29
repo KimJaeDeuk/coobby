@@ -199,7 +199,7 @@
 					smallCateCode=$(this).children('input').val();
 				}
 			});
-			//console.log($(this).closest('tr').children(':first').find('input').val()); 부모의 detaillev 찾는 방법
+			
 			//+버튼을 눌러 소분류를 추가하는 과정
 			$(document).on('click','.smallCateAdd', function(){
 				$(this).before('<span class="smallCate btn btn-default inputText" name="cateName">'+
@@ -233,7 +233,7 @@
 			
 			//수정 버튼을 눌렀을때 진행되는 과정
 			$(document).on('click','.modify',function(){
-				console.log(smallChoose.text().trim());
+				console.log(smallCateCode+"||"+$('.cateModify').val());
 				if(smallChoose.text().trim() != ''){	//값이 있음을 체크하고 ajax로 update
 					$.ajax({
 						type : 'PUT',
@@ -245,7 +245,7 @@
 							console.log('Ajax성공');
 						},
 						error : function(err) {
-							alert('실패');
+							console.log(err);
 						}
 					}); 
 				
@@ -268,7 +268,7 @@
 						}
 					});
 				}
-					
+	
 				smallChoose.html('')
 				smallChoose.append($('.cateModify').val()+
 						'<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">'+
