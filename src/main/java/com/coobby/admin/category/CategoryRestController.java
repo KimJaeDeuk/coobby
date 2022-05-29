@@ -21,7 +21,7 @@ public class CategoryRestController {
 	private CategoryService cateService;
 	
 	@PostMapping("/insertCate")
-	public CategoryVO insertCate(@RequestBody CategoryVO vo) {
+	public int insertCate(@RequestBody CategoryVO vo) {
 		return cateService.insertCate(vo);
 	}
 	

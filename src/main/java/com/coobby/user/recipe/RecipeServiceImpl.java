@@ -8,7 +8,8 @@ import com.coobby.vo.RecipeVO;
 @Service
 public class RecipeServiceImpl implements RecipeService{
 	
-	@Autowired private RecipeRepository recipeRepo;
+	@Autowired 
+	private RecipeRepository recipeRepo;
 	
 	public RecipeVO getrecipe(RecipeVO revo) {
 		return recipeRepo.findById(revo.getReNo()).get();

@@ -22,7 +22,7 @@ public class DashBoardController {
 		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
 		 m.addAttribute("todayFeedCnt", dashService.todayFeed());
 		
-		 List<Object[]> list = dashService.ageGroupSexRate();
+		
 		 m.addAttribute("ageGroup", dashService.ageGroupSexRate());
 	}
 	
