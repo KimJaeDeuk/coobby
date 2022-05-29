@@ -11,8 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.coobby.user.recipe.category.CategoryRepository;
-import com.coobby.user.recipe.cook.CookRepository;
+import com.coobby.repository.CategoryRepository;
+import com.coobby.repository.CookRepository;
+import com.coobby.repository.RecipeRepository;
 import com.coobby.vo.CategoryVO;
 import com.coobby.vo.RecipeVO;
 

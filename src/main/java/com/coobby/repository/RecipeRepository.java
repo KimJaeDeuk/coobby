@@ -1,4 +1,4 @@
-package com.coobby.user.recipe;
+package com.coobby.repository;
 
 import java.util.HashMap;
 
