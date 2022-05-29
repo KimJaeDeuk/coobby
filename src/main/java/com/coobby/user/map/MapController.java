@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.coobby.vo.MapVO;
+
 @Controller
 @RequestMapping("/user")
 public class MapController {
