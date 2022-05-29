@@ -22,6 +22,9 @@ public interface FeedService {
 	
 	// 마이피드 수정
 	public FeedVO modifyFeed(FeedVO vo);
+	
+	// 당일 피드 생성 갯수
+	public int todayFeed();
 
 	
 	// 마이피드 이미지 삭제
