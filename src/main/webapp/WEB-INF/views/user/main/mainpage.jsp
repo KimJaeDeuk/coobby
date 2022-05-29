@@ -86,6 +86,30 @@
 
 
 
+		<!-- <section id="slider" class="slider-element dark justify-content-start"> -->
+
+			<!-- Hero Text
+			============================================= -->
+			<!-- <div class="container z-1">
+				<div class="row align-items-start justify-content-center justify-content-xl-start py-6">
+					<div class="col-xl-6 col-lg-9 col-md-10 mt-xl-4 text-center text-xl-start">
+						<p class="op-07 text-white mb-3 text-uppercase ls2 text-smaller">Quality is everyone's Responsibilty</p>
+						<h1 class="display-4 mb-5 text-white fw-medium">A Home Is Not A Home Without <span class="svg-underline nocolor">Furniture</span></h1>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- Hero line in Responsive
+			============================================= -->
+			<!-- <div class="line d-block d-xl-none my-0"></div> -->
+
+			<!-- Hero Image
+			============================================= -->
+			<!-- <div class="hero-image">
+				<img src="demos/furniture/images/hero.png" alt="">
+			</div> -->
+
+		</section>
 		<!-- slider Section
 		============================================= -->
 		<section id="slider"
@@ -93,8 +117,15 @@
 			data-loop="true">
 
 			<div class="swiper-container swiper-parent">
+			<!-- <div class="col-xl-6 col-lg-9 col-md-5 mt-xl-4 text-center text-xl-start">
+						<p class="op-07 text-white mb-3 text-uppercase ls2 text-smaller">Quality is everyone's Responsibilty</p>
+						<h1 class="display-4 mb-5 text-white fw-medium">A Home Is Not A Home Without <span class="svg-underline nocolor">Furniture</span></h1>
+						<a href="demo-furniture-single.html" class="button button-large button-white button-light h-op-09 color m-0 fw-normal color px-4"><i style="position: relative; top: -2px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--themecolor)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><rect x="32" y="48" width="192" height="160" rx="8" opacity="0.2"></rect><rect x="32" y="48" width="192" height="160" rx="8" stroke-width="16" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" fill="none"></rect><path d="M168,88a40,40,0,0,1-80,0" fill="none" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path></svg></i> Shop Now</a>
+					</div> -->
+			
+			
 				<div class="swiper-wrapper">
-
+				
 					<div class="swiper-slide">
 						<div class="container">
 							<div class="position-absolute pos-y-end mb-3 row w-100 col-mb-30">
@@ -145,7 +176,7 @@
 											<h4 class="mb-2 text-white fw-medium">Brown Sofa with Pillows</h4>
 											<h4 class="mb-0 h6 text-white fw-normal font-body d-flex">$149.99 <i class="icon-long-arrow-right ms-auto"></i></h4>
 										</div>
-									</a> -->
+									</a>
 								</div>
 								<div class="col-lg-auto col-md-8 col-10">
 									<!-- <a href="demo-furniture-single.html" class="card d-flex flex-row" data-animate="fadeInLeft" data-delay="400">
@@ -206,7 +237,7 @@
 						</div> -->
 
 						<div class="swiper-slide-bg"
-							style="background-image: linear-gradient(to bottom, transparent, rgba(25, 53, 50, .9)), url('resources/user/images/my/main3.jpg');"></div>
+							style="background-image: linear-gradient(to bottom, transparent, rgba(25, 53, 50, .9)), url('/resources/user/images/my/main3.jpg');"></div>
 					</div>
 				</div>
 				<div class="slider-arrow-left">
@@ -386,9 +417,7 @@
 									<b>Popular</b> <span data-animate="svg-underline-animated"
 										class="svg-underline nocolor"><span><b>chief</b></span></span>
 								</h3>
-								<p class="op-07 mb-4">Compellingly cultivate synergistic
-									infrastructures rather than fully tested opportunities.
-									Synergistically evisculate web-enabled interfaces.</p>
+								<p class="op-07 mb-4">최고 인기쉐프의 인기 레시피를<br/> 엄선하였습니다.</p>
 								<a href="demo-furniture-products.html"
 									class="button button-border py-1 nott ls0 fw-normal button-dark border-width-1 border-color h-bg-color">쉐프
 									더보기</a> <a href="demo-furniture-products.html"
@@ -873,15 +902,75 @@
 			</div>
 		</section>
 		<!-- #content end -->
+		<br/>
 
 		<!-- Footer
 		============================================= -->
-		<footer id="footer" class="border-0 bg-white">
+		<footer id="footer" class="border-0 bg-default" style='background-color: #F7F8E0'>
+		<div class="container col-md-12">
+		<div class="row">
+            <div class="col-md-4 col-1 intro">
+            <br/>
+                <p class="f_link">
+                    <a href="http://www.ezhld.co.kr/2012_ezhld/company/company.html" target="_blank">COOBBY소개</a><span> | </span>
+                    <!-- <a href="http://www.10000recipe.com/ad/" target="_blank">광고문의</a><span>|</span> -->
+                    <a href="https://www.10000recipe.com/user/rules.html?f=contract" target="_blank">마이페이지</a><span> | </span>
+                    <a href="https://www.10000recipe.com/customer/list.html">고객센터(1:1 문의)</a>
+                </p>
+                
+                <!-- <p style = "disc"> -->
+                <p> &nbsp;♠ 상호명 : COOBBY  <br><br>&nbsp;♠ Email : coobbyHelp @COOBBY.com <br><br>&nbsp;♠ 문의전화(운영시간 평일 10:00~18:00)<br><br>&nbsp;♠ 쇼핑문의(만개스토어) : 02-6953-4433<br><br>&nbsp;♠ 서비스 이용문의 : 070-4896-6416 </p>
+                <p> &nbsp;♠ Copyright <b>©EZHLD</b> Inc. All Rights Reserved</p>
+                
+            </div>
+            <div class="col-md-4 col-1 banner">
+                <div class="app_layer" style="display:none;">
+                    <p class="tit">모바일 만개의 레시피 다운받기</p>
+                    <div class="layer_l"><img src="https://recipe1.ezmember.co.kr/img/img_ezqr1.gif" alt="안드로이드"><a href="https://market.android.com/details?id=com.ezhld.recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btn_go.gif" alt="바로가기"></a></div>
+                    <div class="layer_r"><img src="https://recipe1.ezmember.co.kr/img/img_ezqr2.gif" alt="아이폰"><a href="https://itunes.apple.com/kr/app/yoribaeggwa-mangaeyi-resipi/id494190282?mt=8" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btn_go.gif" alt="바로가기"></a></div>
+                </div>
+                <a href="javascript:void(0);" id="appDownLayerBtn"><img src="https://recipe1.ezmember.co.kr/img/btm_app2.gif" alt="app다운로드"></a><br/><br/>
+                <div class="banner_sns" style='text-align:center;'>
+                    <a href="https://www.facebook.com/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_1.gif" alt="페이스북"></a> &nbsp;
+                    <a href="https://www.instagram.com/10000recipe/" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_2.gif" alt="인스타그램"></a> &nbsp;
+                    <a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_3.gif" alt="유튜브"></a> &nbsp;
+                    <!--a href="http://tvcast.naver.com/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4.gif" alt="네이버TV"></a-->
+                    <a href="https://blog.naver.com/ezday1" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4_1.gif" alt="네이버블로그"></a> &nbsp;
+                    <a href="https://tv.kakao.com/channel/2134164/video" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_6.gif" alt="카카오TV"></a> &nbsp;
+                    <a href="https://story.kakao.com/ch/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_7.gif" alt="카카오스토리"></a> &nbsp;
+                </div>
+            </div>
+            <div class="col-md-4 col-1 comment" style= 'text-align:center;'>
+                <textarea id="customerSend" name="board_txt" class="form-control" placeholder="불편사항이나 제안사항​​이 있으시다면, 의견을 남겨주세요."></textarea>
+                <button class="btn btn-Info" style='background-color: skyblue;' onclick="customerPropose();">의견제출</button>
+                <p class="noti">개별회신을 원하시면 <a href="https://www.10000recipe.com/customer/list.html?bid=3" style="text-decoration:underline; color:#666;">여기</a>에 문의하세요.</p>
+            </div>
+        </div>
+        </div>
 			<div class="container">
+			<!-- <div class="footer st2">
+    <div class="container">
+        <img src="https://recipe1.ezmember.co.kr/img/logo6.png">
+        <ul class="btm_stats">
+            <li><a href="https://www.10000recipe.com/brand/apply.html" style="color:#fff;"><span class="btm_stats_1"></span>제휴업체수</a><b>543</b></li>
+            <li><a href="https://www.10000recipe.com/chef/apply.html" style="color:#fff;"><span class="btm_stats_2"></span>총 쉐프수</a><b>3,213</b></li>
+            <li><a href="https://www.10000recipe.com/recipe/list.html" style="color:#fff;"><span class="btm_stats_3"></span>총 레시피수</a><b>179,050</b></li>
+            <li><span class="btm_stats_4"></span>월 방문자수<b>5,140,000</b></li>
+            <li><span class="btm_stats_5"></span>총 레시피 조회수<b>2,408,968,599</b></li>
+        </ul>
+        <div class="btm_mail">
+            <a href="mailto:marketing@10000recipe.com"><img src="https://recipe1.ezmember.co.kr/img/btm_img2.png"></a>
+        </div>
+    </div>
+    <div style="background:#fff; text-align:center; padding:16px 0; margin-bottom:-10px;"><img src="https://recipe1.ezmember.co.kr/img/btm_since.png"></div>
+</div> -->
+
+
 
 				<!-- Footer Widgets
 				============================================= -->
 				<div class="footer-widgets-wrap py-lg-6">
+				
 					<div class="row col-mb-30">
 
 						<!-- Footer Col 1 -->
@@ -978,6 +1067,16 @@
 					</div>
 
 				</div>
+				<div class="banner_sns" style='text-align:center'>
+                    <a href="https://www.facebook.com/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_1.gif" alt="페이스북"></a>
+                    <a href="https://www.instagram.com/10000recipe/" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_2.gif" alt="인스타그램"></a>
+                    <a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_3.gif" alt="유투브"></a>
+                    <!--a href="http://tvcast.naver.com/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4.gif" alt="네이버TV"></a-->
+                    <a href="https://blog.naver.com/ezday1" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_4_1.gif" alt="네이버블로그"></a>
+                    <a href="http://m.post.naver.com/my.nhn?memberNo=11566067" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_5.gif" alt="네이버포스트"></a>
+                    <a href="https://tv.kakao.com/channel/2134164/video" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_6.gif" alt="카카오TV"></a>
+                    <a href="https://story.kakao.com/ch/10000recipe" target="_blank"><img src="https://recipe1.ezmember.co.kr/img/btm_sns_7.gif" alt="카카오스토리"></a>
+                </div>
 				<!-- .footer-widgets-wrap end -->
 
 			</div>

@@ -139,8 +139,13 @@ function kakaoLogout() {
 						<input
 							type="text" class="form-control" id="name"
 							placeholder="Example@ex.com" style='font-style: ltalic'
-							value="" required>
+							value="" required><br/>
+							<button class="btn btn-warning btn-lg btn-block" type="submit"
+							style="width: 80%; height: 20%; margin: auto;">인증번호 전송</button>
+							 인종번호가 전송되었습니다.
 						<div class="invalid-feedback">ID를 입력해주세요.
+						
+						
 						
 </div>
 
