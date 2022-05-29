@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -84,7 +85,7 @@
 	border-radius: 1%;
 	border-color: black;
 	margin-top: 110px;
-	margin-left `: 10px;
+	margin-left : 10px;
 }
 
 #getCurrentPosBtn.active {
@@ -157,6 +158,10 @@
 	text-align: center;
 	margin-top: 5px
 }
+
+#sample5_address{
+background-color: white;
+}
 </style>
 
 <script
@@ -218,7 +223,7 @@
 
 										<input type="email" id="sample5_address"
 											name="widget-subscribe-form-email"
-											class="form-control required email" placeholder="주소를 입력하세요">
+											class="form-control required email" placeholder="주소를 입력하세요" onclick="sample5_execDaumPostcode()" readonly>
 										<button class="btn btn-dark bg-color px-3 input-group-text"
 											type="submit" id="searchBtn"
 											onclick="sample5_execDaumPostcode()">
@@ -244,7 +249,7 @@
 							<div class="row bg-light border col-lg-6 p-0" id="contentbox"
 								style="height: 400px;">
 
-								<div class="">
+								<div class="pageContainer">
 
 
 									<div class="onofftext">
@@ -255,23 +260,30 @@
 										<table class="table table-bordered">
 											<thead>
 												<tr>
-													<th>#</th>
 													<th>매장명</th>
-
+													<th>상품명</th>
 													<th>가격</th>
 												</tr>
 											</thead>
 											<tbody>
+												<c:forEach items="${storeList }" var="list">
 												<tr>
-													<td rowspan="2">1</td>
-													<td>홈플러스</td>
-													<td>1800원</td>
+													<td>${list.storeName }</td>
+													<td>${list.productName }</td>
+													<td>${list.price }</td>
 												</tr>
+												</c:forEach>
 											</tbody>
 										</table>
 									</div>
-
-
+									<div class="page">
+										<nav aria-label="Page navigation">
+											<ul class="pagination justify-content-center mt-4">
+												<li class="page-item"><a class="page-link" >&lt;</a></li>
+												<li class="page-item"><a class="page-link" >&gt;</a></li>
+											</ul>
+										</nav>
+									</div>
 								</div>
 
 							</div>
