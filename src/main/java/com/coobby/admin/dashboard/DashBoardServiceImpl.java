@@ -6,6 +6,9 @@ import java.util.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.FeedRepository;
+import com.coobby.user.recipe.RecipeRepository;
+
 @Service
 public class DashBoardServiceImpl implements DashBoardService{
 	
