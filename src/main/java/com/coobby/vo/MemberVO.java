@@ -15,7 +15,6 @@ import lombok.Data;
 public class MemberVO {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="mem_id")
 	private String memId;
 	
