@@ -94,8 +94,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo" class="mx-auto col-auto flex-column order-2">
-							<a href="/user/main/mainpage" class="standard-logo">COOBBY</a>
-							<a href="/user/main/mainpage" class="retina-logo">COOBBY</a>
+							<a href="demo-furniture.html" class="standard-logo">COOBBY</a>
+							<a href="demo-furniture.html" class="retina-logo">COOBBY</a>
 						</div><!-- #logo end -->
 
 						<div class="header-misc col-auto col-lg-3 order-3 justify-content-lg-end ms-0 ms-sm-3 px-0">
@@ -130,7 +130,7 @@
 								<a href="#" class="">나의 피드보기</a>
 							</div>
 							<div id="logout">
-								<a href="/user/login/loginpage" class="">로그아웃</a>
+								<a href="#" class="">로그아웃</a>
 							</div>
 
 						</div>
@@ -148,7 +148,7 @@
 
 							<ul class="menu-container">
 								<li class="menu-item">
-									<a class="menu-link" href="/user/search/searchpage">
+									<a class="menu-link" href="demo-furniture.html">
 										<div class="menu-font">레시피</div>
 									</a>
 								</li>
