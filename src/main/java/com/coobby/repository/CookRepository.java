@@ -1,4 +1,4 @@
-package com.coobby.user.recipe.cook;
+package com.coobby.repository;
 
 import java.util.HashMap;
 import java.util.List;
