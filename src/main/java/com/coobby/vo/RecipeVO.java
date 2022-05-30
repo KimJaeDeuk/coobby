@@ -47,15 +47,8 @@ public class RecipeVO {
 	@ManyToOne
 	@JoinColumn(name="mem_id")
 	private MemberVO memberVO;
-<<<<<<< HEAD
-	
-=======
 
-	@ManyToOne
-	@JoinColumn(name="cate_code")
-	private CategoryVO categoryVO;
 
->>>>>>> bded3f84f70e69bbe46598dbc531e391de78ed16
 	@OneToMany(mappedBy ="recipeVO")
 	List<Recipe_imageVO> recipe_imageVO;
 

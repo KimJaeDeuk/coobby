@@ -11,6 +11,9 @@ import com.coobby.vo.CateHowVO;
 
 
 public interface CateHowAdminRepository extends CrudRepository<CateHowVO, Integer>{
+
+	@Query(value="SELECT max(how_code) FROM how_cate", nativeQuery=true)
+	int findMaxCode();
 	
 
 
