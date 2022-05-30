@@ -104,7 +104,7 @@
 							-->
 							<!-- #top-cart end -->
 							<div id="myfeed">
-								<a href="#" class="">나의 피드보기</a>
+								<a href="/user/feed/MyFeed" class="">나의 피드보기</a>
 							</div>
 							<div id="logout">
 								<a href="#" class="">로그아웃</a>
@@ -125,15 +125,15 @@
 
 							<ul class="menu-container">
 								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture.html">
+									<a class="menu-link" href="recipedetail?reNo=13">
 										<div class="menu-font">레시피</div>
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
+									<a href="MyFeed" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture-about.html">
+									<a class="menu-link" href="QnA/insertpage">
 										<div class="menu-font">공지사항/Q&A</div>
 									</a>
 								</li>
