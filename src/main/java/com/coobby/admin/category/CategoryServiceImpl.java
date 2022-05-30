@@ -12,7 +12,7 @@ import com.coobby.vo.CategoryVO;
 public class CategoryServiceImpl implements CategoryService{
 	
 	@Autowired
-	private CategoryAdminRepository cateRepo;
+	private CateHowAdminRepository cateRepo;
 
 	@Override
 	public List<CategoryVO> getCateList() {

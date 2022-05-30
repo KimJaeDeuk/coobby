@@ -312,7 +312,6 @@
 				womenData.push(0)
 			}
 		}
-		console.log(menData + "  " + womenData);
 			
 		var myChart = new Chart(chartArea, {
 		    // ①차트의 종류(String)
