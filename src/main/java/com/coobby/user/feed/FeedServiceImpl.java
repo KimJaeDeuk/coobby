@@ -1,10 +1,14 @@
 package com.coobby.user.feed;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//import com.coobby.repository.FeedImageRepository;
+import com.coobby.repository.FeedRepository;
 import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 
@@ -13,9 +17,13 @@ public class FeedServiceImpl implements FeedService {
 	
 	@Autowired
 	private FeedRepository feedRepo;
-	@Autowired
-	private FeedImageRepository feedimgrepo;
+//	@Autowired
+//	private FeedImageRepository feedimgrepo;
 	 
+	private static final String DATE_PATTERN = "yyyy-MM-dd"; 
+	private static final Date today = new Date();
+	SimpleDateFormat date = new SimpleDateFormat(DATE_PATTERN);
+	
 	// 피드 목록 출력
 	public List<FeedVO> getFeedList(FeedVO vo) {
 		return (List<FeedVO>)feedRepo.findAll();
@@ -30,7 +38,7 @@ public class FeedServiceImpl implements FeedService {
 //		imgvo.setFeStoredImage(fvo.getFeStoredImage());
 //		imgvo.setFeOriginImage(fvo.getFeOriginImage());
 		
-		feedimgrepo.save(fvo);
+//		feedimgrepo.save(fvo);
 	}
 	
 	// 마이피드 상세보기
@@ -56,8 +64,10 @@ public class FeedServiceImpl implements FeedService {
 
 	}
 
-	
-
+	@Override
+	public int todayFeed() {
+		return feedRepo.findByfeRegdate(date.format(today)).size();
+	}
 	
 	
 }

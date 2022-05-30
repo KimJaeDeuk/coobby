@@ -30,7 +30,12 @@
 }
 
 .ingrcenter{
-	margin: 0 150px 0 15px;
+	width: 60%;
+	margin-left: 5%;
+}
+
+.ingrcount {
+	width:40%;
 }
 
 .relrecipecontainer{
@@ -51,6 +56,10 @@
 
 .recipeseq{
 	display: flex;
+}
+
+.recipeseq > div {
+	width: 60%;
 }
 
 #ingrcontainer{

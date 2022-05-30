@@ -8,7 +8,7 @@ public interface CategoryService {
 
 	List<CategoryVO> getCateList();
 
-	CategoryVO insertCate(CategoryVO vo);
+	int insertCate(CategoryVO vo);
 
 	CategoryVO updateCate(CategoryVO vo);
 

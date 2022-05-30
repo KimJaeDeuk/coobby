@@ -30,7 +30,6 @@ public class CategoryVO {
 	private String cateName;
 	
 	@Column(name="cate_detail_lev")
-
 	private Integer cateDetaillev;
 	
 	@Column(name="cate_parent_lev")

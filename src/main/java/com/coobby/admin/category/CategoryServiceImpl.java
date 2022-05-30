@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.CategoryRepository;
 import com.coobby.vo.CategoryVO;
 
  
@@ -12,7 +13,7 @@ import com.coobby.vo.CategoryVO;
 public class CategoryServiceImpl implements CategoryService{
 	
 	@Autowired
-	private CategoryRepository cateRepo;
+	private CategoryAdminRepository cateRepo;
 
 	@Override
 	public List<CategoryVO> getCateList() {
@@ -20,9 +21,9 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 
 	@Override
-	public CategoryVO insertCate(CategoryVO vo) {
+	public int insertCate(CategoryVO vo) {
 		cateRepo.insertCate(vo.getCateName(), vo.getCateDetailParentlev());
-		return cateRepo.findByCateName(vo.getCateName());
+		return cateRepo.findMaxSmallCate();
 	}
 
 	@Override
