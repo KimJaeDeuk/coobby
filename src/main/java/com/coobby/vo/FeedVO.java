@@ -17,7 +17,7 @@ import lombok.Data;
 @Entity
 @Table(name="Feed")
 public class FeedVO {
-	
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="fe_no")
@@ -26,10 +26,9 @@ public class FeedVO {
 	private String feTitle;
 	@Column(name="fe_content")
 	private String feContent;
-	
+
 	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
-	@Temporal(TemporalType.DATE)
-	private Date feRegdate;
+	private String feRegdate;
 	@Column(name="fe_replycheck")
 	private int feReplycheck;
 	@Column(name="mem_id")

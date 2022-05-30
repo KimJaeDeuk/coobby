@@ -52,6 +52,10 @@
 		#wrapper{
 			width : 100%;	
 		}
+		
+		nav {
+			margin-right: 30%;
+		}
 
 		
 	</style>
@@ -79,34 +83,6 @@
 				<div class="container">
 					<div class="header-row justify-content-lg-between">
 						
-					
-						<!-- Primary Navigation
-						============================================= -->
-					
-						<nav class="primary-menu with-arrows order-lg-1 order-last px-0">
-
-							<ul class="menu-container">
-								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture.html">
-										<div class="menu-font">레시피</div>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
-								</li>
-								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture-about.html">
-										<div class="menu-font">공지사항/Q&A</div>
-									</a>
-								</li>
-								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
-									<div class="menu-font">마이페이지</div>
-								</a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
-						
 						<!-- Logo
 						============================================= -->
 						<div id="logo" class="mx-auto col-auto flex-column order-2">
@@ -119,7 +95,7 @@
 							<!-- Top 로그인
 							============================================= -->
 							<div id="userimgcontain">
-								<img id="userimg" src="/resources/images/about/1.jpg" alt="" />
+								<img id="userimg" src="/resources/user/images/about/1.jpg" alt="" />
 							</div>
 							<!-- 비로그인 시 
 							<div id="top-search" class="header-misc-icon">
@@ -143,7 +119,7 @@
 							-->
 							<!-- #top-cart end -->
 							<div id="myfeed">
-								<a href="#" class="">나의 피드보기</a>
+								<a href="/user/feed/MyFeed" class="">나의 피드보기</a>
 							</div>
 							<div id="logout">
 								<a href="#" class="">로그아웃</a>
@@ -153,7 +129,37 @@
 
 						<!-- Mobile Menu Icon
 						============================================= -->
-						
+						<div id="primary-menu-trigger">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><defs><style>.a,.c{fill:none;}.b{fill:var(--themecolor);opacity:0.2;}.c,.d{stroke:var(--themecolor);}.c{stroke-miterlimit:10;stroke-width:14px;}.d{stroke-linecap:round;stroke-linejoin:round;stroke-width:13px;}</style></defs><rect class="a" width="24" height="24"/><circle class="b" cx="96" cy="96" r="96" transform="translate(32 32)"/><circle class="c" cx="96" cy="96" r="96" transform="translate(32 32)"/><line class="d" x2="85" transform="translate(86 127)"/><line class="d" x2="85" transform="translate(86 97)"/><line class="d" x2="85" transform="translate(86 159)"/></svg>
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--themecolor)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" opacity="0.2"></circle><circle cx="128" cy="128" r="96" fill="none" stroke="var(--themecolor)" stroke-miterlimit="10" stroke-width="16"></circle><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="160" y1="160" x2="96" y2="96" fill="none" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
+						</div>
+
+						<!-- Primary Navigation
+						============================================= -->
+						<nav class="primary-menu with-arrows order-lg-1 order-last px-0">
+
+							<ul class="menu-container">
+								<li class="menu-item">
+									<a class="menu-link" href="recipedetail?reNo=13">
+										<div class="menu-font">레시피</div>
+									</a>
+								</li>
+								<li class="menu-item">
+									<a href="MyFeed" class="menu-link"><div class="menu-font">피드보기</div></a>
+								</li>
+								<li class="menu-item">
+									<a class="menu-link" href="QnA/insertpage">
+										<div class="menu-font">공지사항/Q&A</div>
+									</a>
+								</li>
+								<!-- if문 걸 자리 -->
+								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
+									<div class="menu-font">마이페이지</div>
+								</a></li>
+							</ul>
+
+						</nav><!-- #primary-menu end -->
+
 						<!-- Top Search Form
 						============================================= -->
 						<form class="top-search-form" action="search.html" method="get">

@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
 import com.coobby.repository.CategoryRepository;
 import com.coobby.repository.CookRepository;
 import com.coobby.repository.RecipeRepository;
@@ -19,16 +19,16 @@ import com.coobby.vo.RecipeVO;
 @Controller
 @RequestMapping("user/recipe")
 public class RecipeController {
-	
-	@Autowired 
-	private RecipeService recipeService; 
+
+	@Autowired
+	private RecipeService recipeService;
 	@Autowired
 	private CategoryRepository cateRepo;
 	@Autowired
 	private RecipeRepository recipeRepo;
-	//@Autowired
-	//private CookRepository cookRepo;
-	
+	@Autowired
+	private CookRepository cookRepo;
+
 	@RequestMapping("recipeinsert")
 	public void recipeinsert(Model m) {
 		List<CategoryVO> kindresult = new ArrayList<CategoryVO>();
@@ -63,20 +63,20 @@ public class RecipeController {
 			vo.setCateName((String)situobj[1]);
 			situresult.add(vo);
 		}
-		
+
 		m.addAttribute("kind", kindresult);
 		m.addAttribute("how", howresult);
 		m.addAttribute("ingr", ingrresult);
 		m.addAttribute("situ", situresult);
-		
+
 	}
-	
+
 	@RequestMapping("recipedetail")
 	public void recipedetail(@RequestParam("reNo") Integer reNo, Model m) {
 		// 레시피정보, 작성자정보 가져오기
 		RecipeVO recipeResult = recipeRepo.findById(reNo).get();
 		List<HashMap> cookResult = new ArrayList<HashMap>();
-		/*List<Object[]> getCook = cookRepo.getingr(reNo);
+		List<Object[]> getCook = cookRepo.getingr(reNo);
 		for(Object[] result : getCook) {
 			HashMap hm = new HashMap();
 			hm.put("INGR_COUNT",result[0]);
@@ -92,17 +92,17 @@ public class RecipeController {
 			hm.put("INGR_STORED_IMAGE",result[10]);
 			cookResult.add(hm);
 		}
-		
+
 		m.addAttribute("ingr", cookResult);
-		m.addAttribute("recipe", recipeResult);*/
+		m.addAttribute("recipe", recipeResult);
 	}
-	
+
 	@RequestMapping("recipesave")
 	public String saverecipe(RecipeVO revo) {
 		System.out.println("레시피 등록");
 		recipeService.saverecipe(revo);
 		return "redirect:recipeinsert";
 	}
-	
-	
+
+
 }
