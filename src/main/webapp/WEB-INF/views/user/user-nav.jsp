@@ -52,6 +52,10 @@
 		#wrapper{
 			width : 100%;	
 		}
+		
+		nav {
+			margin-right: 30%;
+		}
 
 		
 	</style>
@@ -78,34 +82,6 @@
 			<div id="header-wrap">
 				<div class="container">
 					<div class="header-row justify-content-lg-between">
-						
-					
-						<!-- Primary Navigation
-						============================================= -->
-					
-						<nav class="primary-menu with-arrows order-lg-1 order-last px-0">
-
-							<ul class="menu-container">
-								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture.html">
-										<div class="menu-font">레시피</div>
-									</a>
-								</li>
-								<li class="menu-item">
-									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
-								</li>
-								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture-about.html">
-										<div class="menu-font">공지사항/Q&A</div>
-									</a>
-								</li>
-								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
-									<div class="menu-font">마이페이지</div>
-								</a></li>
-							</ul>
-
-						</nav><!-- #primary-menu end -->
 						
 						<!-- Logo
 						============================================= -->
