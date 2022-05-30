@@ -7,9 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-import com.coobby.user.feed.FeedRepository;
-import com.coobby.user.recipe.RecipeRepository;
+import com.coobby.repository.FeedRepository;
+import com.coobby.repository.RecipeRepository;
 
 @Service
 public class DashBoardServiceImpl implements DashBoardService{
