@@ -80,7 +80,7 @@
 							<!-- Top 로그인
 							============================================= -->
 							<div id="userimgcontain">
-								<img id="userimg" src="/resources/images/about/1.jpg" alt="" />
+								<img id="userimg" src="/resources/user/images/about/1.jpg" alt="" />
 							</div>
 							<!-- 비로그인 시 
 							<div id="top-search" class="header-misc-icon">
