@@ -3,6 +3,7 @@ package com.coobby.user.recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.RecipeRepository;
 import com.coobby.vo.RecipeVO;
 
 @Service

@@ -31,8 +31,15 @@
 			height:55px;
 			border-radius:50%;
 		}
-		#userimgcontain{
-			margin-right:10px;
+		#logo{
+			position : absolute;
+			
+			right : 45%;
+			
+		}
+		#header-wrap{
+			position : relative;
+			width : 100%;
 		}
 		#useridcontainer{
 			width:auto;
@@ -42,20 +49,29 @@
 			width:auto;
 			margin-right:10px; 
 		}
-		#logout{
-			
+		#wrapper{
+			width : 100%;	
 		}
+		
+		.header-size-sm #header-wrap #logo img {
+		   width:150px;
+		   height:30px;
+		}
+
 		
 	</style>
 
 </head>
 
 <body class="stretched">
-
+	
 	<!-- Cart Panel Background
 	============================================= -->
 	<div class="body-overlay"></div>
-
+	<div id="primary-menu-trigger">
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256"><defs><style>.a,.c{fill:none;}.b{fill:var(--themecolor);opacity:0.2;}.c,.d{stroke:var(--themecolor);}.c{stroke-miterlimit:10;stroke-width:14px;}.d{stroke-linecap:round;stroke-linejoin:round;stroke-width:13px;}</style></defs><rect class="a" width="24" height="24"/><circle class="b" cx="96" cy="96" r="96" transform="translate(32 32)"/><circle class="c" cx="96" cy="96" r="96" transform="translate(32 32)"/><line class="d" x2="85" transform="translate(86 127)"/><line class="d" x2="85" transform="translate(86 97)"/><line class="d" x2="85" transform="translate(86 159)"/></svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="var(--themecolor)" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"></rect><circle cx="128" cy="128" r="96" opacity="0.2"></circle><circle cx="128" cy="128" r="96" fill="none" stroke="var(--themecolor)" stroke-miterlimit="10" stroke-width="16"></circle><line x1="160" y1="96" x2="96" y2="160" fill="none" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line><line x1="160" y1="160" x2="96" y2="96" fill="none" stroke="var(--themecolor)" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line></svg>
+	</div>
 
 	<!-- Document Wrapper
 	============================================= -->
@@ -67,20 +83,20 @@
 			<div id="header-wrap">
 				<div class="container">
 					<div class="header-row justify-content-lg-between">
-
+						
 						<!-- Logo
 						============================================= -->
 						<div id="logo" class="mx-auto col-auto flex-column order-2">
-							<a href="demo-furniture.html" class="standard-logo">COOBBY</a>
-							<a href="demo-furniture.html" class="retina-logo">COOBBY</a>
+							<a href="demo-furniture.html" class="standard-logo"><img src="/resources/img/coobbylogo.png" /></a>
+							<a href="demo-furniture.html" class="retina-logo"><img src="/resources/img/coobbylogo.png" /></a>
 						</div><!-- #logo end -->
 
-						<div class="header-misc col-auto col-lg-3 order-3 justify-content-lg-end ms-0 ms-sm-3 px-0">
+						<div class="header-misc col-auto order-3 justify-content-lg-end ms-0 ms-sm-3 px-0">
 
 							<!-- Top 로그인
 							============================================= -->
 							<div id="userimgcontain">
-								<img id="userimg" src="/resources/images/about/1.jpg" alt="" />
+								<img id="userimg" src="/resources/user/images/about/1.jpg" alt="" />
 							</div>
 							<!-- 비로그인 시 
 							<div id="top-search" class="header-misc-icon">
@@ -104,7 +120,7 @@
 							-->
 							<!-- #top-cart end -->
 							<div id="myfeed">
-								<a href="#" class="">나의 피드보기</a>
+								<a href="/user/feed/MyFeed" class="">나의 피드보기</a>
 							</div>
 							<div id="logout">
 								<a href="#" class="">로그아웃</a>
@@ -125,20 +141,21 @@
 
 							<ul class="menu-container">
 								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture.html">
+									<!-- 추후에 레시피 목록으로 경로 바꾸기 -->
+									<a class="menu-link" href="/user/recipe/recipedetail?reNo=13">
 										<div class="menu-font">레시피</div>
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
+									<a href="/user/feed/MyFeed" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture-about.html">
+									<a class="menu-link" href="/user/QnA/QnAlist">
 										<div class="menu-font">공지사항/Q&A</div>
 									</a>
 								</li>
 								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
+								<li class="menu-item"><a class="menu-link" href="/user/mypage/MemberFavorites">
 									<div class="menu-font">마이페이지</div>
 								</a></li>
 							</ul>

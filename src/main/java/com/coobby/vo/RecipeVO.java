@@ -16,38 +16,46 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="RECIPE")
+@Table(name="recipe")
 public class RecipeVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="re_no")
 	private Integer reNo;
-	
+
 	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name="re_createtime")
 	private String reCreatetime;
-	
+
 	@Column(name="re_updatetime")
 	private String reUpdatetime;
-	
+
 	@Column(name="re_title")
 	private String reTitle;
-	
+
 	@Column(name="re_content")
 	private String reContent;
-	
+
 	@Column(name="re_tip")
 	private String reTip;
-	
+
 	@Column(name="re_video_url")
 	private String reVideoUrl;
-	
+
 	@Column(name="re_cook")
 	private String reCook;
-	
+
 	@ManyToOne
 	@JoinColumn(name="mem_id")
 	private MemberVO memberVO;
+<<<<<<< HEAD
 	
+=======
+
+	@ManyToOne
+	@JoinColumn(name="cate_code")
+	private CategoryVO categoryVO;
+
+>>>>>>> bded3f84f70e69bbe46598dbc531e391de78ed16
 	@OneToMany(mappedBy ="recipeVO")
 	List<Recipe_imageVO> recipe_imageVO;
 

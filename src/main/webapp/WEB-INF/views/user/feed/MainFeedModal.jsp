@@ -30,11 +30,11 @@
 							<!-- Product Description
 							============================================= -->
 							<div class="col-md-6 product-desc content-sticky">
-								<h2 class="mb-3 fw-normal">${feedmodal.fe_title }</h2>
+								<h2 class="mb-3 fw-normal">${feedmodal.feTitle }</h2>
 								<!-- 내용 -->
 								<!-- 유저정보 -->
 								<div id="feeduser">
-									<h3 class="userId mb-4 fw-semibold">${feedmodal.mem_id }</h3>
+									<h3 class="userId mb-4 fw-semibold">${feedmodal.memId }</h3>
 									<a href="#"><img src="/resources/images/heart.png" alt="test" id="heartlike"></a>
 									<a href="#">
 									<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-chat-dots" viewBox="0 0 16 16">
@@ -44,7 +44,7 @@
 									</a>						
 								</div>
 								<div class="line my-5"></div>
-								<div class="feedcon">${feedmodal.fe_content }</div>
+								<div class="feedcon">${feedmodal.feContent }</div>
 								<div class="line my-5"></div>
 								<div class="feedcomment input-group">
 									<textarea id="write_content" placeholder="댓글을 입력해주세요" class="form-control" maxlength="1000" style="resize: none; height: 35px;" ></textarea>

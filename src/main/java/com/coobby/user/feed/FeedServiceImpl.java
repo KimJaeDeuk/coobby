@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+//import com.coobby.repository.FeedImageRepository;
+import com.coobby.repository.FeedRepository;
 import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 
@@ -15,8 +17,8 @@ public class FeedServiceImpl implements FeedService {
 	
 	@Autowired
 	private FeedRepository feedRepo;
-	@Autowired
-	private FeedImageRepository feedimgrepo;
+//	@Autowired
+//	private FeedImageRepository feedimgrepo;
 	 
 	private static final String DATE_PATTERN = "yyyy-MM-dd"; 
 	private static final Date today = new Date();
@@ -36,7 +38,7 @@ public class FeedServiceImpl implements FeedService {
 //		imgvo.setFeStoredImage(fvo.getFeStoredImage());
 //		imgvo.setFeOriginImage(fvo.getFeOriginImage());
 		
-		feedimgrepo.save(fvo);
+//		feedimgrepo.save(fvo);
 	}
 	
 	// 마이피드 상세보기

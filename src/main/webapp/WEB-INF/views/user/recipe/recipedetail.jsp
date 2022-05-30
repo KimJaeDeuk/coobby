@@ -13,25 +13,25 @@
 	rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
 
-<link rel="stylesheet" href="/resources/css/bootstrap.css"
+<link rel="stylesheet" href="/resources/user/css/bootstrap.css"
 	type="text/css" />
-<link rel="stylesheet" href="/resources/style.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/style.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/dark.css" type="text/css" />
 
-<link rel="stylesheet" href="/resources/css/font-icons.css"
+<link rel="stylesheet" href="/resources/user/css/font-icons.css"
 	type="text/css" />
-<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/magnific-popup.css"
+<link rel="stylesheet" href="/resources/user/css/animate.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/magnific-popup.css"
 	type="text/css" />
 
-<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!--  Recipes Demo Specific Stylesheet -->
-<link rel="stylesheet" href="/resources/css/colors.php?color=267DF4"
+<link rel="stylesheet" href="/resources/user/css/colors.php?color=267DF4"
 	type="text/css" />
 <!-- Theme Color -->
-<link rel="stylesheet" href="/resources/demos/recipes/css/fonts.css"
+<link rel="stylesheet" href="/resources/user/demos/recipes/css/fonts.css"
 	type="text/css" />
 <!-- Theme Font -->
 <link rel="stylesheet" href="/resources/demos/recipes/recipes.css"
@@ -58,7 +58,7 @@
 		============================================= -->
 		<section id="slider"
 			class="slider-element dark parallax include-header"
-			style="background: #1ABC9C url('demos/recipes/images/recipe-single.jpg') center center/cover; padding: 230px 0;"
+			style="background: #1ABC9C url('resources/user/demos/recipes/images/recipe-single.jpg') center center/cover; padding: 230px 0;"
 			data-0="background-position:0px -200px;"
 			data-400="background-position:0px -100px;">
 			<div class="container clearfix">
@@ -82,23 +82,23 @@
 								<div class="col-lg-8 mt-5 mt-lg-0">
 								  <h4>사진</h4>
 									<div class="bxslider">
-									   <div><img src="/resources/images/about/1.jpg" alt=""/></div>
-									   <div><img src="/resources/images/about/2.jpg" alt=""/></div>
-									   <div><img src="/resources/images/about/3.jpg" alt=""/></div>
+									   <div><img src="/resources/user/images/about/1.jpg" alt=""/></div>
+									   <div><img src="/resources/user/images/about/2.jpg" alt=""/></div>
+									   <div><img src="/resources/user/images/about/3.jpg" alt=""/></div>
 									 </div>
 									 <div id="recipeseqcontainer">
 										<h4>조리 순서</h4>
 										<ol class="list-unstyled list-preparation">
 											<li class="recipeseq">
 												<div>${ recipe.reCook }</div>
-												<img class="recipeimg" src="/resources/images/about/1.jpg"
+												<img class="recipeimg" src="/resources/user/images/about/1.jpg"
 												alt="" />
 											</li>
 										</ol>
 									</div>
 									<h4>조리 영상</h4>
 									<div class="rounded position-relative dark mb-5"
-										style="background: url('/resources/demos/recipes/images/recipe-week.jpg') no-repeat center center/cover; min-height: 300px;">
+										style="background: url('/resources/user/demos/recipes/images/recipe-week.jpg') no-repeat center center/cover; min-height: 300px;">
 										<a href="https://www.youtube.com/watch?v=P3Huse9K6Xs"
 											data-lightbox="iframe" class="play-video stretched-link">
 											<i class="icon-play"></i>
@@ -123,7 +123,7 @@
 													<div class="comment-meta">
 														<div class="comment-author vcard">
 															<span class="comment-avatar clearfix"> <img
-																alt="Image" src="/resources/demos/articles/images/authors/2.jpg"
+																alt="Image" src="/resources/user/demos/articles/images/authors/2.jpg"
 																class="avatar avatar-60 photo avatar-default"
 																height="60" width="60" /></span>
 														</div>
@@ -220,7 +220,7 @@
 													<div class="comment-meta">
 														<div class="comment-author vcard">
 															<span class="comment-avatar clearfix"> <img
-																alt="Image" src="/resources/demos/articles/images/authors/1.jpg"
+																alt="Image" src="/resources/user/demos/articles/images/authors/1.jpg"
 																class="avatar avatar-60 photo" height="60" width="60" /></span>
 														</div>
 													</div>
@@ -277,7 +277,7 @@
 								<div class="col-lg-4">
 									<div id="writercontain"
 										class="single_sidebar_widget author_widget">
-										<img class="writerimg" src="/resources/images/about/${ recipe.memberVO.memStoredimage }"
+										<img class="writerimg" src="/resources/user/images/about/${ recipe.memberVO.memStoredimage }"
 											alt="" />
 										<!-- 작성자 이름 -->
 										<h4>${ recipe.memberVO.memName }</h4>
@@ -293,7 +293,7 @@
 									<ul class="list-unstyled list-ingredients bg-light p-4">
 										<c:forEach items="${ ingr }" var="ingr">
 											<li data-bs-toggle="modal" data-bs-target="#contactFormModal" class="ingrcontainer">
-												<img class="ingrimg" src="/resources/images/about/1.jpg" alt="" />
+												<img class="ingrimg" src="/resources/user/images/about/${ ingr.INGR_STORED_IMAGE }" alt="" />
 												<div class="ingrcenter">${ ingr.INGR_NAME }</div>
 												<div class="ingrcount">${ ingr.INGR_COUNT }</div>
 											</li>
@@ -306,12 +306,12 @@
 											<h4 class="mb-0">관련 레시피</h4>
 										</div>
 										<div class="relrecipecontainer">
-											<img class="relrecipeimg" src="/resources/images/about/1.jpg"
+											<img class="relrecipeimg" src="/resources/user/images/about/1.jpg"
 												alt="" />
 											<div>레시피명</div>
 										</div>
 										<div class="relrecipecontainer">
-											<img class="relrecipeimg" src="/resources/images/about/1.jpg"
+											<img class="relrecipeimg" src="/resources/user/images/about/1.jpg"
 												alt="" />
 											<div>레시피명</div>
 										</div>
@@ -447,7 +447,7 @@
 								data-bs-dismiss="modal" aria-hidden="true"></button>
 						</div>
 						<div id="ingrcontainer">
-							<img id="ingrimg" src="/resources/images/about/1.jpg" alt="" />
+							<img id="ingrimg" src="/resources/user/images/about/1.jpg" alt="" />
 						</div>
 						<div class="modal-body">
 
@@ -614,12 +614,12 @@
 	============================================= -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 	<script src="/resources/js/myjs/recipebxside.js"></script>
 	<script src="/resources/user/recipe/js/recipedetail.js" type="text/javascript"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 </body>
 </html>
