@@ -183,7 +183,7 @@ background-color: white;
 	<!-- Document Wrapper
 	============================================= -->
 	<div id="wrapper" class="clearfix">
-		<jsp:include page="../nav-bar/user-nav.jsp" />
+		<jsp:include page="../user-nav.jsp" />
 
 		<!-- #header end -->
 

@@ -265,12 +265,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/Feed/js/myfeed.js"></script>
 	<script type="text/javascript" src="/resources/user/Feed/js/UploadMyFeed.js"></script>
 

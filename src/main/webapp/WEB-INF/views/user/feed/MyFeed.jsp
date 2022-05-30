@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="/resources/user/css/animate.css" type="text/css" />
 	<link rel="stylesheet" href="/resources/user/css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Furniture Demo Specific Theme Stylesheet - #193532 -->
@@ -75,15 +75,15 @@
 							<a href="insertFeed" class="button button-border button-rounded button-yellow"><i class="icon-pencil"></i>작성하기</a>
 						</div>
 						<!-- 마이 피드 내용 -->
-						<div id="myfeed2" role="tabpanel" aria-labelledby="home-tab" class="row">						
-						<div class="product">						
+						<div id="myfeed2" role="tabpanel" aria-labelledby="home-tab">						
+						<div class="product col-6 col-md-12 row">						
 							<c:forEach items="${ feedList}" var="feed">
-								<div class="grid-inner col-lg-3 col-md-4 col-sm-6 col-12">
+								<div class="col-md-3">
 									<form action="/uploadimg" method="post" enctype="multipart/form-data">
 									<div class="product-image">
 										<img src="#" alt="feed image" />
 										<div>
-											<a href="MyFeedModal?fe_no=${feed.feNo }" class="btn btn-light" data-lightbox="ajax">
+											<a href="MyFeedModal?feNo=${feed.feNo }" class="btn btn-light" data-lightbox="ajax">
 											<div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400"></div>
 										</a>
 										</div>
@@ -235,12 +235,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/Feed/js/myfeed.js"></script>
 	
 	

@@ -1,4 +1,4 @@
-package com.coobby.user.feed;
+package com.coobby.repository;
 
 import java.util.List;
 

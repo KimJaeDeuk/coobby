@@ -28,8 +28,7 @@ public class FeedVO {
 	private String feContent;
 
 	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
-	@Temporal(TemporalType.DATE)
-	private Date feRegdate;
+	private String feRegdate;
 	@Column(name="fe_replycheck")
 	private int feReplycheck;
 	@Column(name="mem_id")

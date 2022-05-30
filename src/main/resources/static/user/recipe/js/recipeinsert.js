@@ -3,7 +3,7 @@ $("#ingrplusbtn").click(() => {
 })
 
 $("#recipeplusbtn").click(() => {
-	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/images/about/1.jpg" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">Default file input example</label><input id="input-image" class="form-control" type="file" id="formFile"></div></li>')
+	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/user/images/about/1.jpg" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">Default file input example</label><input id="input-image" class="form-control" type="file" id="formFile"></div></li>')
 })
 
 function readImage(input) {

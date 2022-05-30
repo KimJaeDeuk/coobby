@@ -54,29 +54,30 @@ public class FeedController {
 
 		// 피드 작성페이지
 		@RequestMapping("/saveFeed")
-		public String saveFeed(FeedVO vo, FeedImageVO fvo , HttpServletRequest request, @RequestPart MultipartFile uploadfiles) throws Exception {			
+		public String saveFeed(FeedVO vo) {			
 			
 			// 파일 업로드
-			FeedImageVO imgvo = new FeedImageVO();
-			
-			String originFileName = uploadfiles.getOriginalFilename();
-			String originFileNameExtenstion = FilenameUtils.getExtension(originFileName).toLowerCase();
-			File storedFile;
-			String storedFileName;
-			String FileUrl = "C:/coobby/src/main/resoures/static/user/Feed/images/";
-			
-			do {
-				storedFileName = RandomStringUtils.randomAlphanumeric(32) + "." + originFileNameExtenstion;
-				storedFile = new File(FileUrl + storedFileName);
-			} while (storedFile.exists());
-			
-			storedFile.getParentFile().mkdirs();
-			uploadfiles.transferTo(storedFile);
-			
-			imgvo.setFeStoredImage(storedFileName);
-			imgvo.setFeOriginImage(originFileName);
-			
-			feedService.insertFeed(vo, imgvo);
+//			FeedImageVO fvo , HttpServletRequest request, @RequestPart MultipartFile uploadfiles => feedVO 괄호 안에 들어갈 것들
+//			FeedImageVO imgvo = new FeedImageVO();
+//			
+//			String originFileName = uploadfiles.getOriginalFilename();
+//			String originFileNameExtenstion = FilenameUtils.getExtension(originFileName).toLowerCase();
+//			File storedFile;
+//			String storedFileName;
+//			String FileUrl = "C:/coobby/src/main/resoures/static/user/Feed/images/";
+//			
+//			do {
+//				storedFileName = RandomStringUtils.randomAlphanumeric(32) + "." + originFileNameExtenstion;
+//				storedFile = new File(FileUrl + storedFileName);
+//			} while (storedFile.exists());
+//			
+//			storedFile.getParentFile().mkdirs();
+//			uploadfiles.transferTo(storedFile);
+//			
+//			imgvo.setFeStoredImage(storedFileName);
+//			imgvo.setFeOriginImage(originFileName);
+//			
+//			feedService.insertFeed(vo, imgvo);
 			
 			return "redirect:MyFeed";
 		}
@@ -99,29 +100,7 @@ public class FeedController {
 			return "no";
 			
 		}
-		
-		// 이미지 업로드
-		
-		
-		
-		
-		 
-		// 이미지 업로드
-//		@PostMapping()
-//		public String uploadImage(@RequestParam("files") List<MultipartFile> files) throws Exception {
-//			String rootPath = FileSystemView.getFileSystemView().getHomeDirectory().toString();
-//			String basePath = rootPath + "/" + "multi";
-//			
-//			// 파일 업로드 (여러개) 처리
-//			for(MultipartFile file : files) {
-//				String originalName = file.getOriginalFilename();
-//				String filePath = basePath + "/" + originalName;
-//				
-//				File dest = new File(filePath);
-//				file.transferTo(dest);
-//			}
-//			return "uploaded";
-//		}
+
 		
 	// ------------------------- 메인피드
 		// 마이피드 목록 출력
