@@ -115,69 +115,6 @@
 										</tr>
 										</c:if>
 										</c:forEach>
-										<%-- <tr>
-											<td><div class="btn btn-default btn-block 2">방법별</div></td>
-											<td class="tableLine">
-											<c:if test="${howCate != null }">
-													<c:forEach var="how" items="${howCate}">
-														<span class="smallCate btn btn-default inputText" name="howName">
-														${how.howName}
-														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
-														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-														</svg>
-														<input type="hidden" name="howName" class="hiddenName" value="${how.howName}"/>
-														</span>
-													</c:forEach>
-												</c:if>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-plus-circle smallCateAdd" viewBox="0 0 16 16">
-		  											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-		  											<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-												</svg>
-											</td>
-										</tr>
-										<tr>
-											<td><div class="btn btn-default btn-block 3">재료별</div></td>
-											<td class="tableLine">
-											<c:if test="${ingrCate != null }">
-													<c:forEach var="ingr" items="${ingrCate}">
-														<span class="smallCate btn btn-default inputText" name="ingrName">
-														${ingr.ingrName}
-														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
-														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-														</svg>
-														<input type="hidden" name="ingrName" class="hiddenName" value="${ingr.ingrName}"/>
-														</span>
-													</c:forEach>
-												</c:if>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-plus-circle smallCateAdd" viewBox="0 0 16 16">
-		  											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-		  											<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-												</svg>
-											</td>
-										</tr>
-										<tr>
-											<td><div class="btn btn-default btn-block 4">상황별</div></td>
-											<td class="tableLine">
-											<c:if test="${situCate != null }">
-													<c:forEach var="situ" items="${situCate}">
-														<span class="smallCate btn btn-default inputText" name="situName">
-														${situ.situName}
-														<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="red" class="bi bi-dash-circle smallCateDel" viewBox="0 0 16 16">
-														  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-														  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/>
-														</svg>
-														<input type="hidden" name="situName" class="hiddenName" value="${situ.situName}"/>
-														</span>
-													</c:forEach>
-												</c:if>
-											<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="blue" class="bi bi-plus-circle smallCateAdd" viewBox="0 0 16 16">
-		  											<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-		  											<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-												</svg>
-											</td>
-										</tr> --%>
 									</tbody>
 								</table>
 								</form>
@@ -252,7 +189,7 @@
 				$('.cateModify').val($(this).text().trim());
 				cateDetail = $(this).children('input:eq(0)').val();
 				smallChoose = $(this);
-				$('.bCateParent').html('<div class="btn btn-default btn-block BicCate">'+$(this).parent().prev().children().text()+'</div>')	// 대분류가 무엇인지 찾고 삽입
+				$('.bCateParent').html('<div class="btn btn-default btn-block BigCate">'+$(this).parent().prev().children().text()+'</div>')	// 대분류가 무엇인지 찾고 삽입
 				$('span').removeAttr('id');
 				$('span').removeAttr('style');
 				$(this).attr('id','clickCate');
@@ -295,8 +232,9 @@
 			});
 			
 			//수정 버튼을 눌렀을때 진행되는 과정
-			$('.modify').click(function(){
-				if(smallChoose.text() != ''){	//값이 있음을 체크하고 ajax로 update
+			$(document).on('click','.modify',function(){
+				console.log(smallChoose.text().trim());
+				if(smallChoose.text().trim() != ''){	//값이 있음을 체크하고 ajax로 update
 					$.ajax({
 						type : 'PUT',
 						url : 'updateCate',
@@ -321,7 +259,7 @@
 								cateName : $('.cateModify').val()}),
 						contentType: "application/json; charset=utf-8",
 						success : function(data) {
-							smallCateCode = data["cateCode"];
+							smallCateCode = data;
 							console.log('Ajax성공');
 						},
 						error : function(err) {
@@ -330,7 +268,6 @@
 						}
 					});
 				}
-					
 					
 				smallChoose.html('')
 				smallChoose.append($('.cateModify').val()+

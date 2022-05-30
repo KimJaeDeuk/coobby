@@ -2,6 +2,8 @@ package com.coobby.user.map;
 
 import java.util.List;
 
+import com.coobby.vo.MapVO;
+
 public interface MapService {
 	//오프라인 매장 위치 
 	public List<Object[]> getStoreLoc(Double lat, Double lon);

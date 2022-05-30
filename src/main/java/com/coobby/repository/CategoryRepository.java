@@ -24,25 +24,25 @@ public interface CategoryRepository extends CrudRepository<CategoryVO, Integer>{
 	public CategoryVO findByCateName(String cateName);
 
 	// user
-	// 종류별 카테고리 조회
+	// 종류별 카테고리 검색
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 1 ORDER BY cate_code  ",
 			nativeQuery=true)
 	List<Object[]> kindCategory();
 
-	// 방법별 카테고리 조회
+	// 방법별 카테고리 검색
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 2 ORDER BY cate_code  ",
 			nativeQuery=true)
 	List<Object[]> howCategory();
 
-	// 재료별 카테고리 조회
+	// 재료별 카테고리 검색
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 3 ORDER BY cate_code  ",
 			nativeQuery=true)
 	List<Object[]> ingrCategory();
 
-	// 상황별 카테고리 조회
+	// 상황별 카테고리 검색
 	@Query(value="SELECT cate_code, cate_name from category  "
 			+ " WHERE cate_detail_parent_lev = 4 ORDER BY cate_code  ",
 			nativeQuery=true)

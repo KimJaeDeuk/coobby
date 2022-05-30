@@ -1,4 +1,4 @@
-package com.coobby.user.recipe.comment;
+package com.coobby.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
