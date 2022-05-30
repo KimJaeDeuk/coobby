@@ -139,6 +139,86 @@ div.content-wrap > div > #uploadFile {
 	justify-content: center;
 }
 
+/* ------------------------- chatting  -------------------------------------- */
+/* 채팅방 목록 */
+
+.roomContainer{
+	background-color: #F6F6F6;
+	width: 500px;
+	height: 500px;
+	overflow: auto;
+	text-aligh:center;
+	margin:0 auto;
+}
+.roomList{
+	border: none;
+}
+.roomList th{
+	border: 1px solid #FFBB00;
+	background-color: #fff;
+	color: #FFBB00;
+}
+.roomList td{
+	border: 1px solid #FFBB00;
+	background-color: #fff;
+	text-align: left;
+	color: #FFBB00;
+}
+.roomList .num{
+	width: 75px;
+	text-align: center;
+}
+.roomList .room{
+	width: 350px;
+}
+.roomList .go{
+	width: 71px;
+	text-align: center;
+}
+button{
+	background-color: #FFBB00;
+	font-size: 14px;
+	color: #000;
+	border: 1px solid #000;
+	border-radius: 5px;
+	padding: 3px;
+	margin: 3px;
+}
+.inputTable {
+	position:absolute;
+	left:30%;
+}
+.inputTable th{
+	padding: 5px;
+}
+.inputTable input{
+	width: 330px;
+	height: 25px;
+}
+
+/* 채팅방 내부 */
+
+.chating{
+	background-color: #000;
+	width: 500px;
+	height: 500px;
+	overflow: auto;
+}
+.chating .me{
+	color: #F6F6F6;
+	text-align: right;
+}
+.chating .others{
+	color: #FFE400;
+	text-align: left;
+}
+input{
+	width: 330px;
+	height: 25px;
+}
+#yourMsg{
+	display: none;
+}
 
 
 

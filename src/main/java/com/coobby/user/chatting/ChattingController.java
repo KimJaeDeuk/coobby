@@ -31,10 +31,10 @@ public class ChattingController {
 	 * 방 페이지
 	 * @return
 	 */
-	@RequestMapping("/room")
+	@RequestMapping("/MyFeed")
 	public ModelAndView room() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("room");
+		mv.setViewName("MyFeed");
 		return mv;
 	}
 	
@@ -78,9 +78,9 @@ public class ChattingController {
 		if(new_list != null && new_list.size() > 0) {
 			mv.addObject("roomName", params.get("roomName"));
 			mv.addObject("roomNumber", params.get("roomNumber"));
-			mv.setViewName("chat");
+			mv.setViewName("/user/feed/chat");
 		}else {
-			mv.setViewName("room");
+			mv.setViewName("/user/feed/MyFeed");
 		}
 		return mv;
 	}

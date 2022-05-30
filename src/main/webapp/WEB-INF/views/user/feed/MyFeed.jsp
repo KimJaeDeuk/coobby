@@ -33,12 +33,13 @@
 	<!-- / -->
 	<!-- CSS -->
 	<link rel="stylesheet" href="/resources/user/Feed/css/Feed.css" type="text/css" />
+	
 
 
 	<!-- Document Title
 	============================================= -->
 	<title> COOBBY | 마이피드 </title>
-
+	
 </head>
 
 <body class="stretched">
@@ -101,7 +102,6 @@
 						<!-- 채팅 내용 -->
 						<div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
 						<div class="container">
-							<h4>채팅방 목록</h4>
 							<div id="roomContainer" class="roomContainer">
 								<table id="roomList" class="roomList"></table>
 							</div>
@@ -122,7 +122,7 @@
 
 					<div class="clear"></div>
 
-					<nav aria-label="Page navigation">
+					<nav aria-label="Page navigation" class="Feedpaging">
 						<ul class="pagination justify-content-center mt-4">
 							<li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
 							<li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -153,6 +153,7 @@
 	============================================= -->
 	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/Feed/js/myfeed.js"></script>
+	<script src="/resources/user/Feed/js/Chatting.js"></script>
 	
 	
 

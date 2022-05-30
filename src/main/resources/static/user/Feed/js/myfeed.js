@@ -11,6 +11,7 @@ $(function(){
     $('#chat_tab').click(function(){
         $('#myfeed2').hide();
         $('#writefeed').hide();
+        $('.Feedpaging').hide();
         $('#chatting').show();
         
     })
