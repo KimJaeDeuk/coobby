@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	@RequestMapping("/admin")
 public class reportController {
 	
+	private ReportService reportService;
 
 		@RequestMapping("Report/report")
 		public void report() {
