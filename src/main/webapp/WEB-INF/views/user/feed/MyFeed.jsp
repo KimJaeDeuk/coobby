@@ -101,7 +101,7 @@
 						<!-- 채팅 내용 -->
 						<div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
 						<div class="container">
-							<h1>채팅방 목록</h1>
+							<h4>채팅방 목록</h4>
 							<div id="roomContainer" class="roomContainer">
 								<table id="roomList" class="roomList"></table>
 							</div>
