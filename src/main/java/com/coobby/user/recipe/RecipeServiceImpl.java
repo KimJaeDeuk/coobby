@@ -3,12 +3,14 @@ package com.coobby.user.recipe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.RecipeRepository;
 import com.coobby.vo.RecipeVO;
 
 @Service
 public class RecipeServiceImpl implements RecipeService{
 	
-	@Autowired private RecipeRepository recipeRepo;
+	@Autowired 
+	private RecipeRepository recipeRepo;
 	
 	public RecipeVO getrecipe(RecipeVO revo) {
 		return recipeRepo.findById(revo.getReNo()).get();

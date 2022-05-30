@@ -1,4 +1,4 @@
-package com.coobby.user.map;
+package com.coobby.vo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

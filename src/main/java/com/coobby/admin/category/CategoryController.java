@@ -19,15 +19,9 @@ public class CategoryController {
 	
 	@RequestMapping("/category")
 	public void categoryManage(Model m) {
-		
-		m.addAttribute("kindCate",cateService.kindList());
-		m.addAttribute("howCate",cateService.howList());
-		m.addAttribute("ingrCate",cateService.ingrList());
-		m.addAttribute("situCate",cateService.situList());
+		m.addAttribute("cateList",cateService.getCateList());
+	
 	}
-	@RequestMapping("/cateSave")
-	public String saveCategory(String[] kind_name, String[] how_name, String[] ingr_name, String[] situ_name) {
-		cateService.saveCategory(kind_name, how_name, ingr_name, situ_name);
-		return "redirect:/admin/category";
-	}
+	
+	
 }

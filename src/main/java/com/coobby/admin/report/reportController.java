@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class reportController {
 	
 
-		@RequestMapping("report")
+		@RequestMapping("Report/report")
 		public void report() {
 			
 		}
