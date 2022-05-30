@@ -26,8 +26,8 @@ public class RecipeController {
 	private CategoryRepository cateRepo;
 	@Autowired
 	private RecipeRepository recipeRepo;
-	//@Autowired
-	//private CookRepository cookRepo;
+	@Autowired
+	private CookRepository cookRepo;
 	
 	@RequestMapping("recipeinsert")
 	public void recipeinsert(Model m) {
@@ -76,7 +76,7 @@ public class RecipeController {
 		// 레시피정보, 작성자정보 가져오기
 		RecipeVO recipeResult = recipeRepo.findById(reNo).get();
 		List<HashMap> cookResult = new ArrayList<HashMap>();
-		/*List<Object[]> getCook = cookRepo.getingr(reNo);
+		List<Object[]> getCook = cookRepo.getingr(reNo);
 		for(Object[] result : getCook) {
 			HashMap hm = new HashMap();
 			hm.put("INGR_COUNT",result[0]);
@@ -94,7 +94,7 @@ public class RecipeController {
 		}
 		
 		m.addAttribute("ingr", cookResult);
-		m.addAttribute("recipe", recipeResult);*/
+		m.addAttribute("recipe", recipeResult);
 	}
 	
 	@RequestMapping("recipesave")

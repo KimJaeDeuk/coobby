@@ -14,29 +14,29 @@
 	href="https:/fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap"
 	rel="stylesheet">
 
-<link rel="stylesheet" href="/resources/css/bootstrap.css"
+<link rel="stylesheet" href="/resources/user/css/bootstrap.css"
 	type="text/css" />
-<link rel="stylesheet" href="/resources/style.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/style.css" type="text/css" />
 
-<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/font-icons.css"
+<link rel="stylesheet" href="/resources/user/css/dark.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/font-icons.css"
 	type="text/css" />
-<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
-<link rel="stylesheet" href="/resources/css/magnific-popup.css"
+<link rel="stylesheet" href="/resources/user/css/animate.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/magnific-popup.css"
 	type="text/css" />
 
-<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- Furniture Demo Specific Theme Stylesheet - #193532 -->
-<link rel="stylesheet" href="/resources/css/colors.php?color=193532"
+<link rel="stylesheet" href="/resources/user/css/colors.php?color=193532"
 	type="text/css" />
 
 <!-- Furniture Demo Specific Stylesheet -->
-<link rel="stylesheet" href="/resources/demos/furniture/furniture.css"
+<link rel="stylesheet" href="/resources/user/demos/furniture/furniture.css"
 	type="text/css" />
 <!-- Furniture Custom Css -->
-<link rel="stylesheet" href="/resources/demos/furniture/css/fonts.css"
+<link rel="stylesheet" href="/resources/user/demos/furniture/css/fonts.css"
 	type="text/css" />
 <!-- Furniture Custom Fonts -->
 <!-- / -->
@@ -265,12 +265,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/Feed/js/myfeed.js"></script>
 	<script type="text/javascript" src="/resources/user/Feed/js/UploadMyFeed.js"></script>
 

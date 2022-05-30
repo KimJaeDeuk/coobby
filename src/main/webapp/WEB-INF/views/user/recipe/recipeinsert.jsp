@@ -12,28 +12,28 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="/resources/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/style.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/style.css" type="text/css" />
 
-	<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/components/ion.rangeslider.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/components/ion.rangeslider.css" type="text/css" />
 
 	<!-- Furniture Demo Specific Theme Stylesheet - #193532 -->
-	<link rel="stylesheet" href="/resources/css/colors.php?color=193532" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/colors.php?color=193532" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Furniture Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="/resources/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
-	<link rel="stylesheet" href="/resources/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
+	<link rel="stylesheet" href="/resources/user/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
+	<link rel="stylesheet" href="/resources/user/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
 	<link rel="stylesheet" href="/resources/user/recipe/css//recipeinsert.css" type="text/css"/>
 	<!-- / -->
 
@@ -173,7 +173,7 @@
 											<li>
 												<div class="recipeinsertcontainer">
 													<textarea class="recipeinsert" name="reCook" rows="7" placeholder="내용을 입력해주세요"></textarea>
-													<img id="preview-image" class="recipeimg" src="/resources/images/about/1.jpg" alt="" />
+													<img id="preview-image" class="recipeimg" src="/resources/user/images/about/1.jpg" alt="" />
 												</div>
 												<div class="mb-3">
 												  <label for="formFile" class="form-label">Default file input example</label>
@@ -336,12 +336,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/recipe/js/recipeinsert.js"></script>
 
 </body>
