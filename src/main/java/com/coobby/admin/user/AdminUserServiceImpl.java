@@ -15,8 +15,8 @@ public class AdminUserServiceImpl implements AdminUserService{
 	private AdminUserRepository adminUserRepo;
 	
 	@Override
-	public List<MemberVO> adminMemberList(MemberVO vo) {
-		return null; //(List<MemberVO>)adminUserRepo.findAll();
+	public List<MemberVO> adminMemberList() {
+		return adminUserRepo.OrderByMemCreatetimeDesc();
 	}
 
 	

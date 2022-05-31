@@ -6,6 +6,6 @@ import com.coobby.vo.MemberVO;
 
 public interface AdminUserService {
 
-	public List<MemberVO> adminMemberList(MemberVO vo);
+	public List<MemberVO> adminMemberList();
 	
 }

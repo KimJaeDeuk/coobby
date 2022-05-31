@@ -18,8 +18,8 @@ public class AdminUserController {
 	
 	@RequestMapping("AdminUser/adminUser")
 	public void getAdminUser(Model m) {
-		MemberVO vo = new MemberVO();
-		List<MemberVO> list = adminUserService.adminMemberList(vo);
+		List<MemberVO> list = adminUserService.adminMemberList();
+		
 		m.addAttribute("memlist", list);
 	}
 }
