@@ -1,4 +1,4 @@
-package com.coobby.admin.report;
+package com.coobby.repository;
 
 import java.util.List;
 

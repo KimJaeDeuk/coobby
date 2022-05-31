@@ -71,7 +71,7 @@
 					</a>
 						</li>
 					<div class="space"></div>
-					<li class="nav-item"><a href="#" class="nav-link"> <svg
+					<li class="nav-item"><a href="/admin/AdminUser/adminUser" class="nav-link"> <svg
 								xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 								fill="currentColor" class="bi bi-people navi"
 								viewBox="0 0 16 16">
@@ -132,7 +132,7 @@
 							
 						</ul></li>
 					<div class="space"></div>
-					<li class="nav-item"><a href="admin/tlsrh" class="nav-link"> <svg
+					<li class="nav-item"><a href="/admin/Report/report" class="nav-link"> <svg
 								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-exclamation-octagon-fill navi"
 								viewBox="0 0 16 16">
