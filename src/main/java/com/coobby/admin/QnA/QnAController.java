@@ -16,4 +16,5 @@ public class QnAController {
 	public String listpage() {
 		return "/admin/QnA/listpage";
 	}
+	
 }

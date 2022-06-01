@@ -41,6 +41,12 @@
 		#footer {
 			margin-top: 100px;
 		}
+		#connect{
+		border : 3px solid #e2d9d9;
+		padding-top : 5%;
+		border-radius : 5% 5% 3% 3%;
+		padding-bottom : 5%;
+		}
 	</style>
 	<!-- Document Title
 	============================================= -->
@@ -61,7 +67,7 @@
 
   <div class="page-wrapper">
     <div class="container">
-      <div class="row" style="margin-top: 20px;">
+      <div class="row" style="margin-top: 20px;" id="connect">
         <!--사이드 -->
         <div class="col-md-3" style="border-right: 2px solid; height:100%">
           <aside class="sidebar" >
@@ -94,11 +100,11 @@
                     <!-- 사이드 닫음 -->
 			<div class="col-md-9" style="display: flex; justify-content: center;">   
 			<br/><br/>
-				<div class="text-center" style="text-align: center;">
+				<div class="text-center" style="text-align: center; width:100%;">
 				 <h2>1대1 문의글 리스트</h2><br/>
 
 			 <a href="inqueryinsert"><button type="button" class="btn btn-main" id="writebtn2" style="background-color: gray; color: white; float:right; margin-top: -40px;">문의글 작성</button></a>
-				<div class="table-responsive" style="width: 800px;">
+				<div class="table-responsive">
 				<table class="table table-bordered mb-0">
 				 <thead>
 					<tr>
@@ -126,6 +132,8 @@
 			</div>
 		</div>
        </div>
+      </div>
+     </div>
   <!--================End Checkout Area =================-->
 
 

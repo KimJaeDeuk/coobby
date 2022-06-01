@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,8 +22,10 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-		<!-- Left navbar links -->
+		<jsp:include page="../navbar/admin-nav.jsp"/>
+
+<!--   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+		Left navbar links
 		<ul class="navbar-nav">
 			<li class="nav-item"><a class="nav-link" data-widget="pushmenu"
 				href="#" role="button"><i class="fas fa-bars"></i></a></li>
@@ -43,15 +46,15 @@
 				</div>
 			</li>
 		</ul>
-	</nav>
+	</nav> -->
 	<!-- /.navbar -->
 
 	<!-- Main Sidebar Container -->
-	<aside class="main-sidebar sidebar-dark-primary elevation-4">
-		<!-- Brand Logo -->
-		<!-- Sidebar -->
+<!-- 	<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		Brand Logo
+		Sidebar
 		<div class="sidebar">
-			<!-- Sidebar user panel (optional) -->
+			Sidebar user panel (optional)
 			<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 
 				<div class="info">
@@ -59,15 +62,15 @@
 				</div>
 			</div>
 
-			<!-- SidebarSearch Form -->
+			SidebarSearch Form
 
 
-			<!-- Sidebar Menu -->
+			Sidebar Menu
 			<nav class="mt-2">
 				<ul class="nav nav-pills nav-sidebar flex-column"
 					data-widget="treeview" role="menu" data-accordion="false">
-					<!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
+					Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library
 					<li class="nav-item"><a href="dashboard" class="nav-link">
 							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-motherboard navi"
@@ -171,10 +174,10 @@
 						</li>
 				</ul>
 			</nav>
-			<!-- /.sidebar-menu -->
+			/.sidebar-menu
 		</div>
-		<!-- /.sidebar -->
-	</aside>
+		/.sidebar
+	</aside> -->
 
 
   <!-- Content Wrapper. Contains page content -->
@@ -219,36 +222,23 @@
                   </tr>
                   </thead>
                   <tbody>
+                  <c:forEach items="${boardList }" var="list">
                   <tr>
-                    <td>1</td>
-                    <td style="text-align:left;">공지사항 제목</td>
-                    <td>2022-05-01</td>
-                    <td>대기중</td>
+                    <td>${list.boardNo}</td>
+                    <td style="text-align:left;">${list.boardTitle}</td>
+                    <td>${list.boardCreatetime }</td>
+                    <td>
+                    <c:choose>
+                    	<c:when test="${list.boardImp eq 0 }">
+                    		-
+                    	</c:when>
+                    	<c:otherwise>
+                    		상단 고정
+                    	</c:otherwise>
+                    </c:choose>
+                    </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td style="text-align:left;">제목</td>
-                    <td>작성일</td>
-                    <td>공지중</td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td style="text-align:left;">제목</td>
-                    <td>작성일</td>
-                    <td>대기중</td>
-                  </tr>
-                  <tr>
-                    <td >4</td>
-                    <td style="text-align:left;">제목</td>
-                    <td>작성일</td>
-                    <td>공지중</td>
-                  </tr>
-                  <tr>
-                    <td>5</td>
-                    <td style="text-align:left;">제목</td>
-                    <td>작성일</td>
-                    <td>공지중</td>
-                  </tr>
+                  </c:forEach>
                   </tbody>
                 </table>
               </div>

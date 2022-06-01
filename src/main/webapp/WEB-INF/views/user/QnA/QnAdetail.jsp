@@ -54,7 +54,7 @@
   <div class="text-center" style="text-align: center;">
     <h2>Q&A 상세페이지</h2><br/>
    </div>
-   <main>        
+   <main id="connect">        
       <!--? Hero Area Start-->
        <div class="slider-area ">
           <hr/>
@@ -93,7 +93,7 @@
      </table>	
      <a href="QnAlist">
      <button type="button"
-         class="btn btn-secondary m-2" id="btnQnAList">목록보기</button></a>			
+         class="btn btn-secondary m	-2" id="btnQnAList">목록보기</button></a>		
      </div>	
    </div>
    </main>
@@ -208,7 +208,7 @@
 		</footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
-	</div>
+
 
 	<!-- Go To Top
 	============================================= -->

@@ -211,7 +211,7 @@
                   <thead>
                   <tr>
                     <th style="width: 8.33%;">번호</th>
-                    <th style="width: 40%;">제목</th>
+                    <th style="width: 30%;">제목</th>
                     <th>작성일</th>
                     <th style="width: 8.33%;">상태</th>
                   </tr>
@@ -325,6 +325,13 @@
       "autoWidth": false,
       "responsive": true,
     });
+  });
+  
+  $("#button").click(function(){
+  $("#item").html("");   
+  $("input[name=itemChk]:checked").each(function() {
+  $("#item").append("<div class='col-xs-4'></div>"); 
+  	});
   });
 </script>
 </body>

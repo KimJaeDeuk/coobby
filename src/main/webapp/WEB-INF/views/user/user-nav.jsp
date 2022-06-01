@@ -133,13 +133,13 @@
 									<a href="feed/MainFeed.jsp" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
-									<a class="menu-link" href="demo-furniture-about.html">
+									<a class="menu-link" href="nav-announce">
 										<div class="menu-font">공지사항/Q&A</div>
 									</a>
 								</li>
 								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
-									<div class="menu-font">마이페이지</div>
+								<li class="menu-item"><a class="menu-link" href="/user/mypage/MemberFavorites">
+									<div class="menu-font">마이페이지</div>	
 								</a></li>
 							</ul>
 

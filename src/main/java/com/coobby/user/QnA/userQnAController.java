@@ -1,4 +1,4 @@
-package com.coobby.controller;
+package com.coobby.user.QnA;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,4 +17,10 @@ public class userQnAController {
 		return "/user/QnA/QnAdetail";
 	}
 	
+	@RequestMapping("QnA/nav-announce")
+	public String BoardList_2() {
+	return "/user/QnA/nav-announce";
+	}
+	
 }
+ 

@@ -41,6 +41,12 @@
 		#footer {
 		margin-top: 100px;
 		}
+		#connect{
+			border : 3px solid #e2d9d9;
+			padding-top : 5%;
+			border-radius : 5% 5% 3% 3%;
+		}
+		
 	</style>
 	<!-- Document Title
 	============================================= -->
@@ -71,7 +77,7 @@
   </section>
   <div class="page-wrapper">
     <div class="container">
-      <div class="row" style="margin-top: 20px;">
+      <div class="row" style="margin-top: 20px;" id="connect">
         <!--사이드 -->
         <div class="col-md-3" style="border-right: 2px solid; height:100%">
           <aside class="sidebar" >
@@ -127,7 +133,7 @@
 					 <hr/>
 				 <div class="butto" style="text-align: right;">
 					<a href="inquery"><button type="submit" class="btn btn-secondary m-2" id="Writebtn" style="background-color: blue; color: aliceblue;">등록하기</button></a> 
-						<a href="inquery"><button type="button" class="btn btn-secondary m-2" id="Cancelbtn1">취소하기</button></a>   
+						<a href="inquery"><button type="button" class="btn btn-secondary m-2" id="">목록보기</button></a>   
 				</div> 	 
 				   </form>  
 				  </div>

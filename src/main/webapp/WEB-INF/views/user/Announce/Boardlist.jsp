@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -30,7 +31,11 @@
 	<link rel="stylesheet" href="/resources/user/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
 	<link rel="stylesheet" href="/resources/user/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
 	<!-- / -->
-
+	<style>
+		#footer {
+			margin-top: 100px;
+		}
+	</style>
 	<!-- Document Title
 	============================================= -->
 	<title>Furniture | Canvas</title>
@@ -70,53 +75,19 @@
                <tr>
                 <th style="width: 16.6%;">번호</th>
                 <th style="width: 40%;">제목</th>
-                <th style="width: 20%;">담당자</th>
                 <th>작성일</th>
                 <th style="width: 8.33%;">조회수</th>
               </tr>
               </thead>
               <tbody>
-                <tr>
-                 <td>1</td>
-                 <td style="text-align:left">공지사항 제목입니다.</td>
-                 <td>관리자</td>
-                 <td>2022-05-05</td>
-                 <td>12</td>
-                </tr>
-                <tr>
-                 <td>2</td>
-                 <td style="text-align:left">공지사항</td>
-                 <td>관리자</td>
-                 <td>2022-04-25</td>
-                 <td>23</td>
-                <tr>
-                 <td>3</td>
-                 <td style="text-align:left">공지사항</td>
-                 <td>관리자</td>
-                 <td>2022-04-02</td>
-                 <td>12</td>
-                </tr>
-                <tr>  
-                 <td>4</td>
-                 <td style="text-align:left">공지사항</td>
-                 <td>관리자</td>
-                 <td>2022-03-26</td>
-                 <td>34</td>
-                </tr>
-                <tr>
-                 <td>5</td>
-                 <td style="text-align:left">공지사항</td>
-                 <td>관리자</td>
-                 <td>2022-03-11</td>
-                 <td>34</td>
-                </tr>
-                <tr>
-                 <td>6</td>
-                 <td style="text-align:left">공지사항</td>
-                 <td>관리자</td>
-                 <td>2022-03-01</td>
-                 <td>65</td>
-                </tr>
+			 <c:forEach items="${boardList}" var="list">
+			<tr>
+			    <td>${list.boardNo}</td>
+                    <td style="text-align:left;">${list.boardTitle}</td>
+                    <td>${list.boardCreatetime }</td>
+                    <td>${list.boardViewcnt}</td>
+            </tr>
+              </c:forEach>
               </tbody>
             </table>
           </form>
@@ -244,7 +215,6 @@
 		</footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
-	</div>
 
 	<!-- Go To Top
 	============================================= -->

@@ -78,41 +78,41 @@
 				<tbody>
 				  <tr>
 				   <td>1</td>
-				   <td style="text-align:left">공지사항 제목입니다.</td>
+				   <td style="text-align:left"><a href="QnAdetail">제목입니다.</a></td>
 				   <td>관리자</td>
 				   <td>2022-05-05</td>
 				   <td>답변 완료</td>
 				  </tr>
 				  <tr>
 				   <td>2</td>
-				   <td style="text-align:left">공지사항</td>
+				   <td style="text-align:left">질문제목</td>
 				   <td>관리자</td>
 				   <td>2022-04-25</td>
 				   <td>답변 대기</td>
 				  <tr>
 				   <td>3</td>
-				   <td style="text-align:left">공지사항</td>
+				   <td style="text-align:left">질문제목</td>
 				   <td>관리자</td>
 				   <td>2022-04-02</td>
 				   <td>답변 대기</td>
 				  </tr>
 				  <tr>  
 				   <td>4</td>
-				   <td style="text-align:left">공지사항</td>
+				   <td style="text-align:left">질문제목</td>
 				   <td>관리자</td>
 				   <td>2022-03-26</td>
 				   <td>답변 완료</td>
 				  </tr>
 				  <tr>
 				   <td>5</td>
-				   <td style="text-align:left">공지사항</td>
+				   <td style="text-align:left">질문제목</td>
 				   <td>관리자</td>
 				   <td>2022-03-11</td>
 				   <td>답변 대기</td>
 				  </tr>
 				  <tr>
 				   <td>6</td>
-				   <td style="text-align:left">공지사항</td>
+				   <td style="text-align:left">질문제목</td>
 				   <td>관리자</td>
 				   <td>2022-03-01</td>
 				   <td>답변 대기</td>
@@ -122,9 +122,12 @@
 			</form>
 		  </div>
 		 </div>
+	 <a href="/user/mypage/inqueryinsert">
+     <button type="button"
+         class="btn btn-main" id="btnQnAwrite" style="background-color: gray; color: white; float:right; margin-right:235px;">등록하기</button></a>	
 		</div>
 		<nav aria-label="Page navigation">
-			<ul class="pagination justify-content-center mt-4">
+			<ul class="pagination justify-content-center mt-6">
 			   <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
 			   <li class="page-item"><a class="page-link" href="#">2</a></li>
 			   <li class="page-item"><a class="page-link" href="#">3</a></li>
