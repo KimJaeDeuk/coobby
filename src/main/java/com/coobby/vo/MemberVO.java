@@ -62,5 +62,5 @@ public class MemberVO {
 	
 	@Column(name="report_cnt")
 	private Integer reportCnt;
-
 }
+
