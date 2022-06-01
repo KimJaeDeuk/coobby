@@ -10,4 +10,8 @@ import com.coobby.vo.RecipeVO;
 
 public interface RecipeRepository extends CrudRepository<RecipeVO, Integer>{
 	public List<RecipeVO> findByReCreatetime(String currentDate);
+	
+	
+	
+	//public Object recentFeedCnt();
 }

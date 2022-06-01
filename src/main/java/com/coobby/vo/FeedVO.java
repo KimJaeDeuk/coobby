@@ -30,7 +30,7 @@ public class FeedVO {
 	@Column(insertable = false, updatable = false, columnDefinition = "date default (current_date)", name="fe_regdate")
 	private String feRegdate;
 	@Column(name="fe_replycheck")
-	private int feReplycheck;
+	private Integer feReplycheck;
 	@Column(name="mem_id")
 	private String memId;
 }

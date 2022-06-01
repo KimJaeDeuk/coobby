@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.coobby.repository.CategoryRepository;
 import com.coobby.repository.CookRepository;
 import com.coobby.repository.RecipeRepository;
-import com.coobby.vo.CategoryVO;
 import com.coobby.vo.RecipeVO;
 
 @Controller
@@ -29,47 +28,47 @@ public class RecipeController {
 	@Autowired
 	private CookRepository cookRepo;
 
-	@RequestMapping("recipeinsert")
-	public void recipeinsert(Model m) {
-		List<CategoryVO> kindresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> howresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> ingrresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> situresult = new ArrayList<CategoryVO>();
-		List<Object[]> kind = cateRepo.kindCategory();
-		for(Object[] kindobj : kind) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)kindobj[0]);
-			vo.setCateName((String)kindobj[1]);
-			kindresult.add(vo);
-		}
-		List<Object[]> how = cateRepo.howCategory();
-		for(Object[] howobj : how) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)howobj[0]);
-			vo.setCateName((String)howobj[1]);
-			howresult.add(vo);
-		}
-		List<Object[]> ingr = cateRepo.ingrCategory();
-		for(Object[] ingrobj : ingr) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)ingrobj[0]);
-			vo.setCateName((String)ingrobj[1]);
-			ingrresult.add(vo);
-		}
-		List<Object[]> situ = cateRepo.situCategory();
-		for(Object[] situobj : situ) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)situobj[0]);
-			vo.setCateName((String)situobj[1]);
-			situresult.add(vo);
-		}
-
-		m.addAttribute("kind", kindresult);
-		m.addAttribute("how", howresult);
-		m.addAttribute("ingr", ingrresult);
-		m.addAttribute("situ", situresult);
-
-	}
+//	@RequestMapping("recipeinsert")
+//	public void recipeinsert(Model m) {
+//		List<CategoryVO> kindresult = new ArrayList<CategoryVO>();
+//		List<CategoryVO> howresult = new ArrayList<CategoryVO>();
+//		List<CategoryVO> ingrresult = new ArrayList<CategoryVO>();
+//		List<CategoryVO> situresult = new ArrayList<CategoryVO>();
+//		List<Object[]> kind = cateRepo.kindCategory();
+//		for(Object[] kindobj : kind) {
+//			CategoryVO vo = new CategoryVO();
+//			vo.setCateCode((Integer)kindobj[0]);
+//			vo.setCateName((String)kindobj[1]);
+//			kindresult.add(vo);
+//		}
+//		List<Object[]> how = cateRepo.howCategory();
+//		for(Object[] howobj : how) {
+//			CategoryVO vo = new CategoryVO();
+//			vo.setCateCode((Integer)howobj[0]);
+//			vo.setCateName((String)howobj[1]);
+//			howresult.add(vo);
+//		}
+//		List<Object[]> ingr = cateRepo.ingrCategory();
+//		for(Object[] ingrobj : ingr) {
+//			CategoryVO vo = new CategoryVO();
+//			vo.setCateCode((Integer)ingrobj[0]);
+//			vo.setCateName((String)ingrobj[1]);
+//			ingrresult.add(vo);
+//		}
+//		List<Object[]> situ = cateRepo.situCategory();
+//		for(Object[] situobj : situ) {
+//			CategoryVO vo = new CategoryVO();
+//			vo.setCateCode((Integer)situobj[0]);
+//			vo.setCateName((String)situobj[1]);
+//			situresult.add(vo);
+//		}
+//
+//		m.addAttribute("kind", kindresult);
+//		m.addAttribute("how", howresult);
+//		m.addAttribute("ingr", ingrresult);
+//		m.addAttribute("situ", situresult);
+//
+//	}
 
 	@RequestMapping("recipedetail")
 	public void recipedetail(@RequestParam("reNo") Integer reNo, Model m) {

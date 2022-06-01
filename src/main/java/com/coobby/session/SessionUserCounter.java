@@ -18,7 +18,9 @@ public class SessionUserCounter implements HttpSessionListener{
 	public static int count = 0;
 	
 	public static int getCount() {
-		return count;
+		if(count==0)
+			return count;
+		return count-1;
 	}
 	
 	public void sessionCreated(HttpSessionEvent event) {
