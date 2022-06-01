@@ -135,7 +135,9 @@
 							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3><%=SessionUserCounter.getCount()%></h3>
+									<h3><%=SessionUserCounter.getCount()%><sup
+											style="font-size: 20px">명</sup>
+									</h3>
 
 									<p>현재 접속 회원 수</p>
 								</div>
@@ -163,10 +165,6 @@
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
 												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
 											</div>
 										</div>
 										<div class="card-body">
@@ -184,21 +182,17 @@
 								<div class="col-md-6">
 									<div class="card card-danger">
 										<div class="card-header">
-											<h3 class="card-title">Donut Chart</h3>
+											<h3 class="card-title">레시피·피드 등록</h3>
 
 											<div class="card-tools">
 												<button type="button" class="btn btn-tool"
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
 												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
 											</div>
 										</div>
 										<div class="card-body">
-											<canvas id="donutChart"
+											<canvas id="reFeedCnt"
 												style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
 										</div>
 										<!-- /.card-body -->
@@ -218,10 +212,6 @@
 												<button type="button" class="btn btn-tool"
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
-												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
 												</button>
 											</div>
 										</div>
@@ -248,10 +238,6 @@
 												<button type="button" class="btn btn-tool"
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
-												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
 												</button>
 											</div>
 										</div>
@@ -290,16 +276,19 @@
 	<script src="/resources/admin/dist/js/adminlte.min.js"></script>
 	<script>
 // 차트를 그럴 영역을 dom요소로 가져온다.
-		var chartArea = document.getElementById('sexRate').getContext('2d');
-		// 차트를 생성한다.
+	$(function(){
+		var sexArea = document.getElementById('sexRate').getContext('2d');
+		var reFeedCnt = document.getElementById('reFeedCnt').getContext('2d');
+		
+		
 		menData=[]
 		womenData=[]
-		labels= ['10대','20대','30대','40대','50대','60대','70대'];
-		for(var i =0; i<labels.length ; i++){
+		labels= ['10대','20대','30대','40대','50대','60대','70대'];			//라벨
+		for(var i =0; i<labels.length ; i++){							//men과 women에 값을 넣음
 			<c:forEach items="${ageGroup}" var="items" varStatus="status">
 				men = menData.length
 				women = womenData.length
-				if('${items[0]}'== labels[i]){
+				if('${items[0]}'== labels[i]){	//연령대 index값이 같다면 데이터 입력
 					menData.push(${items[1]});
 					womenData.push(${items[2]});
 					continue;
@@ -313,7 +302,7 @@
 			}
 		}
 			
-		var myChart = new Chart(chartArea, {
+		var myChart = new Chart(sexArea, {
 		    // ①차트의 종류(String)
 		    type: 'bar',
 		    // ②차트의 데이터(Object)
@@ -343,6 +332,38 @@
 		        }
 		    }
 		});
+	    var myChart = new Chart(reFeedCnt, {
+		    // ①차트의 종류(String)
+		    type: 'line',
+		    // ②차트의 데이터(Object)
+		    data: {
+		        // ③x축에 들어갈 이름들(Array)
+		        labels: labels,
+		        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
+		      datasets: [{
+            label: '남자',
+            backgroundColor: "#1E90FF",
+            data: menData
+        }, {
+            label: '여자',
+            backgroundColor: "#F7464A",
+            data: womenData
+        }]
+		    },
+		    // ⑩차트의 설정(Object)
+		    options: {
+		        // ⑪축에 관한 설정(Object)
+		        scales: {
+		            // ⑫y축에 대한 설정(Object)
+		            y: {
+		                // ⑬시작을 0부터 하게끔 설정(최소값이 0보다 크더라도)(boolean)
+		                beginAtZero: true
+		            }
+		        }
+		    }
+	    
+		});
+		})
 	</script>
 </body>
 </html>

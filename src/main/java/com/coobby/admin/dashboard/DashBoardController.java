@@ -18,8 +18,9 @@ public class DashBoardController {
 		 m.addAttribute("todayRecipeCnt", dashService.todayRecipe());//당일 게시물 수
 		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
 		 m.addAttribute("todayFeedCnt", dashService.todayFeed());
-
 		 m.addAttribute("ageGroup", dashService.ageGroupSexRate());
+//		 m.addAttribute("feedDate",dashService.recentFeedCnt());
+//		 m.addAttribute("recipeDate",dashService.recentRecipeCnt());
 	}
 
 

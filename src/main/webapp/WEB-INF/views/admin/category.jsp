@@ -264,7 +264,7 @@
 			$(document).on('click','.smallCateDel', function(){
 				if($(this).closest('span').text().trim() != ''){					//값이 있던 것이므로 ajax로 delete
 					bigCate = $(this).closest('tr').find('div').text();
-					let CateCode = $(this).next('input').val();/
+					let CateCode = $(this).next('input').val();
 					$.ajax({
 						type : 'DELETE',
 						url : 'deleteCate',
@@ -278,7 +278,6 @@
 							console.log(err);
 						}
 					}); 
-					
 				}
 				$(this).closest('span').remove();	//원래 값이 없던 ajax연동이 됐던 삭제
 			});

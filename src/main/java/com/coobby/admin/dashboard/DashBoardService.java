@@ -15,4 +15,8 @@ public interface DashBoardService {
 
 	List<Object[]> ageGroupSexRate();
 
+	//Object recentFeedCnt();
+
+	//Object recentRecipeCnt();
+
 }
