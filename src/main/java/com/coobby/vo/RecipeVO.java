@@ -1,5 +1,6 @@
 package com.coobby.vo;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -24,7 +27,8 @@ public class RecipeVO {
 	private Integer reNo;
 
 	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name="re_createtime")
-	private String reCreatetime;
+	@Temporal(TemporalType.DATE)
+	private Date reCreatetime;
 
 	@Column(name="re_updatetime")
 	private String reUpdatetime;
@@ -40,6 +44,9 @@ public class RecipeVO {
 
 	@Column(name="re_video_url")
 	private String reVideoUrl;
+	
+	@Column(name="re_viewcnt")
+	private Integer reViewcnt;
 
 	@Column(name="re_cook")
 	private String reCook;
@@ -47,12 +54,29 @@ public class RecipeVO {
 	@ManyToOne
 	@JoinColumn(name="mem_id")
 	private MemberVO memberVO;
-
+	
 	@ManyToOne
-	@JoinColumn(name="cate_code")
-	private CategoryVO categoryVO;
+	@JoinColumn(name="situ_code")
+	private CateSituVO cateSituVO;
+	
+	@ManyToOne
+	@JoinColumn(name="ingr_code")
+	private CateIngrVO cateIngrVO;
+	
+	@ManyToOne
+	@JoinColumn(name="kind_code")
+	private CateKindVO cateKindVO;
+	
+	@ManyToOne
+	@JoinColumn(name="how_code")
+	private CateHowVO cateHowVO;
 
 	@OneToMany(mappedBy ="recipeVO")
 	List<Recipe_imageVO> recipe_imageVO;
+	
+//	@PrePersist
+//    public void reCreatetime() {
+//        this.reCreatetime = LocalDateTime.now();
+//    }
 
 }

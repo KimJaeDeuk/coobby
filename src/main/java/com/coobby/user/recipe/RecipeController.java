@@ -4,17 +4,26 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.coobby.repository.CategoryRepository;
 import com.coobby.repository.CookRepository;
 import com.coobby.repository.RecipeRepository;
-import com.coobby.vo.CategoryVO;
+import com.coobby.vo.CateHowVO;
+import com.coobby.vo.CateIngrVO;
+import com.coobby.vo.CateKindVO;
+import com.coobby.vo.CateSituVO;
+import com.coobby.vo.CookVO;
+import com.coobby.vo.IngrVO;
 import com.coobby.vo.RecipeVO;
+import com.coobby.vo.Recipe_imageVO;
 
 @Controller
 @RequestMapping("user/recipe")
@@ -23,47 +32,17 @@ public class RecipeController {
 	@Autowired
 	private RecipeService recipeService;
 	@Autowired
-	private CategoryRepository cateRepo;
-	@Autowired
 	private RecipeRepository recipeRepo;
 	@Autowired
 	private CookRepository cookRepo;
 
 	@RequestMapping("recipeinsert")
-	public void recipeinsert(Model m) {
-		List<CategoryVO> kindresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> howresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> ingrresult = new ArrayList<CategoryVO>();
-		List<CategoryVO> situresult = new ArrayList<CategoryVO>();
-		List<Object[]> kind = cateRepo.kindCategory();
-		for(Object[] kindobj : kind) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)kindobj[0]);
-			vo.setCateName((String)kindobj[1]);
-			kindresult.add(vo);
-		}
-		List<Object[]> how = cateRepo.howCategory();
-		for(Object[] howobj : how) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)howobj[0]);
-			vo.setCateName((String)howobj[1]);
-			howresult.add(vo);
-		}
-		List<Object[]> ingr = cateRepo.ingrCategory();
-		for(Object[] ingrobj : ingr) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)ingrobj[0]);
-			vo.setCateName((String)ingrobj[1]);
-			ingrresult.add(vo);
-		}
-		List<Object[]> situ = cateRepo.situCategory();
-		for(Object[] situobj : situ) {
-			CategoryVO vo = new CategoryVO();
-			vo.setCateCode((Integer)situobj[0]);
-			vo.setCateName((String)situobj[1]);
-			situresult.add(vo);
-		}
-
+	public void recipeinsert(Model m) {		
+		List<CateHowVO> howresult = recipeService.selectHow();
+		List<CateKindVO> kindresult = recipeService.selectKind();
+		List<CateIngrVO> ingrresult = recipeService.selectIngr();
+		List<CateSituVO> situresult = recipeService.selectSitu();
+		
 		m.addAttribute("kind", kindresult);
 		m.addAttribute("how", howresult);
 		m.addAttribute("ingr", ingrresult);
@@ -98,9 +77,19 @@ public class RecipeController {
 	}
 
 	@RequestMapping("recipesave")
-	public String saverecipe(RecipeVO revo) {
+	public String saverecipe(HttpServletRequest request, HttpServletResponse response, RecipeVO revo, MultipartFile[] file, @RequestParam("ingrCount") String[] ingrCount, @RequestParam("ingrName") String[] ingrName) {
 		System.out.println("레시피 등록");
-		recipeService.saverecipe(revo);
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+		
+		for(int i = 0; i<ingrName.length; i++) {
+			System.out.println(ingrCount[i]);
+			System.out.println(ingrName[i]);
+		}
+		
+		recipeService.saverecipe(revo, file, ingrCount, ingrName);
+//		recipeService.saverecipeimage(reim);
+		
 		return "redirect:recipeinsert";
 	}
 

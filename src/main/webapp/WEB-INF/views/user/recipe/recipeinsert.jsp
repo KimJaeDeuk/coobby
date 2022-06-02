@@ -72,8 +72,10 @@
 
 						<div class="row shadow bg-light border">
 							<div class="col-lg-12 p-5">
-								<form class="row mb-0" id="fitness-form" action="recipesave" method="post">
-									<input type="hidden" name="memId" value="test" />
+								<form class="row mb-0" id="fitness-form" action="recipesave" method="post" enctype="multipart/form-data">
+									<input type="hidden" name="memberVO.memId" value="test" />
+									<input type="hidden" name="reViewcnt" value="0" />
+									<input type="hidden" name="reCreatetime" value="now()" />
 									<div class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scaler"></div>
@@ -120,28 +122,28 @@
 											</div>
 											<div class="col-sm-10">
 												<div class="btn-group d-flex" role="group">
-													<select class="form-select" name="kindName" id="event-registration-interests">
+													<select class="form-select" name="cateKindVO" id="event-registration-interests">
 														<option value="">종류별</option>
 														<c:forEach items="${ kind }" var="catekind">
-															<option value="${ catekind.cateCode }">${ catekind.cateName }</option>
+															<option value="${ catekind.kindCode }">${ catekind.kindName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="situName" id="">
+													<select class="form-select" name="cateSituVO" id="">
 														<option value="">상황별</option>
 														<c:forEach items="${ situ }" var="catesitu">
-															<option value="${ catesitu.cateCode }">${ catesitu.cateName }</option>
+															<option value="${ catesitu.situCode }">${ catesitu.situName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="howName" id="event-registration-interests">
+													<select class="form-select" name="cateHowVO" id="event-registration-interests">
 														<option value="">방법별</option>
 														<c:forEach items="${ how }" var="catehow">
-															<option value="${ catehow.cateCode }">${ catehow.cateName }</option>
+															<option value="${ catehow.howCode }">${ catehow.howName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="ingrName" id="event-registration-interests">
+													<select class="form-select" name="cateIngrVO" id="event-registration-interests">
 														<option value="">재료별</option>
 														<c:forEach items="${ ingr }" var="cateingr">
-															<option value="${ cateingr.cateCode }">${ cateingr.cateName }</option>
+															<option value="${ cateingr.ingrCode }">${ cateingr.ingrName }</option>
 														</c:forEach>
 													</select>
 												</div>
@@ -153,18 +155,15 @@
 									<div class="col-12 form-group">
 										<div id="ingrinputcontainer" class="row">
 											<div class="col-sm-4">
-												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 고추장">
+												<input type="text" name="ingrName" id="fitness-form-age" class="form-control" value="" placeholder="예) 고추장">
 											</div>
 											<div class="col-sm-4">
-												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 2스푼">
+												<input type="text" name="ingrCount" id="fitness-form-age" class="form-control" value="" placeholder="예) 2스푼">
 											</div>
 										</div>
 										<div class="plusbtncontain">
 											<button id="ingrplusbtn" class="button" type="button">추가</button>
 										</div>
-									</div>
-									<div class="col-12 d-none">
-										<input type="text" id="fitness-form-botcheck" name="fitness-form-botcheck" value="" />
 									</div>
 									<hr/>
 									<h4>요리 순서</h4>
@@ -177,7 +176,7 @@
 												</div>
 												<div class="mb-3">
 												  <label for="formFile" class="form-label">Default file input example</label>
-												  <input id="input-image" class="form-control" type="file" id="formFile" accept="image/jpeg, image/jpg, image/png">
+												  <input id="input-image" class="form-control" type="file" id="formFile" name="file" accept="image/jpeg, image/jpg, image/png">
 												</div>
 											</li>
 										</ol>
@@ -191,7 +190,7 @@
 										<div class="mb-3">
 											<label for="formFile" class="form-label">Default file input example</label>
 											<input type="file" class="form-control " id="uploadFile"
-							                  name="uploadFile" accept="image/jpeg, image/jpg, image/png"
+							                  name="file" accept="image/jpeg, image/jpg, image/png"
 							                  multiple />
 										</div>
 									</div>
