@@ -5,6 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.CateHowAdminRepository;
+import com.coobby.repository.CateIngrAdminRepository;
+import com.coobby.repository.CateKindAdminRepository;
+import com.coobby.repository.CateSituAdminRepository;
 import com.coobby.vo.CateHowVO;
 import com.coobby.vo.CateIngrVO;
 import com.coobby.vo.CateKindVO;

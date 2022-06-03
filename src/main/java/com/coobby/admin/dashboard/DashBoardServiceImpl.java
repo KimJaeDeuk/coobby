@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coobby.repository.FeedRepository;
+import com.coobby.repository.MemberRepository;
 import com.coobby.repository.RecipeRepository;
 
 @Service
@@ -26,7 +27,7 @@ public class DashBoardServiceImpl implements DashBoardService{
 
 	@Override
 	public int todayRecipe() {			//당일 레시피 등록 개수
-
+		System.out.println(date.format(today));
 		return recipeRepo.findByReCreatetime(date.format(today)).size();
 	}
 
@@ -45,15 +46,32 @@ public class DashBoardServiceImpl implements DashBoardService{
 	public List<Object[]> ageGroupSexRate() {	//연령대별 회원 성비
 		return memRepo.ageGroupSexRate();
 	}
-//
-//	@Override
-//	public Object recentFeedCnt() {			//최근한달 동안 일자별 피드 등록수
-//		return recipeRepo.recentFeedCnt();
-//	}
-//
-//	@Override
-//	public Object recentRecipeCnt() {		//최근 한달동안 레시피 등록 수
-//		return null;
-//	}
+
+	@Override
+	public List<Object[]> recentFeedCnt() {			//최근한달 동안 일자별 피드 등록수
+		return feedRepo.recentFeedCnt();
+	}
+
+	@Override
+	public List<Object[]> recentRecipeCnt() {		//최근 한달동안 레시피 등록 수
+		return recipeRepo.recentRecipeCnt();
+	}
+	
+	@Override
+	public List<Object[]> weekKktWebMemberCnt(){
+		return memRepo.weekKktWebMemberCnt();
+	}
+
+	@Override
+	public List<Object[]> rangeFeedCnt(String startDate, String endDate) {
+		List<Object[]> list =  feedRepo.rangeFeedCnt(startDate, endDate);
+		return list;
+	}
+
+	@Override
+	public List<Object[]> rangeRecipeCnt(String startDate, String endDate) {
+		List<Object[]> list =  recipeRepo.rangeRecipeCnt(startDate, endDate);
+		return list;
+	}
 
 }

@@ -25,7 +25,7 @@ public class CategoryRestController {
 	}
 	
 	@PutMapping("/updateCate")
-	public void updateCate(String cateName, int cateCode, String cateType ) {
+	public void updateCate(String cateName, Integer cateCode, String cateType ) {
 		cateService.updateCate(cateName, cateCode, cateType);
 	}
 	

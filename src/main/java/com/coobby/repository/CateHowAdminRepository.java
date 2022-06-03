@@ -1,4 +1,4 @@
-package com.coobby.admin.category;
+package com.coobby.repository;
 
 import javax.transaction.Transactional;
 
@@ -8,12 +8,11 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.coobby.vo.CateHowVO;
-import com.coobby.vo.CateKindVO;
 
 
-public interface CateKindAdminRepository extends CrudRepository<CateKindVO, Integer>{
-	
-	@Query(value="SELECT max(kind_code) FROM kind_cate", nativeQuery=true)
+public interface CateHowAdminRepository extends CrudRepository<CateHowVO, Integer>{
+
+	@Query(value="SELECT max(how_code) FROM how_cate", nativeQuery=true)
 	int findMaxCode();
 	
 
