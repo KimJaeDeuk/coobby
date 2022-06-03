@@ -47,4 +47,14 @@ public interface FeedRepository extends CrudRepository<FeedVO, Integer> {
 			+ "      ) m "
 			+ "   ON date_format(c.d, '%m-%d') = m.day", nativeQuery=true)
 	List<Object[]> rangeFeedCnt(@Param("startDate") String startDate, @Param("endDate") String endDate);
+	
+	@Query(value="SELECT t.fe_no, t.fe_stored_image "
+			+ "FROM ( "
+			+ "	select row_number() over() rownum, f.fe_no, fi.fe_stored_image "
+			+ "	from feed f right outer join feed_image fi "
+			+ "	on f.fe_no = fi.fe_no "
+			+ "    group by f.fe_no "
+			+ "	) t "
+			+ "order by rand() limit 9", nativeQuery=true)
+	List<Object[]> mainRandomFeed();
 }

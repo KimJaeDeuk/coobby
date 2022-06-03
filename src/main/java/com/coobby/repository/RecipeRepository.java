@@ -49,4 +49,28 @@ public interface RecipeRepository extends CrudRepository<RecipeVO, Integer>{
 			+ "      ) m "
 			+ "   ON date_format(c.d, '%m-%d') = m.day", nativeQuery = true)
 	public List<Object[]> rangeRecipeCnt(@Param("startDate") String startDate, @Param("endDate") String endDate);
+	
+	
+	@Query(value="select * "
+			+ "FROM (select  "
+			+ "	row_number() over(order by l.re_no desc) rownum, count(*) as likeCnt ,r.re_no, r.re_title,r.re_viewcnt,r.mem_id, ri.re_stored_image "
+			+ "	from recipe r join re_love l  "
+			+ "	on r.re_no = l.re_no  "
+			+ "    left outer join recipe_image ri on r.re_no = ri.re_no "
+			+ "	group by l.re_no "
+			+ "    ) t "
+			+ " where t.rownum <=20 "
+			+ " ORDER BY RAND() LIMIT 7",nativeQuery = true)
+	public List<Object[]> mainTopRecipeList();
+	
+	@Query(value="SELECT * "
+			+ "FROM ( "
+			+ "	select row_number() over(order by r.re_createtime desc) rownum, r.re_no, r.re_title, "
+			+ " ri.re_stored_image "
+			+ "	from recipe r right outer join recipe_image ri "
+			+ "	on r.re_no = ri.re_no "
+			+ "    where ri.re_split = 0 "
+			+ "	) t "
+			+ "where t.rownum <=6 ", nativeQuery=true)
+	public List<Object[]> mainRecentRecipeList();
 }

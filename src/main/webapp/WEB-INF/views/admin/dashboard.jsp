@@ -175,7 +175,7 @@
 								<div class="col-md-6">
 									<div class="card card-danger">
 										<div class="card-header">
-											<h3 class="card-title">최근 일주일 카카오톡 인증 가입 수</h3>
+											<h3 class="card-title">가입 유형</h3>
 
 											<div class="card-tools">
 												<button type="button" class="btn btn-tool"
