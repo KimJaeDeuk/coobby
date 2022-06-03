@@ -14,6 +14,7 @@ public class AdminUserServiceImpl implements AdminUserService{
 	@Autowired
 	private AdminUserRepository adminUserRepo;
 	
+	//회원 관리 목록
 	@Override
 	public List<MemberVO> adminMemberList() {
 		return adminUserRepo.OrderByMemCreatetimeDesc();
