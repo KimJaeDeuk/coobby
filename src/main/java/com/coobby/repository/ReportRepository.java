@@ -9,10 +9,14 @@ import com.coobby.vo.ReportVO;
 
 public interface ReportRepository extends CrudRepository<ReportVO, Integer>{
 
-	/*
-	 * @Query(
-	 * value="SELECT * FROM report WHERE title LIKE %?1% ORDER BY report DESC",
-	 * nativeQuery = true) List<ReportVO> reportCommentList();
-	 */
+	//댓글 신고 목록
+	  @Query( value="SELECT * FROM report WHERE report_type = 0 ORDER BY report_date DESC",
+			  nativeQuery = true)
+	  List<ReportVO> reportCommentList();
+	
+	//게시글 신고 목록
+	  @Query(  value="SELECT * FROM report WHERE report_type = 1 ORDER BY report_date DESC",
+			  nativeQuery = true)
+	  List<ReportVO> reportBoardList();
 	
 }
