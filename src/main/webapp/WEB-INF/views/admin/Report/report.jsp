@@ -123,16 +123,16 @@
                     <td>${colist.reportDate }</td>
                     <c:choose>
 	                    <c:when test="${colist.reportApply eq 0 }">
-	                    	<td><div class="btn btn-block btn-secondary">대기</div></td>
+	                    	<td><div class="btn btn-block btn-light ">신고 대기</div></td>
 	                    </c:when>
 	                    <c:when test="${colist.reportApply eq 1 }">
-	                    	<td><div class="btn btn-block btn-success">완료</div></td>
+	                    	<td><div class="btn btn-block btn-success">신고 완료</div></td>
 	                    </c:when>
 	                    <c:when test="${colist.reportApply eq 2 }">
-	                   	 <td><div class="btn btn-block btn-danger">반려</div></td>
+	                   	 <td><div class="btn btn-block btn-danger">신고 반려</div></td>
 	                    </c:when>
 	                    <c:otherwise>
-	                    <td><div class="btn btn-block btn-info">블랙리스트</div></td>
+	                    <td><div class="btn btn-block btn-dark">블랙리스트</div></td>
 	                    </c:otherwise>
                     </c:choose>
                   </tr>
@@ -182,16 +182,16 @@
                     <td>${bolist.reportDate }</td>
                     <c:choose>
 	                    <c:when test="${bolist.reportApply eq 0 }">
-	                    	<td><div class="btn btn-block btn-secondary">대기</div></td>
+	                    	<td><div class="btn btn-block btn-light">신고 대기</div></td>
 	                    </c:when>
 	                    <c:when test="${bolist.reportApply eq 1 }">
-	                    	<td><div class="btn btn-block btn-success">완료</div></td>
+	                    	<td><div class="btn btn-block btn-success">신고 완료</div></td>
 	                    </c:when>
 	                    <c:when test="${bolist.reportApply eq 2 }">
-	                   	 <td><div class="btn btn-block btn-danger">반려</div></td>
+	                   	 <td><div class="btn btn-block btn-danger">신고 반려</div></td>
 	                    </c:when>
 	                    <c:otherwise>
-	                    <td><div class="btn btn-block btn-info">블랙리스트</div></td>
+	                    <td><div class="btn btn-block btn-dark">블랙리스트</div></td>
 	                    </c:otherwise>
                     </c:choose>
                   </tr>

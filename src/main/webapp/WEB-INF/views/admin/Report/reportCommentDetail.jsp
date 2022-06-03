@@ -84,7 +84,6 @@
               <div class="form-group">
                 <label for="inputStatus">신고 타입</label>
                 <select id="inputStatus" name="reportApply" class="form-control custom-select">
-                  <option selected disabled>신고 타입을 고르세요</option>
                   <option value="1">신고</option>
                   <option value="2">반려</option>
                   <option value="3">블랙리스트</option>
