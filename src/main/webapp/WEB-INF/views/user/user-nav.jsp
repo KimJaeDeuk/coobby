@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html dir="ltr" lang="en-US">
 <head>
@@ -122,9 +123,18 @@
 							<div id="myfeed">
 								<a href="/user/feed/MyFeed" class="">나의 피드보기</a>
 							</div>
-							<div id="logout">
-								<a href="#" class="">로그아웃</a>
-							</div>
+							<c:choose>
+								<c:when test="${session eq null}">
+									<div id="login">
+										<a href="#" class="">로그인</a>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div id="logout">
+										<a href="#" class="">로그아웃</a>
+									</div>
+								</c:otherwise>
+							</c:choose>
 
 						</div>
 

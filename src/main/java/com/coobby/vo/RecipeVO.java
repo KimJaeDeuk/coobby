@@ -15,7 +15,10 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+
 import javax.persistence.PrePersist;
+import javax.persistence.OneToOne;
+
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -68,22 +71,22 @@ public class RecipeVO {
 	@ManyToOne
 	@JoinColumn(name="mem_id")
 	private MemberVO memberVO;
+
+	@OneToOne
+	@JoinColumn(name="how_Code")
+	private CateHowVO cateHow;
 	
-	@ManyToOne
-	@JoinColumn(name="situ_code")
-	private CateSituVO cateSituVO;
+	@OneToOne
+	@JoinColumn(name="ingr_Code")
+	private CateIngrVO cateIngr;
 	
-	@ManyToOne
-	@JoinColumn(name="ingr_code")
-	private CateIngrVO cateIngrVO;
+	@OneToOne
+	@JoinColumn(name="situ_Code")
+	private CateSituVO cateSitu;
 	
-	@ManyToOne
-	@JoinColumn(name="kind_code")
-	private CateKindVO cateKindVO;
-	
-	@ManyToOne
-	@JoinColumn(name="how_code")
-	private CateHowVO cateHowVO;
+	@OneToOne
+	@JoinColumn(name="kind_Code")
+	private CateKindVO cateKind;
 
 	@OneToMany(mappedBy ="recipeVO")
 	List<Recipe_imageVO> recipe_imageVO;
@@ -92,9 +95,5 @@ public class RecipeVO {
 //    public void reCreatetime() {
 //        this.reCreatetime = LocalDate.now();
 //    }
-
-
-	    
-	
 
 }

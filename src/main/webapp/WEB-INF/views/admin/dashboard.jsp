@@ -19,15 +19,7 @@
 <!-- Ionicons -->
 <link rel="stylesheet"
 	href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-<!-- Tempusdominus Bootstrap 4 -->
-<link rel="stylesheet"
-	href="/resources/admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-<!-- iCheck -->
-<link rel="stylesheet"
-	href="/resources/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-<!-- JQVMap -->
-<link rel="stylesheet"
-	href="/resources/admin/plugins/jqvmap/jqvmap.min.css">
+
 <!-- Theme style -->
 <link rel="stylesheet"
 	href="/resources/admin/dist//css/adminlte.min.css">
@@ -38,8 +30,9 @@
 <link rel="stylesheet"
 	href="/resources/admin/plugins/daterangepicker/daterangepicker.css">
 <!-- summernote -->
+
 <link rel="stylesheet"
-	href="/resources/admin/plugins/summernote/summernote-bs4.min.css">
+	href="/resources/admin/plugins/daterangepicker/daterangepicker.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 	<div class="wrapper">
@@ -135,7 +128,9 @@
 							<!-- small box -->
 							<div class="small-box bg-danger">
 								<div class="inner">
-									<h3><%=SessionUserCounter.getCount()%></h3>
+									<h3><%=SessionUserCounter.getCount()%><sup
+											style="font-size: 20px">명</sup>
+									</h3>
 
 									<p>현재 접속 회원 수</p>
 								</div>
@@ -163,10 +158,6 @@
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
 												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
 											</div>
 										</div>
 										<div class="card-body">
@@ -184,21 +175,17 @@
 								<div class="col-md-6">
 									<div class="card card-danger">
 										<div class="card-header">
-											<h3 class="card-title">Donut Chart</h3>
+											<h3 class="card-title">가입 유형</h3>
 
 											<div class="card-tools">
 												<button type="button" class="btn btn-tool"
 													data-card-widget="collapse">
 													<i class="fas fa-minus"></i>
 												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
 											</div>
 										</div>
 										<div class="card-body">
-											<canvas id="donutChart"
+											<canvas id="kktWeb"
 												style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
 										</div>
 										<!-- /.card-body -->
@@ -208,60 +195,33 @@
 							<!-- /.card -->
 
 							<!-- PIE CHART -->
-							<div class="row">
-								<div class="col-md-6">
-									<div class="card card-danger">
-										<div class="card-header">
-											<h3 class="card-title">Pie Chart</h3>
 
-											<div class="card-tools">
-												<button type="button" class="btn btn-tool"
-													data-card-widget="collapse">
-													<i class="fas fa-minus"></i>
-												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
-											</div>
-										</div>
-										<div class="card-body">
-											<canvas id="pieChart"
-												style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-										</div>
-										<!-- /.card-body -->
-									</div>
-								</div>
-								<!-- /.card -->
-
-								<!-- /.col (LEFT) -->
-
-								<!-- /.card -->
-
-								<!-- BAR CHART -->
-								<div class="col-md-6">
-									<div class="card card-success">
-										<div class="card-header">
-											<h3 class="card-title">Bar Chart</h3>
-
-											<div class="card-tools">
-												<button type="button" class="btn btn-tool"
-													data-card-widget="collapse">
-													<i class="fas fa-minus"></i>
-												</button>
-												<button type="button" class="btn btn-tool"
-													data-card-widget="remove">
-													<i class="fas fa-times"></i>
-												</button>
-											</div>
-										</div>
-										<div class="card-body">
-											<div class="chart">
-												<canvas id="barChart"
-													style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-											</div>
+							<div class="col-md-12">
+								<div class="card card-danger">
+									<div class="card-header">
+										<h3 class="card-title">레시피·피드 등록 수</h3>
+											<!-- /.input group -->
+										<div class="card-tools">
+											<button type="button" class="btn btn-tool"
+												data-card-widget="collapse">
+												<i class="fas fa-minus"></i>
+											</button>
 										</div>
 									</div>
+									<div class="card-body">
+										<div class="input-group col-md-12 ajax">
+												<div class="input-group-prepend">
+													<span class="input-group-text"> <i
+														class="far fa-calendar-alt"></i>
+													</span>
+												</div>
+												<input type="text" class="form-control float-right"
+													id="reservation">
+											</div>
+										<canvas id="reFeedCnt"
+											style="min-height: 350px; height: 350px; max-height: 350px; max-width: 100%;"></canvas>
+									</div>
+									<!-- /.card-body -->
 								</div>
 							</div>
 						</div>
@@ -281,25 +241,33 @@
 
 	<!-- jQuery -->
 	<script src="/resources/admin/plugins/jquery/jquery.min.js"></script>
+	<script src="/resources/admin/plugins/moment/moment.min.js"></script>
 	<!-- Bootstrap 4 -->
 	<script
 		src="/resources/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 	<!-- ChartJS -->
-	<script src="/resources/admin/plugins/chart.js/Chart.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
 	<!-- AdminLTE App -->
 	<script src="/resources/admin/dist/js/adminlte.min.js"></script>
+	<script
+		src="/resources/admin/plugins/daterangepicker/daterangepicker.js"></script>
 	<script>
 // 차트를 그럴 영역을 dom요소로 가져온다.
-		var chartArea = document.getElementById('sexRate').getContext('2d');
-		// 차트를 생성한다.
+	$(function(){
+		 $('#reservation').daterangepicker()
+		 
+		document.getElementById('sexRate').getContext('2d');
+		document.getElementById('kktWeb').getContext('2d');
+		
 		menData=[]
 		womenData=[]
-		labels= ['10대','20대','30대','40대','50대','60대','70대'];
-		for(var i =0; i<labels.length ; i++){
+		agelabels= ['10대','20대','30대','40대','50대','60대','70대'];			//라벨
+		for(var i =0; i<agelabels.length ; i++){							//men과 women에 값을 넣음
 			<c:forEach items="${ageGroup}" var="items" varStatus="status">
 				men = menData.length
 				women = womenData.length
-				if('${items[0]}'== labels[i]){
+				if('${items[0]}'== agelabels[i]){	//연령대 index값이 같다면 데이터 입력
 					menData.push(${items[1]});
 					womenData.push(${items[2]});
 					continue;
@@ -312,23 +280,26 @@
 				womenData.push(0)
 			}
 		}
-		console.log(menData + "  " + womenData);
-			
-		var myChart = new Chart(chartArea, {
+		
+		var myChart = new Chart(sexRate, {
 		    // ①차트의 종류(String)
 		    type: 'bar',
 		    // ②차트의 데이터(Object)
 		    data: {
 		        // ③x축에 들어갈 이름들(Array)
-		        labels: labels,
+		        labels: agelabels,
 		        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
 		      datasets: [{
             label: '남자',
-            backgroundColor: "#1E90FF",
+            backgroundColor : 'rgba(54,162,235,0.2)',
+			borderColor : 'rgba(54,162,235,1)',
+			borderWidth : 2,
             data: menData
         }, {
             label: '여자',
-            backgroundColor: "#F7464A",
+            backgroundColor : 'rgba(255,99,132,0.2)',
+			borderColor : 'rgba(255,99,132,1)',
+			borderWidth : 2,
             data: womenData
         }]
 		    },
@@ -344,6 +315,166 @@
 		        }
 		    }
 		});
+		
+		const kktLabel=[]
+		const webLabel=[]
+		const signLabel=[]
+		<c:forEach items="${kktWebCnt}" var="kktWeb">
+		signLabel.push("${kktWeb[0]}")
+		kktLabel.push(${kktWeb[1]})
+		webLabel.push(${kktWeb[2]})
+		</c:forEach>
+		var myChart = new Chart(kktWeb, {
+		    // ①차트의 종류(String)
+		    type: 'bar',
+		    // ②차트의 데이터(Object)
+		    data: {
+		        // ③x축에 들어갈 이름들(Array)
+		        labels: signLabel,
+		        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
+		      datasets: [{
+            label: '카카오인증',
+            backgroundColor : 'rgba(54,162,235,1)',
+            data: kktLabel
+        }, {
+            label: '웹인증',
+            backgroundColor : 'rgba(255,99,132,1)',
+            data: webLabel
+        }]
+		    },
+		    // ⑩차트의 설정(Object)
+		    options: {
+		        // ⑪축에 관한 설정(Object)
+		        responsive : true,
+		        scales: {
+		            x: {
+		              stacked: true,
+		            },
+		            y: {
+		              stacked: true
+		            }
+		          }
+		    }
+		});
+	});
+/* 		const recipeCnt=[]
+		const feedCnt=[]
+		const dateLabel=[]
+		<c:forEach items="${feedDate}" var="date">
+			dateLabel.push("${date[0]}");
+			feedCnt.push(${date[1]});
+		</c:forEach>
+		<c:forEach items="${recipeDate}" var="recipe">
+			recipeCnt.push(${recipe[1]});
+		</c:forEach>
+	
+	
+    var myChart = new Chart(reFeedCnt, {
+	    // ①차트의 종류(String)
+	    type: 'line',
+	    // ②차트의 데이터(Object)
+	    data: {
+	        // ③x축에 들어갈 이름들(Array)
+	        labels: dateLabel,
+	        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
+			datasets: [{
+	            label: '피드',
+				backgroundColor : 'rgba(255,99,132,0.2)',
+				borderColor : 'rgba(255,99,132,1)',
+	            data: feedCnt
+	        }, {
+	            label: '레시피',
+				backgroundColor : 'rgba(54,162,235,0.2)',
+				borderColor : 'rgba(54,162,235,1)',
+	            data: recipeCnt
+	        }],
+		options:{
+			scales:{
+				yAxes:[{
+					ticks :{
+
+						beginAtZero : true
+					}
+					}]
+				}
+			}
+	 	   }
+		}); */
+		 
+		
+		$(document).on('click','.applyBtn',function(){
+			const recipeAjax=[]
+			const feedAjax=[]
+			const dateAjaxLabel=[]
+			let range=""
+			range = $('.drp-selected').text().split(" ~ ");
+			range_s = range[0].split("/");
+			range_e = range[1].split("/");
+			startDate = range_s[2]+"-"+range_s[0]+"-"+range_s[1]
+			endDate = range_e[2]+"-"+range_e[0]+"-"+range_e[1]
+			$.ajax({
+				type : 'GET',
+				url : 'ajaxChart',
+				data : {"startDate" : startDate,
+						"endDate" : endDate},
+				success : function(result){
+					for(var i =0; i<result.length; i++){
+						console.log(result[i])
+						dateAjaxLabel.push(result[i][0])
+						feedAjax.push(result[i][1])
+						recipeAjax.push(result[i][2])
+					}
+					initChart(feedAjax, recipeAjax, dateAjaxLabel);
+					
+				},
+				error : function(err){
+					console.log(err);
+				}
+			});
+		 })
+		
+		 function initChart(fe,re,label){
+			$("canvas#reFeedCnt").remove();
+			$("div.ajax").append('<canvas id="reFeedCnt" style="min-height: 350px; height: 350px; max-height: 350px; max-width: 100%;"></canvas>');
+			
+			
+			
+			
+			var ChartName = document.getElementById('reFeedCnt').getContext('2d');
+				 ChartName = new Chart(reFeedCnt, {
+			    // ①차트의 종류(String)
+			    type: 'line',
+			    // ②차트의 데이터(Object)
+			    data: {
+			        // ③x축에 들어갈 이름들(Array)
+			        labels: label,
+			        // ④실제 차트에 표시할 데이터들(Array), dataset객체들을 담고 있다.
+					datasets: [{
+			            label: '피드',
+						backgroundColor : 'rgba(255,99,132,0.2)',
+						borderColor : 'rgba(255,99,132,1)',
+			            data: fe
+			        }, {
+			            label: '레시피',
+						backgroundColor : 'rgba(54,162,235,0.2)',
+						borderColor : 'rgba(54,162,235,1)',
+			            data: re
+			        }],
+				options:{
+					scales:{
+						yAxes:[{
+							ticks :{
+		
+								beginAtZero : true
+							}
+							}]
+						}
+					}
+			 	   }
+				}); 
+			}
+		
+		
 	</script>
 </body>
 </html>
