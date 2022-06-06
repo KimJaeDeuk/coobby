@@ -5,7 +5,7 @@ $("#ingrplusbtn").click(() => {
 })
 
 $("#recipeplusbtn").click(() => {
-	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" name="reCook" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/user/images/about/1.jpg" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">Default file input example</label><input id="input-image" class="form-control" type="file" id="formFile" name="file" accept="image/jpeg, image/jpg, image/png" /></div></li>')
+	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" name="reCook" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/user/recipe/image/noimage.png" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">조리하는 사진을 선택해주세요.</label><input id="input-image" class="form-control" type="file" id="formFile" name="file" accept="image/jpeg, image/jpg, image/png" /></div></li>')
 })
 
 function readImage(input) {

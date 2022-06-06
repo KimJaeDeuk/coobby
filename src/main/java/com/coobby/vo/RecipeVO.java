@@ -1,5 +1,9 @@
 package com.coobby.vo;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
@@ -11,9 +15,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.Data;
 
@@ -21,14 +31,18 @@ import lombok.Data;
 @Entity
 @Table(name="recipe")
 public class RecipeVO {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="re_no")
 	private Integer reNo;
-
-	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name="re_createtime")
-	@Temporal(TemporalType.DATE)
-	private Date reCreatetime;
+	
+//	@CreatedDate
+//	@DateTimeFormat(pattern="yyyy-MM-dd")
+//	@Column(insertable=false, updatable=false, columnDefinition="DATE DEFAULT (current_date)", name="re_createtime")
+//	@Temporal(TemporalType.DATE)
+	@Column(name="re_createtime")
+	private String reCreatetime;
 
 	@Column(name="re_updatetime")
 	private String reUpdatetime;
@@ -76,7 +90,11 @@ public class RecipeVO {
 	
 //	@PrePersist
 //    public void reCreatetime() {
-//        this.reCreatetime = LocalDateTime.now();
+//        this.reCreatetime = LocalDate.now();
 //    }
+
+
+	    
+	
 
 }

@@ -1,5 +1,8 @@
 package com.coobby.user.recipe;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +17,17 @@ import com.coobby.repository.CookRepository;
 import com.coobby.repository.IngrRepository;
 import com.coobby.repository.RecipeRepository;
 import com.coobby.repository.Recipe_imageRepository;
+import com.coobby.repository.ScrapRepository;
 import com.coobby.vo.CateHowVO;
 import com.coobby.vo.CateIngrVO;
 import com.coobby.vo.CateKindVO;
 import com.coobby.vo.CateSituVO;
 import com.coobby.vo.CookVO;
 import com.coobby.vo.IngrVO;
+import com.coobby.vo.MemberVO;
 import com.coobby.vo.RecipeVO;
 import com.coobby.vo.Recipe_imageVO;
+import com.coobby.vo.ScrapVO;
 
 @Service
 public class RecipeServiceImpl implements RecipeService{
@@ -42,10 +48,38 @@ public class RecipeServiceImpl implements RecipeService{
 	private IngrRepository ingrVORepo;
 	@Autowired
 	private CookRepository cookRepo;
+	@Autowired
+	private ScrapRepository scrapRepo;
 	
 	// 레시피 상세보기
-	public RecipeVO getrecipe(RecipeVO revo) {
-		return recipeRepo.findById(revo.getReNo()).get();
+	public RecipeVO getrecipe(int reNo) {
+		RecipeVO result = recipeRepo.findById(reNo).get();
+		result.setReViewcnt(result.getReViewcnt()+1);
+		recipeRepo.save(result);
+		return result;
+	}
+	
+	//레시피 이미지 가져오기
+	public List<Recipe_imageVO> getImage(int reNo){
+		return imageRepo.getImage(reNo);
+	}
+	
+	//재료 정보 가져오기
+	public List<Object[]> getIngr(int reNo){
+		return cookRepo.getingr(reNo);
+	}
+	
+	// 즐겨찾기 추가
+	public void scrapSave(RecipeVO recipeVO, MemberVO memberVO) {
+		ScrapVO scrapVO = new ScrapVO();
+		scrapVO.setRecipeVO(recipeVO);
+		scrapVO.setMemberVO(memberVO);
+		scrapRepo.save(scrapVO);
+	}
+	
+	// 즐겨찾기 삭제
+	public void scrapDelete(ScrapVO scrapVO) {
+		scrapRepo.delete(scrapVO);
 	}
 	
 	//레시피 입력
@@ -73,6 +107,11 @@ public class RecipeServiceImpl implements RecipeService{
 			cookVO.setRecipeVO(result);
 			cookRepo.save(cookVO);
 		}
+	}
+	
+	//재료 상세보기
+	public IngrVO selectingr(String ingrName) {
+		return ingrVORepo.selectingr(ingrName);
 	}
 	
 	//방법카테고리 검색

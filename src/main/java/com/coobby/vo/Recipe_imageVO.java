@@ -1,8 +1,6 @@
 package com.coobby.vo;
 
 import java.io.File;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
@@ -31,10 +29,10 @@ public class Recipe_imageVO {
 	private String reOriginImage;
 
 	@Column(name = "re_file_size")
-	private int reFileSize;
+	private Integer reFileSize;
 	
 	@Column(name= "re_seq")
-	private int reSeq;
+	private Integer reSeq;
 
 	@ManyToOne
 	@JoinColumn(name = "re_no")
