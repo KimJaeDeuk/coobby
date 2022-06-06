@@ -21,7 +21,10 @@ public class Recipe_imageVO {
 	private String reOriginImage;
 	
 	@Column(name="re_file_size")
-	private int reFileSize;
+	private Integer reFileSize;
+	
+	@Column(name="re_split")
+	private Integer reSplit;
 	
 	@ManyToOne
     @JoinColumn(name="re_no")

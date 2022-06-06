@@ -1,4 +1,4 @@
-package com.coobby.admin.dashboard;
+package com.coobby.repository;
 
 import java.util.List;
 
@@ -28,4 +28,26 @@ public interface MemberRepository extends CrudRepository<MemberVO, String>{
 			+ "GROUP BY age_group "
 			+ "ORDER BY age_group ", nativeQuery=true)
 	List<Object[]> ageGroupSexRate();
+	
+	@Query(value="WITH RECURSIVE cte AS "
+			+ " (  SELECT DATE_ADD(NOW(), INTERVAL -7 day) AS d "
+			+ "   UNION all "
+			+ "   SELECT DATE_ADD(d, INTERVAL 1 day)  AS d "
+			+ "   FROM cte "
+			+ "   WHERE d < DATE_ADD(NOW(), INTERVAL -1 day) ) "
+			+ " SELECT  "
+			+ "   DATE_FORMAT(c.d, '%m-%d') AS day, "
+			+ "   IFNULL(m.kktmember,0) kktmember, "
+			+ "   IFNULL(m.webmember,0) webmember "
+			+ "FROM cte c "
+			+ "   LEFT OUTER JOIN ( "
+			+ "      SELECT DATE_FORMAT(mem_createtime, '%m-%d') day,"
+			+ "            (select count(*) from member where mem_kkt=1) kktmember, "
+			+ "            (SELECT count(*) from member where mem_kkt=0) webmember "
+			+ "      FROM member "
+			+ "      GROUP BY day "
+			+ "      ) m "
+			+ "   ON date_format(c.d, '%m-%d') = m.day", nativeQuery=true)
+	List<Object[]> weekKktWebMemberCnt();
 }
+
