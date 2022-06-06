@@ -19,7 +19,10 @@ public class CategoryController {
 	
 	@RequestMapping("/category")
 	public void categoryManage(Model m) {
-		m.addAttribute("cateList",cateService.getCateList());
+		m.addAttribute("kindList",cateService.getKindList());
+		m.addAttribute("howList",cateService.getHowList());
+		m.addAttribute("ingrList",cateService.getIngrList());
+		m.addAttribute("situList",cateService.getSituList());
 	
 	}
 	

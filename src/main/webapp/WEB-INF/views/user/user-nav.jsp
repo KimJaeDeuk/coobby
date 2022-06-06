@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE>
 <html dir="ltr" lang="en-US">
 <head>
@@ -53,8 +54,9 @@
 			width : 100%;	
 		}
 		
-		nav {
-			margin-right: 30%;
+		.header-size-sm #header-wrap #logo img {
+		   width:150px;
+		   height:30px;
 		}
 
 		
@@ -121,9 +123,18 @@
 							<div id="myfeed">
 								<a href="/user/feed/MyFeed" class="">나의 피드보기</a>
 							</div>
-							<div id="logout">
-								<a href="#" class="">로그아웃</a>
-							</div>
+							<c:choose>
+								<c:when test="${session eq null}">
+									<div id="login">
+										<a href="#" class="">로그인</a>
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div id="logout">
+										<a href="#" class="">로그아웃</a>
+									</div>
+								</c:otherwise>
+							</c:choose>
 
 						</div>
 
@@ -140,20 +151,21 @@
 
 							<ul class="menu-container">
 								<li class="menu-item">
-									<a class="menu-link" href="recipedetail?reNo=13">
+									<!-- 추후에 레시피 목록으로 경로 바꾸기 -->
+									<a class="menu-link" href="/user/recipe/recipedetail?reNo=13">
 										<div class="menu-font">레시피</div>
 									</a>
 								</li>
 								<li class="menu-item">
-									<a href="MyFeed" class="menu-link"><div class="menu-font">피드보기</div></a>
+									<a href="/user/feed/MyFeed" class="menu-link"><div class="menu-font">피드보기</div></a>
 								</li>
 								<li class="menu-item">
-									<a class="menu-link" href="QnA/insertpage">
+									<a class="menu-link" href="/user/QnA/QnAlist">
 										<div class="menu-font">공지사항/Q&A</div>
 									</a>
 								</li>
 								<!-- if문 걸 자리 -->
-								<li class="menu-item"><a class="menu-link" href="feed/MyFeed">
+								<li class="menu-item"><a class="menu-link" href="/user/mypage/MemberFavorites">
 									<div class="menu-font">마이페이지</div>
 								</a></li>
 							</ul>

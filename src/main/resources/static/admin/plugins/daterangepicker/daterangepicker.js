@@ -37,7 +37,7 @@
         this.startDate = moment().startOf('day');
         this.endDate = moment().endOf('day');
         this.minDate = false;
-        this.maxDate = false;
+        this.maxDate = moment();
         this.maxSpan = false;
         this.autoApply = false;
         this.singleDatePicker = false;
@@ -71,7 +71,7 @@
         this.locale = {
             direction: 'ltr',
             format: moment.localeData().longDateFormat('L'),
-            separator: ' - ',
+            separator: ' ~ ',
             applyLabel: 'Apply',
             cancelLabel: 'Cancel',
             weekLabel: 'W',

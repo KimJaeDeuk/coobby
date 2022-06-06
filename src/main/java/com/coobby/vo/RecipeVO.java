@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -47,10 +48,22 @@ public class RecipeVO {
 	@ManyToOne
 	@JoinColumn(name="mem_id")
 	private MemberVO memberVO;
-
-	@ManyToOne
-	@JoinColumn(name="cate_code")
-	private CategoryVO categoryVO;
+	
+	@OneToOne
+	@JoinColumn(name="how_Code")
+	private CateHowVO cateHow;
+	
+	@OneToOne
+	@JoinColumn(name="ingr_Code")
+	private CateIngrVO cateIngr;
+	
+	@OneToOne
+	@JoinColumn(name="situ_Code")
+	private CateSituVO cateSitu;
+	
+	@OneToOne
+	@JoinColumn(name="kind_Code")
+	private CateKindVO cateKind;
 
 	@OneToMany(mappedBy ="recipeVO")
 	List<Recipe_imageVO> recipe_imageVO;

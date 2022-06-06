@@ -15,11 +15,13 @@ public class DashBoardController {
 	@RequestMapping("/dashboard")
 	public void chartMain(Model m) {
 		//m.addAttribute("countBoard",dashService.recipeCount());// 총 게시물 수
-		 m.addAttribute("todayRecipeCnt", dashService.todayRecipe());//당일 게시물 수
-		 m.addAttribute("todaySingUpCnt", dashService.todayUser());
-		 m.addAttribute("todayFeedCnt", dashService.todayFeed());
-
-		 m.addAttribute("ageGroup", dashService.ageGroupSexRate());
+		 m.addAttribute("todayRecipeCnt", dashService.todayRecipe());//당일 레시피 게시 수
+		 m.addAttribute("todaySingUpCnt", dashService.todayUser());//당일 가입 수
+		 m.addAttribute("todayFeedCnt", dashService.todayFeed());// 당일 피드 게시 수
+		 m.addAttribute("ageGroup", dashService.ageGroupSexRate());//연령대별 회원 성비
+		 m.addAttribute("feedDate",dashService.recentFeedCnt());//최근 한달 피드 게시 수
+		 m.addAttribute("recipeDate",dashService.recentRecipeCnt());//최근 한달 레시피 게시 수
+		 m.addAttribute("kktWebCnt", dashService.weekKktWebMemberCnt());//최근 일주 웹가입, kkt가입 여부 수
 	}
 
 
