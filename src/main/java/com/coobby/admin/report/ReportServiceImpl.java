@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
+import com.coobby.repository.MemberRepository;
 import com.coobby.repository.ReportRepository;
 import com.coobby.vo.MemberVO;
 import com.coobby.vo.ReportVO;
@@ -17,7 +17,7 @@ public class ReportServiceImpl implements ReportService {
 	private ReportRepository reportRepo;
 	
 	@Autowired
-	private com.coobby.repository.MemberRepository memRepo;
+	private MemberRepository memRepo;
 	
 	
 	
