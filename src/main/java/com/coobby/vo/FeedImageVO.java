@@ -15,6 +15,8 @@ import javax.persistence.Transient;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.Data;
 
 @Data
@@ -31,8 +33,6 @@ public class FeedImageVO {
 	private int feFileSize;
 	@Column(name = "fe_seq")
 	private int feSeq;
-	// private int fe_no;
-
 	@ManyToOne
 	@JoinColumn(name = "fe_no")
 	private FeedVO feed;

@@ -23,6 +23,10 @@
 	opacity: 0.5;
 }
 
+.detailIngr {
+	color: #444;
+}
+
 .ingrimg{
 	width:50px;
 	height:50px;
@@ -30,7 +34,7 @@
 }
 
 .ingrcenter{
-	width: 60%;
+	width: 80%;
 	margin-left: 5%;
 }
 
@@ -56,6 +60,7 @@
 
 .recipeseq{
 	display: flex;
+	margin-bottom: 30px;
 }
 
 .recipeseq > div {

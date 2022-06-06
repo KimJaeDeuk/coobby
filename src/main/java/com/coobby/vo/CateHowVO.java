@@ -20,4 +20,6 @@ public class CateHowVO {
 
 	@Column(name="how_name")
 	private String howName;
+
 }
+
