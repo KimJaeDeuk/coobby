@@ -184,7 +184,7 @@ button{
 	padding: 3px;
 	margin: 3px;
 }
-.inputTable {
+#chatting .inputTable {
 	position:absolute;
 	left:30%;
 }
@@ -198,20 +198,36 @@ button{
 
 /* 채팅방 내부 */
 
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
 .chating{
-	background-color: #000;
+	background-color: #9bbbd4;
 	width: 500px;
 	height: 500px;
 	overflow: auto;
+	font-size: 25px;
+	padding-top: 5%;
 }
 .chating .me{
-	color: #F6F6F6;
+	color : black;
+	font-weight : bold;
 	text-align: right;
+	font-family: 'GangwonEdu_OTFBoldA';
 }
+
+
 .chating .others{
-	color: #FFE400;
+	color: black;
 	text-align: left;
+	font-family: 'GangwonEdu_OTFBoldA'; 
 }
+
+
 input{
 	width: 330px;
 	height: 25px;
@@ -220,6 +236,13 @@ input{
 	display: none;
 }
 
+.chatcontainer {
+	display:flex;
+}
+
+.chatcont {
+	margin:0 auto;
+}
 
 
 

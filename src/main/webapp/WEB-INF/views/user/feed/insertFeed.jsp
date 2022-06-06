@@ -70,7 +70,7 @@
 			<div class="content-wrap">
 				<div class="container">
 					<input type="file" class="hidden_input " id="uploadFile"
-						name="uploadfiles" multiple />
+						name="file" multiple />
 					<div class="row">
 					<!-- 사진 업로드 -->
 						<div class="col-md-6 uploadpic">
@@ -86,13 +86,13 @@
 							<table class="table">
 								<tr>
 									<td>제목</td>
-									<td><textarea name="fe_title" id="write_content"
+									<td><textarea name="feTitle" id="write_content"
 											class="form-control" maxlength="1000"
 											style="resize: none; height: 30px;"></textarea></td>
 								</tr>
 								<tr>
 									<td>내용</td>
-									<td><textarea name="fe_content" id="write_content"
+									<td><textarea name="feContent" id="write_content"
 											class="form-control" maxlength="1000"
 											style="resize: none; height: 150px;"></textarea></td>
 								</tr>
@@ -103,7 +103,7 @@
 								</tr>
 
 							</table>
-							<input type="hidden" name="fe_replycheck" value="1" id="checkval" />
+							<input type="hidden" name="feReplycheck" value="1" id="checkval" />
 						</div>
 					</div>
 				</div>

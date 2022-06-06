@@ -78,28 +78,28 @@
 						<!-- 마이 피드 내용 -->
 						<div id="myfeed2" role="tabpanel" aria-labelledby="home-tab">						
 						<div class="product col-6 col-md-12 row">						
-							<c:forEach items="${ feedList}" var="feed">
+							<c:forEach items="${feedList}" var="fe">
 								<div class="col-md-3">
 									<form action="/uploadimg" method="post" enctype="multipart/form-data">
 									<div class="product-image">
-										<img src="#" alt="feed image" />
+										<img src="/resources/user/feedimages/${fe[3]}" alt="feedimage" />
 										<div>
-											<a href="MyFeedModal?feNo=${feed.feNo }" class="btn btn-light" data-lightbox="ajax">
+											<a href="MyFeedModal?feNo=${fe[0] }" class="btn btn-light" data-lightbox="ajax">
 											<div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400"></div>
 										</a>
 										</div>
 									</div>
 									</form>
 									<div class="product-desc">
-										<div class="product-title mb-0"><h4 class="mb-0">${feed.feTitle }</h4></div>
-										<h5 class="product-price fw-normal">${feed.memId }</h5>
+										<div class="product-title mb-0"><h4 class="mb-0">${fe[1]}</h4></div>
+										<h5 class="product-price fw-normal">${fe[2] }</h5>
 									</div>
 								</div>
 							</c:forEach>
 						</div>
 						</div>
 						
-						<!-- 채팅 내용 -->
+						<!-- 채팅방 목록 -->
 						<div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
 						<div class="container">
 							<div id="roomContainer" class="roomContainer">
@@ -136,7 +136,6 @@
 	</div><!-- end wrapper -->
 
 
-	</div><!-- #wrapper end -->
 
 	<!-- Go To Top
 	============================================= -->
