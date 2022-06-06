@@ -55,6 +55,7 @@ public interface FeedRepository extends CrudRepository<FeedVO, Integer> {
 			+ "	on f.fe_no = fi.fe_no "
 			+ "    group by f.fe_no "
 			+ "	) t "
+			+ "WHERE t.report_cnt is not null or t.report_cnt < 3"
 			+ "order by rand() limit 9", nativeQuery=true)
 	List<Object[]> mainRandomFeed();
 }
