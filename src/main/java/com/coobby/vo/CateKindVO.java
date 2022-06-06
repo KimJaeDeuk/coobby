@@ -20,4 +20,5 @@ public class CateKindVO {
 
 	@Column(name="kind_name")
 	private String kindName;
+
 }

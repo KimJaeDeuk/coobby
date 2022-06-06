@@ -11,6 +11,15 @@ import com.coobby.vo.FeedVO;
 public interface FeedRepository extends CrudRepository<FeedVO, Integer> {
 	
 	List<FeedVO> findByfeRegdate(String format);
+
+	@Query(value="select *  "
+			+ "from feed f join feed_image fi  "
+			+ "	on f.fe_no = fi.fe_no "
+			+ "where f.fe_no = :fe_no "
+			+ "order by fe_seq ", nativeQuery = true)
+	List<Object[]> detailFeed(@Param(value = "fe_no") Integer feNo);
+	
+
 	
 	@Query(value=" WITH RECURSIVE cte AS "
 			+ " ( SELECT DATE_ADD(NOW(), INTERVAL -30 day) AS d "
@@ -57,4 +66,5 @@ public interface FeedRepository extends CrudRepository<FeedVO, Integer> {
 			+ "	) t "
 			+ "order by rand() limit 9", nativeQuery=true)
 	List<Object[]> mainRandomFeed();
+
 }

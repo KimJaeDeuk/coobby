@@ -69,8 +69,9 @@
 							<p>대시보드</p>
 					</a></li>
 					<div class="space"></div>
-					<li class="nav-item"><a href="#" class="nav-link"> 
-								<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+
+					<li class="nav-item"><a href="/admin/AdminUser/adminUser" class="nav-link"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="20" height="20"
 								fill="currentColor" class="bi bi-people navi"
 								viewBox="0 0 16 16">
   								<path
@@ -89,8 +90,9 @@
 							<p class="nav-margin">블랙 리스트 관리</p>
 					</a></li>
 					<div class="space"></div>
-					<li class="nav-item"><a href="category" class="nav-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+
+					<li class="nav-item"><a href="/admin/category" class="nav-link"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-list-ul navi"
 								viewBox="0 0 16 16">
 								<path fill-rule="evenodd"
@@ -120,8 +122,9 @@
 
 						</ul></li>
 					<div class="space"></div>
-					<li class="nav-item"><a href="admin/tlsrh" class="nav-link">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+
+					<li class="nav-item"><a href="/admin/Report/report" class="nav-link"> <svg
+								xmlns="http://www.w3.org/2000/svg" width="16" height="16"
 								fill="currentColor" class="bi bi-exclamation-octagon-fill navi"
 								viewBox="0 0 16 16">
   									<path

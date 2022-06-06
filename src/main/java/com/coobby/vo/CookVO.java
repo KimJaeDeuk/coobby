@@ -5,9 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 
 @Data
 @Entity
@@ -17,15 +20,17 @@ public class CookVO {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="cook_no")
-	private int cookNo;
+	private Integer cookNo;
 	
-	@Column(name="ingr_code")
-	private int ingrCode;
+	@ManyToOne
+	@JoinColumn(name="ingr_code")
+	private IngrVO ingrVO;
 	
 	@Column(name="ingr_count")
 	private String ingrCount;
 	
-	@Column(name="re_no")
-	private Integer reNo;
+	@ManyToOne
+	@JoinColumn(name="re_no")
+	private RecipeVO recipeVO;
 
 }

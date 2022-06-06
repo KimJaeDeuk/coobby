@@ -1,9 +1,11 @@
 $("#ingrplusbtn").click(() => {
-	$("#ingrinputcontainer").append('<div id="ingrinputcontainer" class="row"><div class="col-sm-4"><input type="text" min="10" max="50" name="fitness-form-age" id="fitness-form-age" class="form-control required" value="" placeholder="예) 고추장"></div><div class="col-sm-4"><input type="text" min="10" max="50" name="fitness-form-age" id="fitness-form-age" class="form-control required" value="" placeholder="예) 2스푼"></div></div>')
+	$("#ingrinputcontainer").append('<div id="ingrinputcontainer" class="row"><div class="col-sm-4">  '
+	+'<input type="text" min="10" max="50" name="ingrName" id="fitness-form-age" class="form-control required" value="" placeholder="예) 고추장"></div>  '
+	+'<div class="col-sm-4"><input type="text" min="10" max="50" name="ingrCount" id="fitness-form-age" class="form-control required" value="" placeholder="예) 2스푼"></div></div>  ')
 })
 
 $("#recipeplusbtn").click(() => {
-	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/user/images/about/1.jpg" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">Default file input example</label><input id="input-image" class="form-control" type="file" id="formFile"></div></li>')
+	$(".list-preparation").append('<li><div class="recipeinsertcontainer"><textarea class="recipeinsert" name="reCook" rows="7"></textarea><img id="preview-image" class="recipeimg" src="/resources/user/recipe/image/noimage.png" alt="" /></div><div class="mb-3"><label for="formFile" class="form-label">조리하는 사진을 선택해주세요.</label><input id="input-image" class="form-control" type="file" id="formFile" name="file" accept="image/jpeg, image/jpg, image/png" /></div></li>')
 })
 
 function readImage(input) {
