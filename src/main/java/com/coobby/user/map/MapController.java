@@ -18,11 +18,18 @@ public class MapController {
 
 	@RequestMapping("map/map")
 	public void map(Model m, MapVO vo) {
+		
 		/*
 		 * List<MapVO> result = mapService.getStoreList(vo);
 		 *  m.addAttribute("storeList",result);
 		 */
-			
+		
+		
+		/*
+		 * List<MapVO> result = mapService.getStoreList(vo);
+		 *  m.addAttribute("storeList",result);
+		 */
+		
 	}
 
 

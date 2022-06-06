@@ -22,8 +22,11 @@ private MapRepository mapRepo;
 //온라인 매장 및 가격
 @Override
 public List<MapVO> getStoreList(MapVO vo) {
+//public List<MapVO> getStoreList(MapVO vo, Pageable page) {
 	
 	//return mapRepo.getStoreList(vo);
+	
+	//return mapRepo.getStoreList(vo, page);
 	return null;
 }
 

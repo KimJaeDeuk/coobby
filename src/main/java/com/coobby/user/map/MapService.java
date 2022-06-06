@@ -10,4 +10,6 @@ public interface MapService {
 	
 	//온라인 매장 및 가격
 	public List<MapVO> getStoreList(MapVO vo);
+	
+	//public List<MapVO> getStoreList(MapVO vo, Pageable page);
 }
