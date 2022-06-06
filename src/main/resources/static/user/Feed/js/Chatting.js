@@ -4,15 +4,37 @@
 /* 채팅방 목록 */
 
 
+
 document.addEventListener("DOMContentLoaded", function(){
-	
+	var tag;
  	var ws;
 	window.onload = function(){
 		getRoom();
 		createRoom();
+		
 	}
 
-	function getRoom(){
+	function createChatingRoom(res){
+		console.log(res)
+		if(res != null){
+			tag = "<tr><th class='num'>순서</th><th class='room'>방 이름</th><th class='go'></th></tr>";
+			res.forEach(function(d, idx){
+				var rn = d.roomName.trim();
+				var roomNumber = d.roomNumber;
+				tag += "<tr>"+
+							"<td class='num'>"+(idx+1)+"</td>"+
+							"<td class='room'>"+ rn +"</td>"+
+							"<td class='go'><button type='button' onClick='goRoom(\""+roomNumber+"\", \""+rn+"\")'>참여</button></td>" +
+						"</tr>";	
+				console.log(tag);
+			});
+			/*'goRoom(\""+roomNumber+"\", \""+rn+"\")'*/
+			console.log(tag)
+			$("#roomList").empty().append(tag);
+		}
+	}
+		
+			function getRoom(){
 		commonAjax('/getRoom', "", 'post', function(result){
 			createChatingRoom(result);
 		});
@@ -32,22 +54,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 	
 
-	function createChatingRoom(res){
-		if(res != null){
-			var tag = "<tr><th class='num'>순서</th><th class='room'>방 이름</th><th class='go'></th></tr>";
-			res.forEach(function(d, idx){
-				var rn = d.roomName.trim();
-				var roomNumber = d.roomNumber;
-				tag += "<tr>"+
-							"<td class='num'>"+(idx+1)+"</td>"+
-							"<td class='room'>"+ rn +"</td>"+
-							"<td class='go'><button type='button' onclick='goRoom(\""+roomNumber+"\", \""+rn+"\")'>참여</button></td>" +
-						"</tr>";	
-			});
-			$("#roomList").empty().append(tag);
-		}
-	}
-
 	function commonAjax(url, parameter, type, calbak, contentType){
 		$.ajax({
 			url: url,
@@ -63,14 +69,9 @@ document.addEventListener("DOMContentLoaded", function(){
 			}
 		});
 	}
+	});
 	
-}); /*자바스크립트 끝*/
-
+	
 function goRoom(number, name){
-		//location.href="/moveChating?roomName="+name+"&"+"roomNumber="+number;
-		window.open( "/moveChating?roomName="+name+"&"+"roomNumber="+number, 
-		'',
-		'width=600px,height=800px');
-	};
-
-
+      location.href="/moveChating?roomName="+name+"&"+"roomNumber="+number;
+   }

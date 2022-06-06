@@ -62,10 +62,25 @@
 			roomNumber: $("#roomNumber").val(),
 			sessionId : $("#sessionId").val(),
 			userName : $("#userName").val(),
-			msg : $("#chatting").val()
+			msg : $("#chatingmsg").val()
 		}
 		ws.send(JSON.stringify(option))
-		$('#chatting').val("");
+		$('#chatingmsg').val("");
 	}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
