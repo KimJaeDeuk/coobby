@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coobby.repository.MapRepository;
+import com.coobby.vo.IngrVO;
 import com.coobby.vo.MapVO;
 
 @Service
@@ -21,13 +22,10 @@ private MapRepository mapRepo;
 
 //온라인 매장 및 가격
 @Override
-public List<MapVO> getStoreList(MapVO vo) {
-//public List<MapVO> getStoreList(MapVO vo, Pageable page) {
+public List<MapVO> getStoreList(IngrVO vo) {
 	
-	//return mapRepo.getStoreList(vo);
-	
-	//return mapRepo.getStoreList(vo, page);
-	return null;
+	return mapRepo.getStoreList(vo);
+
 }
 
 

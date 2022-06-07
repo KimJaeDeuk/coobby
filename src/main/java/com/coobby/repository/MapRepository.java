@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+import com.coobby.vo.IngrVO;
 import com.coobby.vo.MapVO;
 
 public interface MapRepository extends CrudRepository<MapVO, Integer> {
@@ -25,9 +26,9 @@ public interface MapRepository extends CrudRepository<MapVO, Integer> {
 			+ "union all  "
 			+ "(select * from price where ingr_code=?1 and store_name = '홈플러스' order by price limit 3)   "
 			+ "union all  "
-			+ "(select * from price where ingr_code=?1 and store_name = '롯데마트' order by price limit 3)   ",
+			+ "(select * from price where ingr_code=?1 and store_name = '롯데마트' order by price limit 3)   "
+			+ "order by price asc  ",
 			nativeQuery = true) 
-	List<MapVO> getStoreList(MapVO vo);
-	//List<MapVO> getStoreList(MapVO vo, Pageable pageable);
+	List<MapVO> getStoreList(IngrVO vo);
 
 }

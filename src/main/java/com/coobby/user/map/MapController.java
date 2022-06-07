@@ -7,29 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.coobby.vo.IngrVO;
 import com.coobby.vo.MapVO;
 
 @Controller
-@RequestMapping("/user")
+@RequestMapping("/user/map")
 public class MapController {
 	
 	@Autowired
 	private MapService mapService;
 
-	@RequestMapping("map/map")
-	public void map(Model m, MapVO vo) {
+	@RequestMapping("map")
+	public String map(Model m, IngrVO vo) {
 		
-		/*
-		 * List<MapVO> result = mapService.getStoreList(vo);
-		 *  m.addAttribute("storeList",result);
-		 */
-		
-		
-		/*
-		 * List<MapVO> result = mapService.getStoreList(vo);
-		 *  m.addAttribute("storeList",result);
-		 */
-		
+		//온라인 매장 상품 및 가격 출력
+		 List<MapVO> result = mapService.getStoreList(vo);
+		 m.addAttribute("storeList",result);
+
+		return "/user/map/map";
 	}
 
 
