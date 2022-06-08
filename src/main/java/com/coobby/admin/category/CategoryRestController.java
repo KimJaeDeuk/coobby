@@ -10,9 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.coobby.vo.CategoryVO;
 
-@CrossOrigin(origins = "http://localhost:3000")
+
 @RestController
 @RequestMapping("admin")
 public class CategoryRestController {
@@ -21,17 +20,17 @@ public class CategoryRestController {
 	private CategoryService cateService;
 	
 	@PostMapping("/insertCate")
-	public int insertCate(@RequestBody CategoryVO vo) {
-		return cateService.insertCate(vo);
+	public int insertCate( String cateType, String cateName) {
+		return cateService.insertCate(cateType.strip(), cateName);
 	}
 	
 	@PutMapping("/updateCate")
-	public CategoryVO updateCate(@RequestBody CategoryVO vo) {
-		return cateService.updateCate(vo);
+	public void updateCate(String cateName, Integer cateCode, String cateType ) {
+		cateService.updateCate(cateName, cateCode, cateType);
 	}
 	
-	@DeleteMapping("/deleteCate/{cateCode}")
-	public void deleteCate(@PathVariable Integer cateCode) {
-		cateService.deleteCate(cateCode);
+	@DeleteMapping("/deleteCate")
+	public void deleteCate(String cateType, int cateCode) {
+		cateService.deleteCate(cateType, cateCode);
 	}
 }

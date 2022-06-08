@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface DashBoardService {
 
-	
+
 	//int recipeCount();
 
 	int todayRecipe();
@@ -14,5 +14,15 @@ public interface DashBoardService {
 	int todayFeed();
 
 	List<Object[]> ageGroupSexRate();
+
+	List<Object[]> recentFeedCnt();
+
+	List<Object[]> recentRecipeCnt();
+
+	List<Object[]> weekKktWebMemberCnt();
+
+	List<Object[]> rangeFeedCnt(String startDate, String endDate);
+
+	List<Object[]> rangeRecipeCnt(String startDate, String endDate);
 
 }

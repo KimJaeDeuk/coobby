@@ -12,28 +12,28 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Zilla+Slab:wght@400;500&display=swap" rel="stylesheet">
 
-	<link rel="stylesheet" href="/resources/css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/style.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/style.css" type="text/css" />
 
-	<link rel="stylesheet" href="/resources/css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/magnific-popup.css" type="text/css" />
 
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/components/ion.rangeslider.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/magnific-popup.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/components/ion.rangeslider.css" type="text/css" />
 
 	<!-- Furniture Demo Specific Theme Stylesheet - #193532 -->
-	<link rel="stylesheet" href="/resources/css/colors.php?color=193532" type="text/css" />
-	<link rel="stylesheet" href="/resources/css/custom.css" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/colors.php?color=193532" type="text/css" />
+	<link rel="stylesheet" href="/resources/user/css/custom.css" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 	<!-- Furniture Demo Specific Stylesheet -->
-	<link rel="stylesheet" href="/resources/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
-	<link rel="stylesheet" href="/resources/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
+	<link rel="stylesheet" href="/resources/user/demos/furniture/furniture.css" type="text/css" /> <!-- Furniture Custom Css -->
+	<link rel="stylesheet" href="/resources/user/demos/furniture/css/fonts.css" type="text/css" /> <!-- Furniture Custom Fonts -->
 	<link rel="stylesheet" href="/resources/user/recipe/css//recipeinsert.css" type="text/css"/>
 	<!-- / -->
 
@@ -72,8 +72,10 @@
 
 						<div class="row shadow bg-light border">
 							<div class="col-lg-12 p-5">
-								<form class="row mb-0" id="fitness-form" action="recipesave" method="post">
-									<input type="hidden" name="memId" value="test" />
+								<form class="row mb-0" id="fitness-form" action="recipesave" method="post" enctype="multipart/form-data">
+									<input type="hidden" name="memberVO.memId" value="test1" />
+									<input type="hidden" name="reViewcnt" value="0" />
+									<input type="hidden" name="reCreatetime" value="now()" />
 									<div class="form-process">
 										<div class="css3-spinner">
 											<div class="css3-spinner-scaler"></div>
@@ -120,28 +122,28 @@
 											</div>
 											<div class="col-sm-10">
 												<div class="btn-group d-flex" role="group">
-													<select class="form-select" name="kindName" id="event-registration-interests">
+													<select class="form-select" name="cateKindVO" id="event-registration-interests">
 														<option value="">종류별</option>
 														<c:forEach items="${ kind }" var="catekind">
-															<option value="${ catekind.cateCode }">${ catekind.cateName }</option>
+															<option value="${ catekind.kindCode }">${ catekind.kindName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="situName" id="">
+													<select class="form-select" name="cateSituVO" id="">
 														<option value="">상황별</option>
 														<c:forEach items="${ situ }" var="catesitu">
-															<option value="${ catesitu.cateCode }">${ catesitu.cateName }</option>
+															<option value="${ catesitu.situCode }">${ catesitu.situName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="howName" id="event-registration-interests">
+													<select class="form-select" name="cateHowVO" id="event-registration-interests">
 														<option value="">방법별</option>
 														<c:forEach items="${ how }" var="catehow">
-															<option value="${ catehow.cateCode }">${ catehow.cateName }</option>
+															<option value="${ catehow.howCode }">${ catehow.howName }</option>
 														</c:forEach>
 													</select>
-													<select class="form-select" name="ingrName" id="event-registration-interests">
+													<select class="form-select" name="cateIngrVO" id="event-registration-interests">
 														<option value="">재료별</option>
 														<c:forEach items="${ ingr }" var="cateingr">
-															<option value="${ cateingr.cateCode }">${ cateingr.cateName }</option>
+															<option value="${ cateingr.ingrCode }">${ cateingr.ingrName }</option>
 														</c:forEach>
 													</select>
 												</div>
@@ -152,19 +154,16 @@
 									<h4>재료추가</h4>
 									<div class="col-12 form-group">
 										<div id="ingrinputcontainer" class="row">
-											<div class="col-sm-4">
-												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 고추장">
+											<div id="ingrname" class="col-sm-4">
+												<input type="text" name="ingrName" id="fitness-form-age" class="form-control" value="" placeholder="예) 고추장">
 											</div>
-											<div class="col-sm-4">
-												<input type="text" name="fitness-form-age" id="fitness-form-age" class="form-control" value="" placeholder="예) 2스푼">
+											<div id="ingrcount" class="col-sm-4">
+												<input type="text" name="ingrCount" id="fitness-form-age" class="form-control" value="" placeholder="예) 2스푼">
 											</div>
 										</div>
 										<div class="plusbtncontain">
 											<button id="ingrplusbtn" class="button" type="button">추가</button>
 										</div>
-									</div>
-									<div class="col-12 d-none">
-										<input type="text" id="fitness-form-botcheck" name="fitness-form-botcheck" value="" />
 									</div>
 									<hr/>
 									<h4>요리 순서</h4>
@@ -173,11 +172,11 @@
 											<li>
 												<div class="recipeinsertcontainer">
 													<textarea class="recipeinsert" name="reCook" rows="7" placeholder="내용을 입력해주세요"></textarea>
-													<img id="preview-image" class="recipeimg" src="/resources/images/about/1.jpg" alt="" />
+													<img id="preview-image" class="recipeimg" src="/resources/user/recipe/image/noimage.png" alt="" />
 												</div>
 												<div class="mb-3">
-												  <label for="formFile" class="form-label">Default file input example</label>
-												  <input id="input-image" class="form-control" type="file" id="formFile" accept="image/jpeg, image/jpg, image/png">
+												  <label for="formFile" class="form-label">조리하는 사진을 선택해주세요.</label>
+												  <input id="input-image" class="form-control" type="file" id="formFile" name="file" accept="image/jpeg, image/jpg, image/png">
 												</div>
 											</li>
 										</ol>
@@ -189,9 +188,9 @@
 									<h4>요리 완성 사진</h4>
 									<div>
 										<div class="mb-3">
-											<label for="formFile" class="form-label">Default file input example</label>
+											<label for="formFile" class="form-label">완성된 요리사진을 선택해주세요.</label>
 											<input type="file" class="form-control " id="uploadFile"
-							                  name="uploadFile" accept="image/jpeg, image/jpg, image/png"
+							                  name="file" accept="image/jpeg, image/jpg, image/png"
 							                  multiple />
 										</div>
 									</div>
@@ -217,114 +216,6 @@
 				</div>
 			</div>
 		</section><!-- #content end -->
-		
-
-		<!-- Footer
-		============================================= -->
-		<footer id="footer" class="border-0 bg-white">
-			<div class="container">
-
-				<!-- Footer Widgets
-				============================================= -->
-				<div class="footer-widgets-wrap py-lg-6">
-					<div class="row col-mb-30">
-
-						<!-- Footer Col 1 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Social</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="https://facebook.com/semicolonweb" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
-									<li><a href="https://instagram.com/semicolonweb" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
-									<li><a href="https://twitter.com/__semicolon" target="_blank"><i class="icon-twitter"></i> Twitter</a></li>
-									<li><a href="https://youtube.com/c/SemiColonweb/videos" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
-									<li><a href="https://wa.me/00112233344"><i class="icon-whatsapp"></i> WhatsApp</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 2 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Support</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="demo-furniture.html">Home</a></li>
-									<li><a href="demo-furniture-about.html">About</a></li>
-									<li><a href="demo-furniture-contact.html">Contact</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 3 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Trending</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="demo-furniture-products.html">Shop</a></li>
-									<li><a href="demo-forum-single.html">Single</a></li>
-									<li><a href="demo-furniture-about.html">Who are we</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 4 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Get to Know us</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="intro.html#section-niche">Niche Demos</a></li>
-									<li><a href="intro.html#section-multipage">Home Pages</a></li>
-									<li><a href="intro.html#section-onepage">One Pages</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 5 -->
-						<div class="col-lg-4">
-							<div class="widget subscribe-widget clearfix" data-loader="button">
-								<h4>Subscribe Us</h4>
-								<h5 class="font-body op-04"><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-								<div class="widget-subscribe-form-result"></div>
-								<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
-									<div class="input-group">
-										<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email Address">
-										<button class="btn btn-dark bg-color px-3 input-group-text" type="submit">Subscribe</button>
-									</div>
-								</form>
-							</div>
-						</div>
-
-					</div>
-
-				</div><!-- .footer-widgets-wrap end -->
-
-			</div>
-
-			<!-- Copyrights
-			============================================= -->
-			<div id="copyrights" class="py-3 bg-color-light">
-				<div class="container">
-
-					<div class="d-flex justify-content-between op-04">
-						<span>&copy; 2020 All Rights Reserved by Canvas Inc.</span>
-						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-					</div>
-
-				</div>
-			</div><!-- #copyrights end -->
-		</footer><!-- #footer end -->
 
 	</div><!-- #wrapper end -->
 
@@ -336,12 +227,12 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="/resources/js/jquery.js"></script>
-	<script src="/resources/js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="/resources/js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/recipe/js/recipeinsert.js"></script>
 
 </body>

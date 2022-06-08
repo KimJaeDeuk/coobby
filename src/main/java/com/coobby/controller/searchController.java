@@ -16,6 +16,4 @@ public class searchController {
 	public String searchresultpage() {
 		return "/user/search/searchresultpage";
 	}
-	
-	
 }
