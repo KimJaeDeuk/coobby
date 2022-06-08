@@ -29,4 +29,7 @@ public class ScrapVO {
 	@JoinColumn(name="re_no")
 	private RecipeVO recipeVO;
 	
+	
+	
+	
 }
