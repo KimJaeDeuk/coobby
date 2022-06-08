@@ -114,14 +114,31 @@ public class LoginController {
 					
 	}
 	
+//	@RequestMapping("selectauthpage")
+//	public void selectauthpage(HttpServletRequest request, HttpSession session) {
+////		String referer = request.getHeader("Referer");
+////		System.out.println(referer.indexOf("loginpage"));
+////		if(referer.indexOf("loginpage") < 0) {
+////			session.setAttribute("prevPage", referer);
+////		}
+//		
+//	}
+	
+
+	
 	@RequestMapping("selectauthpage")
-	public void selectauthpage(HttpServletRequest request, HttpSession session) {
-//		String referer = request.getHeader("Referer");
-//		System.out.println(referer.indexOf("loginpage"));
-//		if(referer.indexOf("loginpage") < 0) {
-//			session.setAttribute("prevPage", referer);
-//		}
-		
+	public String selectauthpage() {
+		return "/user/login/selectauthpage";
+	}
+	
+	@RequestMapping("emailauthpage")
+	public String emailtauthpage() {
+		return "/user/login/emailauthpage";
+	}
+	
+	@RequestMapping("mainpage")
+	public String mainpage() {
+		return "/user/login/mainpage";
 	}
 	
 	/*
