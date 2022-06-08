@@ -47,7 +47,7 @@
 
 	
 			
-		<jsp:include page="../user-nav.jsp"/>
+		<jsp:include page="../user-nav.jsp" />
 		
 		<!-- Page Title
 		============================================= -->

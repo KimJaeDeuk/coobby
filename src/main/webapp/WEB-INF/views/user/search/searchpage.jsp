@@ -160,7 +160,7 @@
 		<!-- Header
 		============================================= -->
 		<header id="header" class="header-size-sm border-bottom-0">
-		<jsp:include page="../user-nav.jsp"/>
+		<jsp:include page="../user-nav.jsp" />
 			</header>
 
 		<section class="recipe" id="page-title" style="height: 2%;">	

@@ -46,7 +46,7 @@ public class MemberVO {
 	private String memUpdatetime;
 	
 	@Column(name="mem_auth")
-	private int memAuth;
+	private Integer memAuth;
 	
 	@Column(name="mem_stored_image")
 	private String memStoredimage;

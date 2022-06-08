@@ -1,4 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE>
 <html dir="ltr" lang="en-US">
 <head>
@@ -94,8 +95,8 @@
 						<!-- Logo
 						============================================= -->
 						<div id="logo" class="mx-auto col-auto flex-column order-2">
-							<a href="demo-furniture.html" class="standard-logo">COOBBY</a>
-							<a href="demo-furniture.html" class="retina-logo">COOBBY</a>
+							<a href="/user/main/mainpage" class="standard-logo">COOBBY</a>
+							<a href="/user/main/mainpage" class="retina-logo">COOBBY</a>
 						</div><!-- #logo end -->
 
 						<div class="header-misc col-auto col-lg-3 order-3 justify-content-lg-end ms-0 ms-sm-3 px-0">
@@ -114,10 +115,26 @@
 							-->
 							<!-- #top-search end -->
 
+
+
 							<!-- Top 회원가입
 							============================================= -->
 							<div id="useridcontainer">
-								<span>사용자ID</span>
+								 <span class="dropdown">
+               
+               					<c:choose>
+								<c:when test="${sessionScope.user eq null}">
+								<h5>
+									<a href="/user/login/loginpage">LOGIN</a>
+								</h5>
+								</c:when>
+								<c:otherwise>
+								<h5>
+									<a href="logout">LOGOUT</a>
+								</h5>
+								</c:otherwise>
+							</c:choose>
+              				</span>
 							</div>
 							
 							<!-- 비로그인 시 
@@ -126,13 +143,13 @@
 							</div>
 							-->
 							<!-- #top-cart end -->
-							<div id="myfeed">
+							<!-- <div id="myfeed">
 								<a href="#" class="">나의 피드보기</a>
 							</div>
-							<div id="logout">
-								<a href="#" class="">로그아웃</a>
-							</div>
-
+							<div id="login">
+								<a href="#" class="">로그인</a>
+							</div> -->
+							
 						</div>
 
 						<!-- Mobile Menu Icon
