@@ -10,6 +10,6 @@ import com.coobby.vo.ScrapVO;
 public interface ScrapService {
 
 	//즐겨찾기 목록
-	public List<ScrapVO> scrapList();
+	public List<HashMap> scrapList();
 	
 }
