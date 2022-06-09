@@ -4,14 +4,19 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.coobby.user.board.BoardRepository;
+import com.coobby.repository.BoardImageRepository;
+import com.coobby.repository.BoardRepository;
+import com.coobby.vo.BoardImageVO;
 import com.coobby.vo.BoardVO;
 
-@Service
+@Service("AnnounceService")
 public class AnnounceServiceImpl implements AnnounceService{
 	@Autowired
 	private BoardRepository boardRepo;
+	@Autowired
+	private BoardImageRepository boardimageRepo;
 	
 	@Override
 	public List<BoardVO> getBoardList(){
@@ -19,8 +24,17 @@ public class AnnounceServiceImpl implements AnnounceService{
 	}
 	
 	@Override
-	public void insertBoard(BoardVO vo) {
-		boardRepo.save(vo);
+	public void insertBoard(BoardVO vo, MultipartFile[] file) {
+		BoardVO result = boardRepo.save(vo);
+		if(file != null) {
+			for(int i = 0; i<file.length; i++) {
+				BoardImageVO imageVO = new BoardImageVO();
+				imageVO.setFile(file[i]);
+				imageVO.setBoardVO(result);
+				imageVO.setBSeq(i+1);
+				boardimageRepo.save(imageVO);
+			}
+		}
 	}
 	
 	@Override
@@ -42,5 +56,9 @@ public class AnnounceServiceImpl implements AnnounceService{
 		result.setBoardTitle(vo.getBoardTitle());
 		result.setBoardContent(vo.getBoardContent());
 		boardRepo.save(result);
+	}
+	
+	public List<Object[]> selectByPK(BoardVO vo) {
+		return boardRepo.getBoard(vo.getBoardNo());
 	}
 }

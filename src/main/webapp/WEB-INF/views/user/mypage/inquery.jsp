@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -105,31 +106,30 @@
 
 			 <a href="inqueryinsert"><button type="button" class="btn btn-main" id="writebtn2" style="background-color: gray; color: white; float:right; margin-top: -40px;">문의글 작성</button></a>
 				<div class="table-responsive">
-				<table class="table table-bordered mb-0">
+				<table id="example2" class="table table-bordered table-hover">
 				 <thead>
 					<tr>
 					 <th>작성일</th>
 					 <th style="text-align:left;">제목</th>
-		   			 <th>답변</th>
+		   			 <th>답변유무</th>
 					</tr>
 				 </thead>
 					<tbody>
+					<c:forEach items="${qnaList }" var="qna">
 				   <tr>
-					  <td>2022-05-06</td>
-					  <td style="text-align:left;">문의글 제목입니다.</td>
-					  <td>답변 완료</td>
+					  <td>${qna.qdate }</td>
+					  <td style="text-align:left;">${qna.qtitle }</td>
+		                  <td>
+                    <c:choose>
+							<c:when test="${empty qna.acontent}">미답변</c:when>
+							<c:otherwise>답변완료</c:otherwise>											
+					</c:choose>
+					</td>
 					</tr>
-					<tr>
-					  <td>2022-04-22</td>
-				  	  <td style="text-align:left;">문의글</td>
-					  <td>답변 대기</td>
-					</tr>
+					</c:forEach>
 				  </tbody>
 				</table>
 				</div>
-			<div style="text-align: center"><br/>
-			  <button type="button" class="btn btn-main" id="morebtn" style="background-color: black; color: aliceblue;">더보기</button>
-			</div>
 		</div>
        </div>
       </div>
@@ -255,12 +255,39 @@
 
 	<!-- JavaScripts
 	============================================= -->
-	<script src="js/jquery.js"></script>
-	<script src="js/plugins.min.js"></script>
+	<script src="/resources/user/js/jquery.js"></script>
+	<script src="/resources/user/js/plugins.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+	<script
+		src="/resources/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
 
 	<!-- Footer Scripts
 	============================================= -->
-	<script src="js/functions.js"></script>
+	<script src="/resources/user/js/functions.js"></script>
+	
+	<script>
+  $(function () {
+	  $('#example2').DataTable({
+	      "paging": true,
+	      "lengthChange": false,
+	      "searching": false,
+	      "ordering": true,
+	      "info": true,
+	      "autoWidth": false,
+	      "responsive": true,
+	    });
+		
+  });
+</script>
 
 </body>
 </html>

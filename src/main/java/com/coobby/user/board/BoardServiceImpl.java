@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.coobby.repository.BoardRepository;
 import com.coobby.vo.BoardVO;
 
 @Service
@@ -26,7 +27,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
 		BoardVO result = boardRepo.findById(vo.getBoardNo()).get();
-		result.setBoardViewcnt(vo.getBoardViewcnt());
+		result.setBoardViewcnt(result.getBoardViewcnt()+1);
 		boardRepo.save(result);
 		return result;
 	}
@@ -43,4 +44,5 @@ public class BoardServiceImpl implements BoardService{
 		result.setBoardContent(vo.getBoardContent());
 		boardRepo.save(result);
 	}
+
 }

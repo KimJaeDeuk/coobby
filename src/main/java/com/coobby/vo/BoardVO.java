@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Data;
 @Data
@@ -29,7 +31,7 @@ public class BoardVO {
 	@Column(name = "board_imp")
 	private Integer boardImp;
 	@Column(insertable=false, updatable=false, columnDefinition="date default (current_date)", name = "board_createtime")
-	private Date boardCreatetime;
+	private String boardCreatetime;
 	@Column(name = "board_updatetime")
 	private Date boardUpdatetime;
 	

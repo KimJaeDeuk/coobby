@@ -1,16 +1,26 @@
 package com.coobby.user.mypage;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.coobby.user.QnA.QnAService;
+import com.coobby.vo.QnAVO;
+
 
 @Controller
 @RequestMapping("/user")
 public class MypageController {
+	
+	@Autowired
+	QnAService qnaService;
+	
 	@RequestMapping("mypage/Membersignout")
 	public String Membersignout() {
 		return "/user/mypage/Membersignout";
@@ -41,7 +51,10 @@ public class MypageController {
 	}
 	
 	@RequestMapping("mypage/inquery")
-	public String inquery() {
+	public String inquery(Model m) {
+		List<QnAVO> result = qnaService.getQnAList();
+		m.addAttribute("qnaList",result);
+		System.out.println(result);
 		return "/user/mypage/inquery";
 	}
 	
@@ -50,14 +63,21 @@ public class MypageController {
 		return "/user/mypage/inqueryinsert";
 	}
 	
-	@RequestMapping("mypage/inquerydelete")
-	public String inquerydelete() {
-		return "/user/mypage/inquerydelete";
-	}
 	
 	@RequestMapping("/mypage/nav-announce")
 	public String BoardList_2() {
 		return "/user/Announce/Boardlist";
+	}	
+	
+	@RequestMapping("/mypage/save")
+	public String inquery(QnAVO vo) {
+		if(vo.getQcheck()==null) {
+			vo.setQcheck(0);
+		}
+		qnaService.insertQnA(vo);
+		return "redirect:/user/mypage/inquery";
 	}
+	
+	
 	
 }

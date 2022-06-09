@@ -1,4 +1,4 @@
-package com.coobby.user.QnA;
+package com.coobby.repository;
 
 import javax.transaction.Transactional;
 

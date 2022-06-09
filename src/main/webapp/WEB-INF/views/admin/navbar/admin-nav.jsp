@@ -122,11 +122,11 @@
 							</p>
 					</a>
 						<ul class="nav nav-treeview">
-							<li class="nav-item"><a href="pages/tables/simple.html"
+							<li class="nav-item"><a href="/admin/Announce/listpage"
 								class="nav-link"> <i class="far fa-circle nav-icon"></i>
 									<p>공지사항</p>
 							</a></li>
-							<li class="nav-item"><a href="pages/tables/data.html"
+							<li class="nav-item"><a href="/admin/QnA/listpage"
 								class="nav-link"> <i class="far fa-circle nav-icon"></i>
 									<p>Q&A</p>
 							</a></li>
