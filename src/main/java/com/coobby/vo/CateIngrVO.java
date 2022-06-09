@@ -20,4 +20,5 @@ public class CateIngrVO {
 
 	@Column(name="ingr_name")
 	private String ingrName;
+	
 }
