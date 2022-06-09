@@ -33,12 +33,13 @@
 	<!-- / -->
 	<!-- CSS -->
 	<link rel="stylesheet" href="/resources/user/Feed/css/Feed.css" type="text/css" />
+	
 
 
 	<!-- Document Title
 	============================================= -->
-	<title> COOBBY - MyFeed </title>
-
+	<title> COOBBY | 마이피드 </title>
+	
 </head>
 
 <body class="stretched">
@@ -77,30 +78,43 @@
 						<!-- 마이 피드 내용 -->
 						<div id="myfeed2" role="tabpanel" aria-labelledby="home-tab">						
 						<div class="product col-6 col-md-12 row">						
-							<c:forEach items="${ feedList}" var="feed">
+							<c:forEach items="${feedList}" var="fe">
 								<div class="col-md-3">
 									<form action="/uploadimg" method="post" enctype="multipart/form-data">
 									<div class="product-image">
-										<img src="#" alt="feed image" />
+										<img src="/resources/user/feedimages/${fe[3]}" alt="feedimage" />
 										<div>
-											<a href="MyFeedModal?feNo=${feed.feNo }" class="btn btn-light" data-lightbox="ajax">
+											<a href="MyFeedModal?feNo=${fe[0] }" class="btn btn-light" data-lightbox="ajax">
 											<div class="bg-overlay-content align-items-end justify-content-between" data-hover-animate="fadeIn" data-hover-speed="400"></div>
 										</a>
 										</div>
 									</div>
 									</form>
 									<div class="product-desc">
-										<div class="product-title mb-0"><h4 class="mb-0">${feed.feTitle }</h4></div>
-										<h5 class="product-price fw-normal">${feed.memId }</h5>
+										<div class="product-title mb-0"><h4 class="mb-0">${fe[1]}</h4></div>
+										<h5 class="product-price fw-normal">${fe[2] }</h5>
 									</div>
 								</div>
 							</c:forEach>
 						</div>
 						</div>
 						
-						<!-- 채팅 내용 -->
+						<!-- 채팅방 목록 -->
 						<div id="chatting" role="tabpanel" aria-labelledby="profile-tab">
-							<p>채팅</p>
+						<div class="container">
+							<div id="roomContainer" class="roomContainer">
+								<table id="roomList" class="roomList"></table>
+							</div>
+							<div>
+								<table class="inputTable">
+									<tr>
+										<th>방 제목</th>
+										<th><input type="text" name="roomName" id="roomName"></th>
+										<th><button id="createRoom">방 만들기</button></th>
+									</tr>
+								</table>
+							</div>
+						</div>
 						</div>
 						</div>
 
@@ -108,7 +122,7 @@
 
 					<div class="clear"></div>
 
-					<nav aria-label="Page navigation">
+					<nav aria-label="Page navigation" class="Feedpaging">
 						<ul class="pagination justify-content-center mt-4">
 							<li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
 							<li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -120,112 +134,8 @@
 				 <!-- end content-wrap -->
 		</section><!-- #content end -->
 	</div><!-- end wrapper -->
-		<!-- Footer
-		============================================= -->
-		<footer id="footer" class="border-width-1 border-default bg-white">
-			<div class="container">
 
-				<!-- Footer Widgets
-				============================================= -->
-				<div class="footer-widgets-wrap py-lg-6">
-					<div class="row col-mb-30">
 
-						<!-- Footer Col 1 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Social</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="https://facebook.com/semicolonweb" target="_blank"><i class="icon-facebook"></i> Facebook</a></li>
-									<li><a href="https://instagram.com/semicolonweb" target="_blank"><i class="icon-instagram"></i> Instagram</a></li>
-									<li><a href="https://twitter.com/__semicolon" target="_blank"><i class="icon-twitter"></i> Twitter</a></li>
-									<li><a href="https://youtube.com/c/SemiColonweb/videos" target="_blank"><i class="icon-youtube"></i> YouTube</a></li>
-									<li><a href="https://wa.me/00112233344"><i class="icon-whatsapp"></i> WhatsApp</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 2 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Support</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="demo-furniture.html">Home</a></li>
-									<li><a href="demo-furniture-about.html">About</a></li>
-									<li><a href="demo-furniture-contact.html">Contact</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 3 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Trending</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="demo-furniture-products.html">Shop</a></li>
-									<li><a href="demo-forum-single.html">Single</a></li>
-									<li><a href="demo-furniture-about.html">Who are we</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 4 -->
-						<div class="col-lg-2 col-md-3 col-6">
-							<div class="widget widget_links widget-li-noicon">
-
-								<h4 class="ls0 nott">Get to Know us</h4>
-
-								<ul class="list-unstyled iconlist ms-0">
-									<li><a href="intro.html#section-niche">Niche Demos</a></li>
-									<li><a href="intro.html#section-multipage">Home Pages</a></li>
-									<li><a href="intro.html#section-onepage">One Pages</a></li>
-								</ul>
-
-							</div>
-						</div>
-
-						<!-- Footer Col 5 -->
-						<div class="col-lg-4">
-							<div class="widget subscribe-widget clearfix" data-loader="button">
-								<h4>Subscribe Us</h4>
-								<h5 class="font-body op-04"><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>
-								<div class="widget-subscribe-form-result"></div>
-								<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
-									<div class="input-group">
-										<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email Address">
-										<button class="btn btn-dark bg-color px-3 input-group-text" type="submit">Subscribe</button>
-									</div>
-								</form>
-							</div>
-						</div>
-
-					</div>
-
-				</div><!-- .footer-widgets-wrap end -->
-
-			</div>
-
-			<!-- Copyrights
-			============================================= -->
-			<div id="copyrights" class="py-3 bg-color-light">
-				<div class="container">
-					<div class="d-flex justify-content-between op-04">
-						<span>&copy; 2020 All Rights Reserved by Canvas Inc.</span>
-						<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
-					</div>
-				</div>
-			</div><!-- #copyrights end -->
-		</footer><!-- #footer end -->
-
-	</div><!-- #wrapper end -->
 
 	<!-- Go To Top
 	============================================= -->
@@ -242,6 +152,7 @@
 	============================================= -->
 	<script src="/resources/user/js/functions.js"></script>
 	<script src="/resources/user/Feed/js/myfeed.js"></script>
+	<script src="/resources/user/Feed/js/Chatting.js"></script>
 	
 	
 

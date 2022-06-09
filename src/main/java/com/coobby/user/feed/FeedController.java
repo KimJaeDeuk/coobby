@@ -1,24 +1,17 @@
 package com.coobby.user.feed;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.swing.filechooser.FileSystemView;
-
-import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.coobby.user.feed.comment.FeedCommService;
+import com.coobby.vo.FeedCommentVO;
 import com.coobby.vo.FeedImageVO;
 import com.coobby.vo.FeedVO;
 
@@ -28,21 +21,41 @@ public class FeedController {
 	
 	@Autowired
 	private FeedService feedService;
+	
+	@Autowired
+	private FeedCommService feedcommService;
 
 	
 		// 마이피드 목록 출력
 		@RequestMapping("/MyFeed")
 		public void getFeedList(Model m) {
 			FeedVO vo = new FeedVO();
-			List<FeedVO> list = feedService.getFeedList(vo);
+			List<Object[]> list = feedService.getFeedList(vo);
 			
 			m.addAttribute("feedList",list);
 		}
 
 		// 마이피드 상세보기
 		@RequestMapping("/MyFeedModal")
-		public void MyFeedModal(FeedVO vo, Model m) {
+		public void myFeedModal(FeedVO vo, Model m) {
 			m.addAttribute("myfeedmodal", feedService.getFeedModal(vo));
+			m.addAttribute("feedimg", feedService.getFeedModalimg(vo));
+
+			// 댓글 보기
+			List<FeedCommentVO> list = feedcommService.getFeComm(vo.getFeNo());
+			m.addAttribute("feedcomm",list);
+			System.out.println(">>>>>"+list.size());
+			//return "redirect:MyFeedModal?feNo=" + vo.getFeNo();
+		}
+
+		// 피드 댓글 등록
+		@RequestMapping("/insertFeComm")
+		@ResponseBody
+		public List<FeedCommentVO> insertFeComm(FeedCommentVO fevo) {
+			feedcommService.insertFeComm(fevo);
+			
+			List<FeedCommentVO> list = feedcommService.getFeComm(fevo.getFeed().getFeNo());
+			return list;
 		}
 		
 		
@@ -54,31 +67,8 @@ public class FeedController {
 
 		// 피드 작성페이지
 		@RequestMapping("/saveFeed")
-		public String saveFeed(FeedVO vo) {			
-			
-			// 파일 업로드
-//			FeedImageVO fvo , HttpServletRequest request, @RequestPart MultipartFile uploadfiles => feedVO 괄호 안에 들어갈 것들
-//			FeedImageVO imgvo = new FeedImageVO();
-//			
-//			String originFileName = uploadfiles.getOriginalFilename();
-//			String originFileNameExtenstion = FilenameUtils.getExtension(originFileName).toLowerCase();
-//			File storedFile;
-//			String storedFileName;
-//			String FileUrl = "C:/coobby/src/main/resoures/static/user/Feed/images/";
-//			
-//			do {
-//				storedFileName = RandomStringUtils.randomAlphanumeric(32) + "." + originFileNameExtenstion;
-//				storedFile = new File(FileUrl + storedFileName);
-//			} while (storedFile.exists());
-//			
-//			storedFile.getParentFile().mkdirs();
-//			uploadfiles.transferTo(storedFile);
-//			
-//			imgvo.setFeStoredImage(storedFileName);
-//			imgvo.setFeOriginImage(originFileName);
-//			
-//			feedService.insertFeed(vo, imgvo);
-			
+		public String saveFeed(FeedVO vo, MultipartFile[] file) {	
+			feedService.insertFeed(vo, file);
 			return "redirect:MyFeed";
 		}
 		
@@ -107,7 +97,7 @@ public class FeedController {
 		@RequestMapping("/MainFeed")
 		public void getMainFeedList(Model m) {
 			FeedVO vo = new FeedVO();
-			List<FeedVO> list = feedService.getFeedList(vo);
+			List<Object[]> list = feedService.getFeedList(vo);
 			
 			m.addAttribute("feedList",list);
 		}
@@ -117,7 +107,4 @@ public class FeedController {
 		public void MainFeedModal(FeedVO vo, Model m) {
 			m.addAttribute("feedmodal", feedService.getFeedModal(vo));
 		}
-		
-		
-
 }

@@ -20,4 +20,5 @@ public class CateSituVO {
 
 	@Column(name="situ_name")
 	private String situName;
+
 }

@@ -284,7 +284,7 @@
 			
 			//수정 버튼을 눌렀을때 진행되는 과정
 			$(document).on('click','.modify',function(){
-				
+				smallCateCode = smallChoose.find('input').val(); 
 				if(smallChoose.text().trim() != ''){	//값이 있음을 체크하고 ajax로 update
 					$.ajax({
 						type : 'PUT',
