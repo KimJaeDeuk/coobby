@@ -42,54 +42,7 @@
 <!-- Furniture Custom Css -->
 <link rel="stylesheet"
 	href="/resources/user/demos/furniture/css/fonts.css" type="text/css" />
-<style>
-img {
-	width: 100px;
-	height: 100px;
-	border-radius: 5%;
-	border: 1px solid black;
-}
 
-.searchBar {
-  position: relative;
-  width: 500px;
-  height: 70px;
-  margin: 10px auto;
- 
-}
-
-input {
-  border: 1px solid #F1F1F1;
-  border-radius: 50px;
-  width: 600px;
-  height: 50px;
-  background-color: none;	
-}
-
-input::-webkit-input-placeholder{
-  background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
-  background-size: contain;
-  background-position:  1px center;
-  background-repeat: no-repeat;
-  text-align: center;
-  text-indent: 0;
-  }
-
- .btn{
- 	height : 50px;
- 	border-radius : 25%;
- }
- .rightIcon {
- 	float : left;
- }
- .inputBar{
- 	width : 350px;
- 	float : left
- }
- .btn-primary{
- 	margin-left : -3%;
- }
-</style>
 <title>Furniture | Canvas</title>
 
 </head>
@@ -122,29 +75,7 @@ input::-webkit-input-placeholder{
 						============================================= -->
 					<div id="shop" class="shop row gutter-30 col-mb-30 mt-3">
 						
-						<form action="searchImage" method="GET">
-						   <div class="searchBar">
-						   	<div class="inputBar">
-						      <input name="q" id="searchBar" type="text" class="form-control rounded-pill" placeholder="    재료 혹은 음식 검색" aria-label="Recipient's username" aria-describedby="button-addon2"
-						      onfocus="this.placeholder=''" onblur="this.placeholder='    재료 혹은 음식 검색'" >
-						     </div>
-						      <div class="rightIcon" style="float">
-						      <button type="button" class="btn btn-warning">
-						     <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-mic" viewBox="0 0 16 16">
-							    <path d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z"/>
-							    <path d="M10 8a2 2 0 1 1-4 0V3a2 2 0 1 1 4 0v5zM8 0a3 3 0 0 0-3 3v5a3 3 0 0 0 6 0V3a3 3 0 0 0-3-3z"/>
-							  </svg>
-						 	 </button>
-						 	 <button type="button" class="btn btn-primary">
-						 	 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-image" viewBox="0 0 16 16">
-							   <path d="M6.002 5.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-						 	   <path d="M2.002 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-12zm12 1a1 1 0 0 1 1 1v6.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12V3a1 1 0 0 1 1-1h12z"/>
-						 	 </svg>
-						     
-							  </button>
-							  </div>
-						   </div>
-						  </form>
+						
 					
 					<!-- Title -->
 					<div class="col-xl-3 col-lg-6">
@@ -307,7 +238,7 @@ input::-webkit-input-placeholder{
 
 	<!-- JavaScripts
 	============================================= -->
-	  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 	<script src="/resources/user/js/jquery.js"></script>
 	<script src="/resources/user/js/plugins.min.js"></script>
 
