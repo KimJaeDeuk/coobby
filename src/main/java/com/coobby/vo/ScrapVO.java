@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="SCRAP")
+@Table(name="scrap")
 public class ScrapVO {
 
 	@Id

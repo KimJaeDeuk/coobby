@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.coobby.repository.ScrapRepository;
-import com.coobby.vo.ScrapVO;
+import com.coobby.vo.MemberVO;
 
 @Service
 public class ScrapServiceImpl implements ScrapService {
@@ -17,10 +17,10 @@ public class ScrapServiceImpl implements ScrapService {
 
 	//즐겨찾기 목록 
 	@Override
-	public List<ScrapVO> scrapList() {
+	public List<Object[]> scrapList(String memid) {
 
-		//return scrapRepo.scrapList();
-		return null;
+		return scrapRepo.scrapList(memid);
+		
 	}
 
 
